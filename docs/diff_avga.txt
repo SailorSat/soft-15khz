@@ -1,0 +1,3 @@
+ddc2disabled	0 -> 1
+
+DALCustomOEMModes x -> 1

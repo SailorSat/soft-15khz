@@ -1,0 +1,44 @@
+		ATI	NVidia	Matrox1	Matrox2	3Dfx	Matrox3
+240x240		ok	ok	N/A	N/A	ok	N/A
+256x240		ok	ok	N/A	N/A	ok	N/A
+256x256		error1	ok	N/A	N/A	error1	N/A
+256x264		ok	error2	N/A	N/A	ok	N/A
+288x240		ok	error1	N/A	N/A	ok	N/A
+296x240		ok	error1	N/A	N/A	ok	N/A
+304x240		ok	ok	N/A	N/A	ok	N/A
+321x200		ok	ok	error3	N/A	ok*	N/A
+321x240		ok	ok	ok*	N/A	ok*	N/A
+321x256		ok	error1	ok*	N/A	ok*	N/A
+336x240		ok	error1	ok	N/A	ok	N/A
+352x256		ok	ok	ok	N/A	ok	ok
+352x264		error1	ok	ok	N/A	error1	ok
+352x288		ok	ok	ok	N/A	ok	ok
+368x240		ok	error2	ok	N/A	ok	ok
+384x288		ok	ok	ok	N/A	ok	ok
+392x240		ok	ok	ok	error1	ok	ok
+401x256		ok	ok	ok*	N/A	ok*	ok*
+448x240		ok	ok	ok	N/A	ok	ok
+512x240		ok	ok	ok	N/A	ok	ok
+512x288		ok	ok	ok	N/A	ok	ok
+512x448		ok	ok	ok	N/A	N/A	ok
+512x512		ok	ok	ok	N/A	N/A	ok
+632x264		ok	ok	ok	N/A	ok	ok
+640x240		ok	ok	ok	N/A	ok	ok
+640x288		ok	ok	ok	N/A	ok	ok
+640x480		ok	ok	ok	N/A	N/A	ok
+720x480		ok	ok	N/A	N/A	N/A	ok
+800x600		ok	ok	ok	error1	N/A	ok
+1024x768	ok	ok	error3	error3	N/A	error3
+
+ATI = Radeon9600Pro AGP
+NVidia = GeForce 6600GT AGP
+Matrox1 = Matrox Millenium PCI
+Matrox2	= Matrox G450 DualHead AGP
+3Dfx = Voodoo3 3000 PCI
+Matrox3	= Matrog G100 AGP
+
+error1 = schwarzes bild, maximal ein paar einzelne pixel zu erkennen.
+error2 = bild geviertelt, ich seh das bild viermal
+error3 = bild läuft durch, vermutlich mehr als 60Hz oder weniger als 50Hz
+
+ok* = aufgerundete Auflösung, also z.B. statt 321x240 dann 328x240

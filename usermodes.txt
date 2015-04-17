@@ -1,0 +1,2 @@
+modeline "model1" 16.000 496 541 610 656 384 391 416 424 -hsync -vsync
+modeline "neogeo" 6.000 320 327 355 384 224 240 248 264 -hsync -vsync

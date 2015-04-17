@@ -1,0 +1,4 @@
+modeline "640x480" 12,372 640 656 720 784 480 489 495 526 interlace -hsync -vsync
+modeline "720x480" 14,6 720 752 824 928 480 486 489 525 interlace -hsync -vsync"
+modeline "720x576" 15,164 720 800 896 936 576 588 592 648 interlace -hsync -vsync
+modeline "768x576" 14,774 768 784 848 944 576 581 586 626 interlace -hsync -vsync

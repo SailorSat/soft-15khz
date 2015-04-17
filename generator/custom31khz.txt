@@ -1,0 +1,7 @@
+# -= 31KHz Progressive =-
+modeline '512x448-31,5kHz-60,0Hz' 19,404 512 528 576 616 448 478 494 525 -hsync -vsync
+modeline '640x480-31,5kHz-60,0Hz' 24,444 640 664 728 776 480 494 510 525 -hsync -vsync
+modeline '720x480-31,5kHz-60,0Hz' 27,468 720 744 808 872 480 494 510 525 -hsync -vsync
+modeline '512x512-31,5kHz-54,498Hz' 19,404 512 528 576 616 512 536 553 578 -hsync -vsync
+modeline '800x600-31,5kHz-50,0Hz' 30,492 800 824 896 968 600 605 624 630 -hsync -vsync
+modeline '1024x600-31,5kHz-50,0Hz' 38,808 1024 1056 1152 1232 600 605 624 630 -hsync -vsync

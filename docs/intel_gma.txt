@@ -1,0 +1,46 @@
+HKR,, TotalDTDCount, %REG_DWORD%, 0
+to
+HKR,, TotalDTDCount, %REG_DWORD%, 5
+
+HKR,, DTD_1,%REG_BINARY%, 01,1D,80,18,71,1C,16,20,58,2C,1A,00,00,00,00,00,00,86,37,01   ;1920x1080@60...Interlaced
+HKR,, DTD_2,%REG_BINARY%, 01,1D,80,D0,72,1C,16,20,10,2C,1A,80,00,00,00,00,00,86,37,01   ;1920x1080@50...Interlaced
+HKR,, DTD_3,%REG_BINARY%, 01,1D,00,BC,52,D0,1E,20,B8,28,25,40,00,00,00,00,00,04,37,01   ;1280x720@50....Non-interlaced
+HKR,, DTD_4,%REG_BINARY%, 01,1D,00,72,51,D0,1E,20,6E,28,25,00,00,00,00,00,00,06,37,01   ;1280x720@60....Non-interlaced
+HKR,, DTD_1,%REG_BINARY%, 97,29,A0,D0,51,84,20,30,50,98,03,00,00,00,00,00,00,1C,27,00   ;1440x900@60...Progressive
+HKR,, DTD_2,%REG_BINARY%, 9A,20,00,90,51,20,1C,30,40,88,03,00,00,00,00,00,00,1C,27,00   ;1280x800@60...Progressive
+HKR,, DTD_3,%REG_BINARY%, 79,39,90,40,62,1A,25,40,68,B8,03,00,00,00,00,00,00,1C,27,00   ;1680x1050@60...Progressive
+
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20
+01,1D,80,18,71,1C,16,20,58,2C,1A,00,00,00,00,00,00,86,37,01
+PC_PC,HA,HB,HC,VA,VB,VC,HS,HP,VV,X1,HI,VI,X2,HO,VO,FL,??_??
+
+PC = Pixel Clock
+HA = Lower 8 Bits of Horizontal Active, 10000000
+HB = Lower 8 Bits of Horizontal Blanking, 00011000
+HC = 7-4 = Upper 4 Bits of Horizontal Active, 0111
+     3-0 = Upper 4 Bits of Horizontal Blanking, 0001
+VA = Lower 8 Bits of Vertical Active
+VB = Lower 8 Bits of Vertical Blanking
+VC = 7-4 = Upper 4 Bits of Vertical Active
+     3-0 = Upper 4 Bits of Vertical Blanking
+HS = Horizontal Offset, 01011000
+HP = Horizontal Pulse, 00101100
+VV = 7-4 = Lower 4 Bits of Vertical Offset, 0001
+     3-0 = Lower 4 Bits of Vertical Pulse, 1010
+X1 = 7-6 = Upper 2 Bits of Horizontal Offset
+     5-4 = Upper 2 Bits of Horizontal Pulse
+     3-2 = Upper 2 Bits of Vertical Offset
+     1-0 = Upper 2 Bits of Vertical Pulse
+HI = Horinzontal Image Size
+VI = Vertical Image Size
+X2 = 7-4 = Upper 4 Bits of Horizontal Image Size
+     3-0 = Upper 4 Bits of Vertical Image Size
+HO = Horizontal Border
+VO = Vertical Border
+FL = 7 = 0 - progressiv, 1 - interlace
+     6-5 = 00; Stereo3D
+     4-3 = 11; Seperate Syncs
+     2 = Vertical Polarity, 0 - negative, 1 - positive
+     1 = Horizontal Polarity, 0 - negative, 1 - positive
+     0 = 0; Stereo Mode
+??_?? = Intel Flags (use 27,00)

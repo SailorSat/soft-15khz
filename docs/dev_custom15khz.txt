@@ -1,0 +1,6 @@
+modeline "720x288-15kHz-50Hz" 13,88 720 742 808 888 576 580 584 626 interlace -hsync -vsync
+modeline "640x256" 13,37 640 672 736 832 256 257 260 268 -hsync -vsync
+modeline "496x384" 10,625 496 526 590 672 384 405 440 527 interlace -hsync -vsync
+modeline "896x512" 18,37 896 928 1024 1152 512 514 520 536 interlace -hsync -vsync
+modeline "720x576" 13,88 720 742 808 888 576 580 584 626 interlace -hsync -vsync
+modeline "1024x576" 20,79 1024 1072 1176 1328 576 580 584 626 interlace -hsync -vsync

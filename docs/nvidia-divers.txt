@@ -1,0 +1,26 @@
+"MonitorTiming"=hex:00,03,00,00
+
+nvEDIDPruning
+
+OverrideEdidFlags
+
+Deciphering of the OverrideEdidFlagsX Key:
+Byte [0]  | Byte [1] : ID Manufacturer Name (3A,C4 = C43A = "NVD")
+Byte [2]  | Byte [3] : Product ID Code[tab][/tab] (00,04 = 0400 = 0400 )
+Byte [4]  | Byte [5] : Minimum date matching (setting min/max to 00 00 FF FF seems to be all inclusive)
+Byte [6]  | Byte [7] : Maximum date matching (setting min/max to 00 00 FF FF seems to be all inclusive)
+Byte [8]  : ?
+Byte [9]  : ?
+Byte [10] : ?
+Byte [11] : ?
+Byte [12] : Location of first byte to override with EDID
+Byte [13] : The number of bytes to be overwritten with
+Byte [14...] : Data to override bad EDID with
+
+HKR,, OverrideEdidFlags0,            %REG_BINARY%,   10,AC,00,00,00,00,FF,FF,02,00,00,00
+HKR,, OverrideEdidFlags0,            %REG_BINARY%,   51,F3,8A,50,00,00,ff,ff,04,00,00,00,6C,12,70,0A,D0,B0,20,E0,11,10,10,48,13,00,4b
+cf,10,00,00,18
+HKR,, OverrideEdidFlags0,            %REG_BINARY%,   5a,63,01,f9,00,00,ff,ff,04,00,00,00,34,02,81,80
+HKR,, OverrideEdidFlags1,            %REG_BINARY%,   51,F3,8A,50,00,00,ff,ff,04,00,00,00,26,02,3b,80
+HKR,, OverrideEdidFlags1,            %REG_BINARY%,   51,F3,8A,50,00,00,ff,ff,04,00,00,00,6C,12,70,0A,D0,B0,20,E0,11,10,10,48,13,00,4b
+cf,10,00,00,18

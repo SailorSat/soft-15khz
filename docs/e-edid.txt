@@ -1,0 +1,9 @@
+-- extension block --
+
+  0:	0x02 (Extension Tag)
+  1:	0x03 (Version)
+  2:	0x04 (Data Byte 'd')
+  3:	0x06 (Number of DTDs) [6 x 18 = 108 byte]
+  4:	---- (1st DTD)
+XXX:	0x00 (empty)
+127:	---- (Checksum)

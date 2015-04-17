@@ -1,0 +1,64 @@
+HKEY_LOCAL_MACHINE \ HARDWARE \ DEVICEMAP \ VIDEO \ Video#
+
+-
+
+Mga.SingleResolutions (Binary)
+
+*** Big-Endian! (Reversed Values)
+
+Data
+HOR_SIZE	2	*	720	D0 02
+VER_SIZE	2	*	576	40 02
+*** HOR_SIZE must be multiple of 8
+
+-
+
+Graphic.640.480 (Binary)
+
+Modeline 'NTSC' 12,210 640 656 712 776 480 486 492 525 interlace -hsync -vsync
+Modeline 'Name' FF.FFF HHH PHH LHH THH VVV PVV LVV TVV <options>
+
+*** Big-Endian! (Reversed Values)
+*** Vertical / 2 when Interlace
+
+Data
+VER_FREQ	2	*	30	1E 00
+HOR_FREQ	2	*	16	10 00
+PIX_FREQ	2	FF.FFF	12,210	B2 2F
+NOT_USED	2	*	*	00 00
+HPIX_XX1	2	PHH-HHH	16	10 00
+HPIX_WID	2	LHH-PHH	62	40 00
+HPIX_XX2	2	THH-LHH 56	38 00
+VPIX_XX1	2	PVV-VVV	3	03 00
+VPIX_WID	2	LVV-PVV	3	03 00
+VPIX_XX2	2	TVV-LVV	16	10 00
+SYNC_OPT	2	*	1	01 00	' 1 interlace, 4 hsync pos, 8 vsync pos
+NOT_USED	2	*	*	00 00
+*** TVV must be multiple of 4, we took 524
+
+-
+
+D0M.0.Def.Graphic.XXX.YYY.CC (QuickDesk, derzeit nicht von nöten)
+
+Modeline 'NTSC' 12,210 640 656 712 776 480 486 492 525 interlace -hsync -vsync
+Modeline 'Name' FF.FFF HHH PHH LHH THH VVV PVV LVV TVV <options>
+
+*** Big-Endian! (Reversed Values)
+*** Vertical / 2 when Interlace
+
+Data
+NOT_USED	2	*	*	01 00
+VER_FREQ	2	*	30	1E 00
+HOR_FREQ	2	*	16	10 00
+NOT_USED	2	*	*	00 00
+PIX_FREQ	2	FF.FFF	12,210	B2 2F
+NOT_USED	2	*	*	00 00
+HPIX_XX1	2	PHH-HHH	16	10 00
+HPIX_WID	2	LHH-PHH	62	40 00
+HPIX_XX2	2	THH-LHH 56	38 00
+VPIX_XX1	2	PVV-VVV	3	03 00
+VPIX_WID	2	LVV-PVV	3	03 00
+VPIX_XX2	2	TVV-LVV	16	10 00
+SYNC_OPT	2	*	1	01 00	' 1 interlace, 4 hsync pos, 8 vsync pos
+NOT_USED	2	*	*	00 00
+*** TVV must be multiple of 4, we took 524

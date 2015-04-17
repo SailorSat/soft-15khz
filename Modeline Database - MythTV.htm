@@ -1,0 +1,2691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.2" />
+		<meta name="keywords" content="Modeline Database,Working with Modelines,Judaz,Cengique" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="MythTV (en)" />
+		<link rel="alternate" type="application/rss+xml" title="MythTV RSS Feed" href="/wiki?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="MythTV Atom Feed" href="/wiki?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Modeline Database - MythTV</title>
+		<link rel="stylesheet" href="/w/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/w/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/w/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/w/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/w/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/w/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/w/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/wiki?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/wiki?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="/wiki?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/wiki?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/w/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/w/skins";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/wiki";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://www.mythtv.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Modeline_Database";
+		var wgTitle = "Modeline Database";
+		var wgAction = "view";
+		var wgArticleId = "2042";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 44437;
+		var wgVersion = "1.15.2";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/w/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/wiki?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Modeline_Database skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Modeline Database</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From MythTV</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>Database of standard modelines as well as user created modelines for specific HD Televisions.
+</p>
+<div style="background: #FFFFD9; border: 1px dashed black; padding: 5px 5px 5px 5px;">
+<p><a href="/wiki/File:Important.png" class="image" title="Important.png"><img alt="" src="/w/images/thumb/f/ff/Important.png/25px-Important.png" width="25" height="25" border="0" /></a> <b>Note:</b> Most of the time the driver will pick the optimum values for your TV or monitor automatically, especially when using a digital connection (DVI or HDMI). Modelines are a relict of times when drivers were dumb and monitors/TVs did not respond to EDID requests. Custom modelines should be a last resort.
+</p>
+</div>
+<p><br />
+</p>
+<div style="background: #FFFFD9; border: 1px dashed black; padding: 5px 5px 5px 5px;">
+<p><a href="/wiki/File:Important.png" class="image" title="Important.png"><img alt="" src="/w/images/thumb/f/ff/Important.png/25px-Important.png" width="25" height="25" border="0" /></a> <b>Note:</b> Modelines are <b>ignored</b> by <b>NVIDIA</b>, <b>ATI</b> and <b>Intel</b> drivers when using the TV-Out ability of these chipsets. Instead they use an internal and unmodifiable list of valid modes (which are often incorrect).
+</p>
+</div>
+<p><br />
+</p>
+<div style="background: #FFFFD9; border: 1px dashed black; padding: 5px 5px 5px 5px;">
+<p><a href="/wiki/File:Important.png" class="image" title="Important.png"><img alt="" src="/w/images/thumb/f/ff/Important.png/25px-Important.png" width="25" height="25" border="0" /></a> <b>Note:</b> The different inputs for your TV or monitor may have different allowable resolutions and scanrates.  For example, some Sony TVs will not allow 1920x1080 at 50 Hz via the VGA connector, but will allow it via the HDMI input.
+</p>
+</div>
+<p><br />
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#EDID_Modelines_.28Data_from_your_Monitor.29"><span class="tocnumber">1</span> <span class="toctext">EDID Modelines (Data from your Monitor)</span></a></li>
+<li class="toclevel-1"><a href="#Standard_Modelines"><span class="tocnumber">2</span> <span class="toctext">Standard Modelines</span></a>
+<ul>
+<li class="toclevel-2"><a href="#NVIDIA_Driver_ModePool"><span class="tocnumber">2.1</span> <span class="toctext">NVIDIA Driver ModePool</span></a></li>
+<li class="toclevel-2"><a href="#VESA_ModePool"><span class="tocnumber">2.2</span> <span class="toctext">VESA ModePool</span></a></li>
+<li class="toclevel-2"><a href="#CVT_modelines"><span class="tocnumber">2.3</span> <span class="toctext">CVT modelines</span></a></li>
+<li class="toclevel-2"><a href="#EDID_modelines_from_HDTVs"><span class="tocnumber">2.4</span> <span class="toctext">EDID modelines from HDTVs</span></a></li>
+<li class="toclevel-2"><a href="#ModeValidation"><span class="tocnumber">2.5</span> <span class="toctext">ModeValidation</span></a></li>
+<li class="toclevel-2"><a href="#NTSC_.28Analog.29"><span class="tocnumber">2.6</span> <span class="toctext">NTSC (Analog)</span></a></li>
+<li class="toclevel-2"><a href="#PAL_625"><span class="tocnumber">2.7</span> <span class="toctext">PAL 625</span></a></li>
+<li class="toclevel-2"><a href="#DVD"><span class="tocnumber">2.8</span> <span class="toctext">DVD</span></a></li>
+<li class="toclevel-2"><a href="#DILA_Projector_Native"><span class="tocnumber">2.9</span> <span class="toctext">DILA Projector Native</span></a></li>
+<li class="toclevel-2"><a href="#ATSC_Standard_Modes"><span class="tocnumber">2.10</span> <span class="toctext">ATSC Standard Modes</span></a></li>
+<li class="toclevel-2"><a href="#ATSC_Movie_Modes"><span class="tocnumber">2.11</span> <span class="toctext">ATSC Movie Modes</span></a></li>
+<li class="toclevel-2"><a href="#PC_Tweaked"><span class="tocnumber">2.12</span> <span class="toctext">PC Tweaked</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Custom_Modelines"><span class="tocnumber">3</span> <span class="toctext">Custom Modelines</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Acer"><span class="tocnumber">3.1</span> <span class="toctext">Acer</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Acer_AT4220B_.2F_AT3720B_.2F_AT3220B_.2F_AT2720B"><span class="tocnumber">3.1.1</span> <span class="toctext">Acer AT4220B / AT3720B / AT3220B / AT2720B</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Apex"><span class="tocnumber">3.2</span> <span class="toctext">Apex</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Apex_LD_4088_40.22_LCD"><span class="tocnumber">3.2.1</span> <span class="toctext">Apex LD 4088 40" LCD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Dell"><span class="tocnumber">3.3</span> <span class="toctext">Dell</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Dell_2405FPW"><span class="tocnumber">3.3.1</span> <span class="toctext">Dell 2405FPW</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Fujitsu"><span class="tocnumber">3.4</span> <span class="toctext">Fujitsu</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Fujitsu-Siemens.2C_Amilo_LSL_3230T"><span class="tocnumber">3.4.1</span> <span class="toctext">Fujitsu-Siemens, Amilo LSL 3230T</span></a></li>
+<li class="toclevel-3"><a href="#Fujitsu_50.22_Plasma"><span class="tocnumber">3.4.2</span> <span class="toctext">Fujitsu 50" Plasma</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Hitachi"><span class="tocnumber">3.5</span> <span class="toctext">Hitachi</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Hitachi_42PD380TA"><span class="tocnumber">3.5.1</span> <span class="toctext">Hitachi 42PD380TA</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#InFocus"><span class="tocnumber">3.6</span> <span class="toctext">InFocus</span></a>
+<ul>
+<li class="toclevel-3"><a href="#InFocus_ScreenPlay_5000"><span class="tocnumber">3.6.1</span> <span class="toctext">InFocus ScreenPlay 5000</span></a></li>
+<li class="toclevel-3"><a href="#InFocus_X1A"><span class="tocnumber">3.6.2</span> <span class="toctext">InFocus X1A</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#LG"><span class="tocnumber">3.7</span> <span class="toctext">LG</span></a>
+<ul>
+<li class="toclevel-3"><a href="#DU-37LZ30"><span class="tocnumber">3.7.1</span> <span class="toctext">DU-37LZ30</span></a></li>
+<li class="toclevel-3"><a href="#32LG3000"><span class="tocnumber">3.7.2</span> <span class="toctext">32LG3000</span></a></li>
+<li class="toclevel-3"><a href="#37LG7000"><span class="tocnumber">3.7.3</span> <span class="toctext">37LG7000</span></a></li>
+<li class="toclevel-3"><a href="#26LC3R"><span class="tocnumber">3.7.4</span> <span class="toctext">26LC3R</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Mitsubishi"><span class="tocnumber">3.8</span> <span class="toctext">Mitsubishi</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Mitsubishi_HC-1500"><span class="tocnumber">3.8.1</span> <span class="toctext">Mitsubishi HC-1500</span></a></li>
+<li class="toclevel-3"><a href="#Mitsubishi_WT-46809"><span class="tocnumber">3.8.2</span> <span class="toctext">Mitsubishi WT-46809</span></a></li>
+<li class="toclevel-3"><a href="#Mitsubishi_WS-55513"><span class="tocnumber">3.8.3</span> <span class="toctext">Mitsubishi WS-55513</span></a></li>
+<li class="toclevel-3"><a href="#Mitsubishi_WS-48313"><span class="tocnumber">3.8.4</span> <span class="toctext">Mitsubishi WS-48313</span></a></li>
+<li class="toclevel-3"><a href="#Mitsubishi_HC3000u_Projector"><span class="tocnumber">3.8.5</span> <span class="toctext">Mitsubishi HC3000u Projector</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#NEC"><span class="tocnumber">3.9</span> <span class="toctext">NEC</span></a>
+<ul>
+<li class="toclevel-3"><a href="#NEC_2090UXi"><span class="tocnumber">3.9.1</span> <span class="toctext">NEC 2090UXi</span></a></li>
+<li class="toclevel-3"><a href="#NEC_PX-50XM5_50.22_HD_Plasma"><span class="tocnumber">3.9.2</span> <span class="toctext">NEC PX-50XM5 50" HD Plasma</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Olevia"><span class="tocnumber">3.10</span> <span class="toctext">Olevia</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Olevia_LT26HVX"><span class="tocnumber">3.10.1</span> <span class="toctext">Olevia LT26HVX</span></a></li>
+<li class="toclevel-3"><a href="#Olevia_LT26HVX_-_alternate"><span class="tocnumber">3.10.2</span> <span class="toctext">Olevia LT26HVX - alternate</span></a></li>
+<li class="toclevel-3"><a href="#Olevia_LT32HVE"><span class="tocnumber">3.10.3</span> <span class="toctext">Olevia LT32HVE</span></a></li>
+<li class="toclevel-3"><a href="#Olevia_537h"><span class="tocnumber">3.10.4</span> <span class="toctext">Olevia 537h</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Panasonic"><span class="tocnumber">3.11</span> <span class="toctext">Panasonic</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Panasonic_TX-32LED8F"><span class="tocnumber">3.11.1</span> <span class="toctext">Panasonic TX-32LED8F</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TX32LXD52"><span class="tocnumber">3.11.2</span> <span class="toctext">Panasonic TX32LXD52</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_PT-AE700_Projector"><span class="tocnumber">3.11.3</span> <span class="toctext">Panasonic PT-AE700 Projector</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_PT-AE900U_Projector"><span class="tocnumber">3.11.4</span> <span class="toctext">Panasonic PT-AE900U Projector</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_PT-AX100U_Projector"><span class="tocnumber">3.11.5</span> <span class="toctext">Panasonic PT-AX100U Projector</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TH-50PX600A.2C_TH-50PX60A.2C_TH-50PX70A"><span class="tocnumber">3.11.6</span> <span class="toctext">Panasonic TH-50PX600A, TH-50PX60A, TH-50PX70A</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TH-50PX80A"><span class="tocnumber">3.11.7</span> <span class="toctext">Panasonic TH-50PX80A</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TH-42PX7A"><span class="tocnumber">3.11.8</span> <span class="toctext">Panasonic TH-42PX7A</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TX-42PX75U"><span class="tocnumber">3.11.9</span> <span class="toctext">Panasonic TX-42PX75U</span></a></li>
+<li class="toclevel-3"><a href="#Panasonic_TH-P50G10A"><span class="tocnumber">3.11.10</span> <span class="toctext">Panasonic TH-P50G10A</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Philips"><span class="tocnumber">3.12</span> <span class="toctext">Philips</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Philips_170S_.2817_inch_LCD_Monitor.29"><span class="tocnumber">3.12.1</span> <span class="toctext">Philips 170S (17 inch LCD Monitor)</span></a></li>
+<li class="toclevel-3"><a href="#Philips_190S_.2819_inch_LCD_Monitor.29"><span class="tocnumber">3.12.2</span> <span class="toctext">Philips 190S (19 inch LCD Monitor)</span></a></li>
+<li class="toclevel-3"><a href="#Philips_190b6_TFT_LCD"><span class="tocnumber">3.12.3</span> <span class="toctext">Philips 190b6 TFT LCD</span></a></li>
+<li class="toclevel-3"><a href="#Philips_190b8_TFT_LCD"><span class="tocnumber">3.12.4</span> <span class="toctext">Philips 190b8 TFT LCD</span></a></li>
+<li class="toclevel-3"><a href="#Philips_50.22_Cineos_Plasma_50PF9631D.2F10"><span class="tocnumber">3.12.5</span> <span class="toctext">Philips 50" Cineos Plasma 50PF9631D/10</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Samsung"><span class="tocnumber">3.13</span> <span class="toctext">Samsung</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Samsung_HL-R5678W"><span class="tocnumber">3.13.1</span> <span class="toctext">Samsung HL-R5678W</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LE32R51B_.2F_LE26Rx_.2F_LE37R4_.2F__LE40R5_.2F_LE32R71_.28B.2FW.29"><span class="tocnumber">3.13.2</span> <span class="toctext">Samsung LE32R51B / LE26Rx / LE37R4 /  LE40R5 / LE32R71 (B/W)</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LE40F8"><span class="tocnumber">3.13.3</span> <span class="toctext">Samsung LE40F8</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LA40S71BX_.2F_LA40S71BX.2FXSA"><span class="tocnumber">3.13.4</span> <span class="toctext">Samsung LA40S71BX / LA40S71BX/XSA</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LA40R81BD"><span class="tocnumber">3.13.5</span> <span class="toctext">Samsung LA40R81BD</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LA46M81BDX"><span class="tocnumber">3.13.6</span> <span class="toctext">Samsung LA46M81BDX</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LNR328W"><span class="tocnumber">3.13.7</span> <span class="toctext">Samsung LNR328W</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LNR3255W"><span class="tocnumber">3.13.8</span> <span class="toctext">Samsung LNR3255W</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LNS3241D_.2F_LNS3251D"><span class="tocnumber">3.13.9</span> <span class="toctext">Samsung LNS3241D / LNS3251D</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_LNT4661F_.2F_LNT4061F_.2F_LNT4065F_.2F_LNT4665F_.2F_LNT5265F"><span class="tocnumber">3.13.10</span> <span class="toctext">Samsung LNT4661F / LNT4061F / LNT4065F / LNT4665F / LNT5265F</span></a></li>
+<li class="toclevel-3"><a href="#Samsung_2343BW"><span class="tocnumber">3.13.11</span> <span class="toctext">Samsung 2343BW</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Sanyo"><span class="tocnumber">3.14</span> <span class="toctext">Sanyo</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Sanyo_ViZZon_DP42647_42.22_LCD"><span class="tocnumber">3.14.1</span> <span class="toctext">Sanyo ViZZon DP42647 42" LCD</span></a></li>
+<li class="toclevel-3"><a href="#Sanyo_PLV_Z4.2FZ5"><span class="tocnumber">3.14.2</span> <span class="toctext">Sanyo PLV Z4/Z5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Sceptre"><span class="tocnumber">3.15</span> <span class="toctext">Sceptre</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Sceptre_X37SV-Naga"><span class="tocnumber">3.15.1</span> <span class="toctext">Sceptre X37SV-Naga</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Sharp"><span class="tocnumber">3.16</span> <span class="toctext">Sharp</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Sharp_LC-37D65E"><span class="tocnumber">3.16.1</span> <span class="toctext">Sharp LC-37D65E</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-37D6U"><span class="tocnumber">3.16.2</span> <span class="toctext">Sharp LC-37D6U</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-40C32U"><span class="tocnumber">3.16.3</span> <span class="toctext">Sharp LC-40C32U</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-46D64U"><span class="tocnumber">3.16.4</span> <span class="toctext">Sharp LC-46D64U</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-46D92U"><span class="tocnumber">3.16.5</span> <span class="toctext">Sharp LC-46D92U</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-37X20E"><span class="tocnumber">3.16.6</span> <span class="toctext">Sharp LC-37X20E</span></a></li>
+<li class="toclevel-3"><a href="#Sharp_LC-46X20E"><span class="tocnumber">3.16.7</span> <span class="toctext">Sharp LC-46X20E</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Sony"><span class="tocnumber">3.17</span> <span class="toctext">Sony</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Song_KDL-26S3000"><span class="tocnumber">3.17.1</span> <span class="toctext">Song KDL-26S3000</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-46X3100"><span class="tocnumber">3.17.2</span> <span class="toctext">Sony KDL-46X3100</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KP-46WT520"><span class="tocnumber">3.17.3</span> <span class="toctext">Sony KP-46WT520</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KF-50WE610"><span class="tocnumber">3.17.4</span> <span class="toctext">Sony KF-50WE610</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDF-E42A10"><span class="tocnumber">3.17.5</span> <span class="toctext">Sony KDF-E42A10</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDF-46E2000"><span class="tocnumber">3.17.6</span> <span class="toctext">Sony KDF-46E2000</span></a></li>
+<li class="toclevel-3"><a href="#Sony_Bravia_KLV-S32A10E_.28KLV-S40A10E.2C_KLV-S32A10E.2C_KLV-S26A10E.2C_KLV-S23A10E.2C_KLV-S19A10E.29"><span class="tocnumber">3.17.7</span> <span class="toctext">Sony Bravia KLV-S32A10E (KLV-S40A10E, KLV-S32A10E, KLV-S26A10E, KLV-S23A10E, KLV-S19A10E)</span></a></li>
+<li class="toclevel-3"><a href="#Sony_Bravia_KDL-26P2530"><span class="tocnumber">3.17.8</span> <span class="toctext">Sony Bravia KDL-26P2530</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-40W2000_.28European_model.29"><span class="tocnumber">3.17.9</span> <span class="toctext">Sony KDL-40W2000 (European model)</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-40V2500"><span class="tocnumber">3.17.10</span> <span class="toctext">Sony KDL-40V2500</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDS-R60XBR1"><span class="tocnumber">3.17.11</span> <span class="toctext">Sony KDS-R60XBR1</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-40S2000"><span class="tocnumber">3.17.12</span> <span class="toctext">Sony KDL-40S2000</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-32M3000"><span class="tocnumber">3.17.13</span> <span class="toctext">Sony KDL-32M3000</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-40W4000"><span class="tocnumber">3.17.14</span> <span class="toctext">Sony KDL-40W4000</span></a></li>
+<li class="toclevel-3"><a href="#Sony_KDL-40W4100"><span class="tocnumber">3.17.15</span> <span class="toctext">Sony KDL-40W4100</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Toshiba"><span class="tocnumber">3.18</span> <span class="toctext">Toshiba</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Toshiba_42A3000A"><span class="tocnumber">3.18.1</span> <span class="toctext">Toshiba 42A3000A</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_42H83"><span class="tocnumber">3.18.2</span> <span class="toctext">Toshiba 42H83</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_52HM84"><span class="tocnumber">3.18.3</span> <span class="toctext">Toshiba 52HM84</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_50H81"><span class="tocnumber">3.18.4</span> <span class="toctext">Toshiba 50H81</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_HD51"><span class="tocnumber">3.18.5</span> <span class="toctext">Toshiba HD51</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_56HM66_DLP"><span class="tocnumber">3.18.6</span> <span class="toctext">Toshiba 56HM66 DLP</span></a></li>
+<li class="toclevel-3"><a href="#Toshiba_REGZA_52.22_1080p_LCD_52HL167"><span class="tocnumber">3.18.7</span> <span class="toctext">Toshiba REGZA 52" 1080p LCD 52HL167</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ViewSonic"><span class="tocnumber">3.19</span> <span class="toctext">ViewSonic</span></a>
+<ul>
+<li class="toclevel-3"><a href="#ViewSonic_N2750w"><span class="tocnumber">3.19.1</span> <span class="toctext">ViewSonic N2750w</span></a></li>
+<li class="toclevel-3"><a href="#ViewSonic_N3251w_.28or_ViewSonic_N3760w.29"><span class="tocnumber">3.19.2</span> <span class="toctext">ViewSonic N3251w (or ViewSonic N3760w)</span></a></li>
+<li class="toclevel-3"><a href="#ViewSonic_VG2230wm"><span class="tocnumber">3.19.3</span> <span class="toctext">ViewSonic VG2230wm</span></a></li>
+<li class="toclevel-3"><a href="#ViewSonic_N4280p"><span class="tocnumber">3.19.4</span> <span class="toctext">ViewSonic N4280p</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Vizio"><span class="tocnumber">3.20</span> <span class="toctext">Vizio</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Vizio_L37HDTV_37.22_LCD_720p_.281360x768_PC.29"><span class="tocnumber">3.20.1</span> <span class="toctext">Vizio L37HDTV 37" LCD 720p (1360x768 PC)</span></a></li>
+<li class="toclevel-3"><a href="#Vizio_VO22L_22.22_LCD_720p_.281680x1050_PC.29"><span class="tocnumber">3.20.2</span> <span class="toctext">Vizio VO22L 22" LCD 720p (1680x1050 PC)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Westinghouse"><span class="tocnumber">3.21</span> <span class="toctext">Westinghouse</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Westinghouse_LVM-42W2_42.22_LCD"><span class="tocnumber">3.21.1</span> <span class="toctext">Westinghouse LVM-42W2 42" LCD</span></a></li>
+<li class="toclevel-3"><a href="#Westinghouse_SK-32H240S_.2832.22_LCD.29"><span class="tocnumber">3.21.2</span> <span class="toctext">Westinghouse SK-32H240S (32" LCD)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Zenith"><span class="tocnumber">3.22</span> <span class="toctext">Zenith</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Zenith_P60W26_60.22_Plasma"><span class="tocnumber">3.22.1</span> <span class="toctext">Zenith P60W26 60" Plasma</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Others"><span class="tocnumber">3.23</span> <span class="toctext">Others</span></a>
+<ul>
+<li class="toclevel-3"><a href="#AWA_81cm_LCD"><span class="tocnumber">3.23.1</span> <span class="toctext">AWA 81cm LCD</span></a></li>
+<li class="toclevel-3"><a href="#Tevion_or_Medion_41427_.28Aldi.29"><span class="tocnumber">3.23.2</span> <span class="toctext">Tevion or Medion 41427 (Aldi)</span></a></li>
+<li class="toclevel-3"><a href="#Vizio_GV47L"><span class="tocnumber">3.23.3</span> <span class="toctext">Vizio GV47L</span></a></li>
+<li class="toclevel-3"><a href="#Vizio_l47"><span class="tocnumber">3.23.4</span> <span class="toctext">Vizio l47</span></a></li>
+<li class="toclevel-3"><a href="#Polaroid_.28Proview.29_FLM-3232"><span class="tocnumber">3.23.5</span> <span class="toctext">Polaroid (Proview) FLM-3232</span></a></li>
+<li class="toclevel-3"><a href="#Tatung_32.22_81cm_HDTV"><span class="tocnumber">3.23.6</span> <span class="toctext">Tatung 32" 81cm HDTV</span></a></li>
+<li class="toclevel-3"><a href="#Ventura_Wide"><span class="tocnumber">3.23.7</span> <span class="toctext">Ventura Wide</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1"><a href="#Sources"><span class="tocnumber">5</span> <span class="toctext">Sources</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="EDID_Modelines_.28Data_from_your_Monitor.29" id="EDID_Modelines_.28Data_from_your_Monitor.29"></a><h2> <span class="mw-headline"> EDID Modelines (Data from your Monitor) </span></h2>
+<p>Most modern monitors/TVs can be probed for EDID data concerning their capabilities and requirements. EDID stands for "Extended Display Identification Data".
+</p><p>EDID data are recorded in PROM (programmable read-only memory) or EEPROM (electrically erasable PROM) within the monitor/TV itself. The modelines recorded in the EDID data, are those recommended by the manufacturer (and as such, usually give great results (although, occasionally, the manufacturer supplied data is incorrect)).
+</p><p>EDID modelines are recorded for many different monitor/TV screen resolutions.
+</p><p>EDID information includes manufacturer name, product type, phosphor or filter type, timings supported by the display, display size, luminance data and (for digital displays only) pixel mapping data.
+</p><p>On Linux the EDID modelines can be found by running the command:
+</p><p>startx -- -logverbose 6
+</p><p>from the console. The EDID information is written to the file /var/log/Xorg.0.log (or /var/log/XFree86.0.log).
+</p><p>As an example: Some of the EDID data for a Philips 170S 17" TFT.
+</p>
+<pre>EDID Version                &nbsp;: 1.3
+Manufacturer                &nbsp;: PHL
+Monitor Name                &nbsp;: Philips 170S
+Product ID                  &nbsp;: 2078
+32-bit Serial Number        &nbsp;: 693129
+Serial Number String        &nbsp;:  CF  693129
+Manufacture Date            &nbsp;: 2003, week 32
+DPMS Capabilities           &nbsp;: Standby Suspend Active Off
+Prefer first detailed timing&nbsp;: Yes
+Supports GTF                &nbsp;: No
+Maximum Image Size          &nbsp;: 340mm x 270mm
+Valid HSync Range           &nbsp;: 30.0 kHz - 82.0 kHz
+Valid VRefresh Range        &nbsp;: 56 Hz - 76 Hz
+EDID maximum pixel clock    &nbsp;: 140.0 MHz
+</pre>
+<pre>Validating Mode "1280x1024":
+  1280 x 1024 @ 60 Hz
+  Mode Source: EDID
+    Pixel Clock     &nbsp;: 108.00 MHz
+    HRes, HSyncStart&nbsp;: 1280, 1328
+    HSyncEnd, HTotal&nbsp;: 1440, 1688
+    VRes, VSyncStart&nbsp;: 1024, 1025
+    VSyncEnd, VTotal&nbsp;: 1028, 1066
+    H/V Polarity    &nbsp;: +/+
+  Mode is valid.
+
+Validating Mode "1280x960":
+  1280 x 960 @ 60 Hz
+  Mode Source: EDID
+    Pixel Clock     &nbsp;: 108.00 MHz
+    HRes, HSyncStart&nbsp;: 1280, 1376
+    HSyncEnd, HTotal&nbsp;: 1488, 1800
+    VRes, VSyncStart&nbsp;:  960,  961
+    VSyncEnd, VTotal&nbsp;:  964, 1000
+    H/V Polarity    &nbsp;: +/+
+  Mode is valid.
+
+Validating Mode "1152x864":
+  1152 x 864 @ 70 Hz
+  Mode Source: EDID
+    Pixel Clock     &nbsp;: 96.76 MHz
+    HRes, HSyncStart&nbsp;: 1152, 1224
+    HSyncEnd, HTotal&nbsp;: 1344, 1536
+    VRes, VSyncStart&nbsp;:  864,  865
+    VSyncEnd, VTotal&nbsp;:  868,  900
+    H/V Polarity    &nbsp;: -/+
+  Mode is valid.
+
+and many more such. 
+</pre>
+<p>The modelines obtained from the three results above, are:
+</p>
+<pre>ModeLine "1280x1024_60.00" 108.0  1280 1328 1440 1688 1024 1025 1028 1066 +hsync +vsync
+</pre>
+<pre>ModeLine "1280x960_60.00"  108.0  1280 1376 1488 1800 960  961  964  1000 +hsync +vsync
+</pre>
+<pre>ModeLine "1152x864_70.00"   96.76 1152 1224 1344 1536 864  865  868  900  -hsync +vsync
+</pre>
+<p>The term in the quotes, e.g., 1280x1024_60.00, is just a user defined name for the mode.
+</p><p>For more see: <a href="http://www.webng.com/linuxhelp/" class="external text" title="http://www.webng.com/linuxhelp/" rel="nofollow">A list of Common Video Mode-Lines.</a>
+</p><p>An on-line modeline calculation tool is available at: <a href="http://www.tkk.fi/Misc/Electronics/faq/vga2rgb/calc.html" class="external free" title="http://www.tkk.fi/Misc/Electronics/faq/vga2rgb/calc.html" rel="nofollow">http://www.tkk.fi/Misc/Electronics/faq/vga2rgb/calc.html</a>. Using this tool usually does not give you the result you want. However, it costs nothing, but a little of your time, to try it out. It is best to use the standard modelines listed on this page. 
+</p>
+<a name="Standard_Modelines" id="Standard_Modelines"></a><h2> <span class="mw-headline"> Standard Modelines </span></h2>
+<a name="NVIDIA_Driver_ModePool" id="NVIDIA_Driver_ModePool"></a><h3> <span class="mw-headline"> NVIDIA Driver ModePool </span></h3>
+<p>These are the NVIDIA modelines:
+</p>
+<pre>
+# 320x175 @ 85 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;320x175&quot; 15.75 320 336 368 416 175 191 192 222 +HSync -VSync DoubleScan
+# 320x200 @ 85 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;320x200&quot; 15.75 320 336 368 416 200 200 202 222 -HSync +VSync DoubleScan
+# 320x240 @ 60 Hz (X Server) HSync: 31.5 kHz
+ModeLine &quot;320x240&quot; 12.60 320 328 376 400 240 245 246 262 -HSync -VSync DoubleScan
+# 320x240 @ 73 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;320x240&quot; 15.75 320 332 352 416 240 244 245 260 -HSync -VSync DoubleScan
+# 320x240 @ 75 Hz (X Server) HSync: 37.5 kHz
+ModeLine &quot;320x240&quot; 15.75 320 328 360 420 240 240 242 250 -HSync -VSync DoubleScan
+# 320x240 @ 85 Hz (X Server) HSync: 43.2692 kHz
+ModeLine &quot;320x240&quot; 18.00 320 348 376 416 240 240 242 254 -HSync -VSync DoubleScan
+# 360x200 @ 85 Hz (X Server) HSync: 37.9274 kHz
+ModeLine &quot;360x200&quot; 17.75 360 378 414 468 200 200 202 223 -HSync +VSync DoubleScan
+# 400x300 @ 56 Hz (X Server) HSync: 35.1562 kHz
+ModeLine &quot;400x300&quot; 18.00 400 412 448 512 300 300 301 312 +HSync +VSync DoubleScan
+# 400x300 @ 60 Hz (X Server) HSync: 37.8788 kHz
+ModeLine &quot;400x300&quot; 20.00 400 420 484 528 300 300 302 314 +HSync +VSync DoubleScan
+# 400x300 @ 72 Hz (X Server) HSync: 48.0769 kHz
+ModeLine &quot;400x300&quot; 25.00 400 428 488 520 300 318 321 333 +HSync +VSync DoubleScan
+# 400x300 @ 75 Hz (X Server) HSync: 46.875 kHz
+ModeLine &quot;400x300&quot; 24.75 400 408 448 528 300 300 302 312 +HSync +VSync DoubleScan
+# 400x300 @ 85 Hz (X Server) HSync: 53.7214 kHz
+ModeLine &quot;400x300&quot; 28.15 400 416 448 524 300 300 302 315 +HSync +VSync DoubleScan
+# 416x312 @ 75 Hz (X Server) HSync: 49.7222 kHz
+ModeLine &quot;416x312&quot; 28.64 416 432 464 576 312 312 314 333 -HSync -VSync DoubleScan
+# 512x384 @ 60 Hz (X Server) HSync: 48.3631 kHz
+ModeLine &quot;512x384&quot; 32.50 512 524 592 672 384 385 388 403 -HSync -VSync DoubleScan
+# 512x384 @ 70 Hz (X Server) HSync: 56.4759 kHz
+ModeLine &quot;512x384&quot; 37.50 512 524 592 664 384 385 388 403 -HSync -VSync DoubleScan
+# 512x384 @ 75 Hz (X Server) HSync: 60.061 kHz
+ModeLine &quot;512x384&quot; 39.40 512 520 568 656 384 384 386 400 +HSync +VSync DoubleScan
+# 512x384 @ 85 Hz (X Server) HSync: 68.6773 kHz
+ModeLine &quot;512x384&quot; 47.25 512 536 584 688 384 384 386 404 +HSync +VSync DoubleScan
+# 512x384 @ 87 Hz (X Server) HSync: 35.5222 kHz
+ModeLine &quot;512x384&quot; 22.45 512 516 604 632 384 384 388 408 +HSync +VSync Interlace DoubleScan
+# 576x384 @ 55 Hz (X Server) HSync: 44.1576 kHz
+ModeLine &quot;576x384&quot; 32.50 576 589 657 736 384 385 388 403 +HSync +VSync DoubleScan
+# 576x432 @ 75 Hz (X Server) HSync: 67.5 kHz
+ModeLine &quot;576x432&quot; 54.00 576 608 672 800 432 432 434 450 +HSync +VSync DoubleScan
+# 576x432 @ 85 Hz (X Server) HSync: 77.4872 kHz
+ModeLine &quot;576x432&quot; 60.75 576 608 672 784 432 432 434 455 +HSync -VSync DoubleScan
+# 640x350 @ 85 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;640x350&quot; 31.50 640 672 736 832 350 382 385 445 +HSync -VSync
+# 640x384 @ 60 Hz (X Server) HSync: 47.7024 kHz
+ModeLine &quot;640x384&quot; 40.07 640 672 740 840 384 384 386 397 +HSync +VSync DoubleScan
+# 640x400 @ 60 Hz (X Server) HSync: 49.6786 kHz
+ModeLine &quot;640x400&quot; 41.73 640 672 740 840 400 400 402 414 +HSync +VSync DoubleScan
+# 640x400 @ 85 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;640x400&quot; 31.50 640 672 736 832 400 401 404 445 -HSync +VSync
+# 640x480 @ 60 Hz (X Server) HSync: 31.5 kHz
+ModeLine &quot;640x480&quot; 25.20 640 656 752 800 480 490 492 525 -HSync -VSync
+# 640x480 @ 60 Hz (X Server) HSync: 60 kHz
+ModeLine &quot;640x480&quot; 54.00 640 688 744 900 480 480 482 500 +HSync +VSync DoubleScan
+# 640x480 @ 73 Hz (X Server) HSync: 37.8606 kHz
+ModeLine &quot;640x480&quot; 31.50 640 664 704 832 480 489 491 520 -HSync -VSync
+# 640x480 @ 75 Hz (X Server) HSync: 37.5 kHz
+ModeLine &quot;640x480&quot; 31.50 640 656 720 840 480 481 484 500 -HSync -VSync
+# 640x480 @ 85 Hz (X Server) HSync: 43.2692 kHz
+ModeLine &quot;640x480&quot; 36.00 640 696 752 832 480 481 484 509 -HSync -VSync
+# 640x480 @ 85 Hz (X Server) HSync: 85.9375 kHz
+ModeLine &quot;640x480&quot; 74.25 640 672 752 864 480 480 482 505 +HSync +VSync DoubleScan
+# 640x512 @ 60 Hz (X Server) HSync: 63.981 kHz
+ModeLine &quot;640x512&quot; 54.00 640 664 720 844 512 512 514 533 +HSync +VSync DoubleScan
+# 640x512 @ 75 Hz (X Server) HSync: 79.9763 kHz
+ModeLine &quot;640x512&quot; 67.50 640 648 720 844 512 512 514 533 +HSync +VSync DoubleScan
+# 640x512 @ 85 Hz (X Server) HSync: 91.1458 kHz
+ModeLine &quot;640x512&quot; 78.75 640 672 752 864 512 512 514 536 +HSync +VSync DoubleScan
+# 700x525 @ 60 Hz (X Server) HSync: 64.8936 kHz
+ModeLine &quot;700x525&quot; 61.00 700 744 820 940 525 526 532 541 +HSync +VSync DoubleScan
+# 700x525 @ 70 Hz (X Server) HSync: 77.0408 kHz
+ModeLine &quot;700x525&quot; 75.50 700 732 828 980 525 525 527 550 +HSync +VSync DoubleScan
+# 700x525 @ 75 Hz (X Server) HSync: 81.4854 kHz
+ModeLine &quot;700x525&quot; 77.90 700 732 892 956 525 526 532 545 +HSync +VSync DoubleScan
+# 700x525 @ 85 Hz (X Server) HSync: 93.8776 kHz
+ModeLine &quot;700x525&quot; 92.00 700 732 828 980 525 525 527 550 +HSync +VSync DoubleScan
+# 720x400 @ 85 Hz (X Server) HSync: 37.9274 kHz
+ModeLine &quot;720x400&quot; 35.50 720 756 828 936 400 401 404 446 -HSync +VSync
+# 720x450 @ 60 Hz (X Server) HSync: 56.9247 kHz
+ModeLine &quot;720x450&quot; 54.42 720 736 940 956 450 459 463 473 +HSync +VSync DoubleScan
+# 800x512 @ 60 Hz (X Server) HSync: 64.012 kHz
+ModeLine &quot;800x512&quot; 53.45 800 810 820 835 512 513 515 533 -HSync -VSync DoubleScan
+# 800x600 @ 56 Hz (X Server) HSync: 35.1562 kHz
+ModeLine &quot;800x600&quot; 36.00 800 824 896 1024 600 601 603 625 +HSync +VSync
+# 800x600 @ 60 Hz (X Server) HSync: 37.8788 kHz
+ModeLine &quot;800x600&quot; 40.00 800 840 968 1056 600 601 605 628 +HSync +VSync
+# 800x600 @ 60 Hz (X Server) HSync: 75 kHz
+ModeLine &quot;800x600&quot; 81.00 800 832 928 1080 600 600 602 625 +HSync +VSync DoubleScan
+# 800x600 @ 65 Hz (X Server) HSync: 81.25 kHz
+ModeLine &quot;800x600&quot; 87.75 800 832 928 1080 600 600 602 625 +HSync +VSync DoubleScan
+# 800x600 @ 70 Hz (X Server) HSync: 87.5 kHz
+ModeLine &quot;800x600&quot; 94.50 800 832 928 1080 600 600 602 625 +HSync +VSync DoubleScan
+# 800x600 @ 72 Hz (X Server) HSync: 48.0769 kHz
+ModeLine &quot;800x600&quot; 50.00 800 856 976 1040 600 637 643 666 +HSync +VSync
+# 800x600 @ 75 Hz (X Server) HSync: 93.75 kHz
+ModeLine &quot;800x600&quot; 101.25 800 832 928 1080 600 600 602 625 +HSync +VSync DoubleScan
+# 800x600 @ 75 Hz (X Server) HSync: 46.875 kHz
+ModeLine &quot;800x600&quot; 49.50 800 816 896 1056 600 601 604 625 +HSync +VSync
+# 800x600 @ 85 Hz (X Server) HSync: 106.25 kHz
+ModeLine &quot;800x600&quot; 114.75 800 832 928 1080 600 600 602 625 +HSync +VSync DoubleScan
+# 800x600 @ 85 Hz (X Server) HSync: 53.7214 kHz
+ModeLine &quot;800x600&quot; 56.30 800 832 896 1048 600 601 604 631 +HSync +VSync
+# 832x624 @ 75 Hz (X Server) HSync: 49.7222 kHz
+ModeLine &quot;832x624&quot; 57.28 832 864 928 1152 624 625 628 667 -HSync -VSync
+# 840x525 @ 60 Hz (X Server) HSync: 65.2216 kHz
+ModeLine &quot;840x525&quot; 73.57 840 892 984 1128 525 525 527 543 +HSync +VSync DoubleScan
+# 896x672 @ 60 Hz (X Server) HSync: 83.6601 kHz
+ModeLine &quot;896x672&quot; 102.40 896 960 1060 1224 672 672 674 697 -HSync +VSync DoubleScan
+# 896x672 @ 75 Hz (X Server) HSync: 106.27 kHz
+ModeLine &quot;896x672&quot; 130.50 896 944 1052 1228 672 672 674 708 -HSync +VSync DoubleScan
+# 928x696 @ 60 Hz (X Server) HSync: 86.3528 kHz
+ModeLine &quot;928x696&quot; 109.15 928 976 1088 1264 696 696 698 719 -HSync +VSync DoubleScan
+# 928x696 @ 75 Hz (X Server) HSync: 112.5 kHz
+ModeLine &quot;928x696&quot; 144.00 928 992 1104 1280 696 696 698 750 -HSync +VSync DoubleScan
+# 960x600 @ 60 Hz (X Server) HSync: 74.5216 kHz
+ModeLine &quot;960x600&quot; 96.58 960 1024 1128 1296 600 600 602 621 +HSync +VSync DoubleScan
+# 960x600 @ 73 Hz (X Server) HSync: 90.981 kHz
+ModeLine &quot;960x600&quot; 115.00 960 968 1048 1264 600 600 602 625 -HSync -VSync DoubleScan
+# 960x720 @ 60 Hz (X Server) HSync: 90 kHz
+ModeLine &quot;960x720&quot; 117.00 960 1024 1128 1300 720 720 722 750 -HSync +VSync DoubleScan
+# 960x720 @ 75 Hz (X Server) HSync: 112.5 kHz
+ModeLine &quot;960x720&quot; 148.50 960 1032 1144 1320 720 720 722 750 -HSync +VSync DoubleScan
+# 960x720 @ 85 Hz (X Server) HSync: 128.524 kHz
+ModeLine &quot;960x720&quot; 170.68 960 1036 1144 1328 720 720 722 756 -HSync +VSync DoubleScan
+# 1024x768 @ 60 Hz (X Server) HSync: 95.3357 kHz
+ModeLine &quot;1024x768&quot; 133.47 1024 1100 1212 1400 768 768 770 794 -HSync +VSync DoubleScan
+# 1024x768 @ 60 Hz (X Server) HSync: 48.3631 kHz
+ModeLine &quot;1024x768&quot; 65.00 1024 1048 1184 1344 768 771 777 806 -HSync -VSync
+# 1024x768 @ 70 Hz (X Server) HSync: 56.4759 kHz
+ModeLine &quot;1024x768&quot; 75.00 1024 1048 1184 1328 768 771 777 806 -HSync -VSync
+# 1024x768 @ 75 Hz (X Server) HSync: 120.226 kHz
+ModeLine &quot;1024x768&quot; 170.24 1024 1108 1220 1416 768 768 770 801 -HSync +VSync DoubleScan
+# 1024x768 @ 75 Hz (X Server) HSync: 60.061 kHz
+ModeLine &quot;1024x768&quot; 78.80 1024 1040 1136 1312 768 769 772 800 +HSync +VSync
+# 1024x768 @ 85 Hz (X Server) HSync: 137.02 kHz
+ModeLine &quot;1024x768&quot; 194.02 1024 1108 1220 1416 768 768 770 806 -HSync +VSync DoubleScan
+# 1024x768 @ 85 Hz (X Server) HSync: 68.6773 kHz
+ModeLine &quot;1024x768&quot; 94.50 1024 1072 1168 1376 768 769 772 808 +HSync +VSync
+# 1024x768 @ 87 Hz (X Server) HSync: 35.5222 kHz
+ModeLine &quot;1024x768&quot; 44.90 1024 1032 1208 1264 768 768 776 817 +HSync +VSync Interlace
+# 1152x768 @ 55 Hz (X Server) HSync: 44.1576 kHz
+ModeLine &quot;1152x768&quot; 65.00 1152 1178 1314 1472 768 771 777 806 +HSync +VSync
+# 1152x864 @ 75 Hz (X Server) HSync: 67.5 kHz
+ModeLine &quot;1152x864&quot; 108.00 1152 1216 1344 1600 864 865 868 900 +HSync +VSync
+# 1152x864 @ 85 Hz (X Server) HSync: 77.4872 kHz
+ModeLine &quot;1152x864&quot; 121.50 1152 1216 1344 1568 864 865 868 911 +HSync -VSync
+# 1280x768 @ 60 Hz (X Server) HSync: 47.7024 kHz
+ModeLine &quot;1280x768&quot; 80.14 1280 1344 1480 1680 768 769 772 795 +HSync +VSync
+# 1280x800 @ 60 Hz (X Server) HSync: 49.6786 kHz
+ModeLine &quot;1280x800&quot; 83.46 1280 1344 1480 1680 800 801 804 828 +HSync +VSync
+# 1280x960 @ 60 Hz (X Server) HSync: 60 kHz
+ModeLine &quot;1280x960&quot; 108.00 1280 1376 1488 1800 960 961 964 1000 +HSync +VSync
+# 1280x960 @ 85 Hz (X Server) HSync: 85.9375 kHz
+ModeLine &quot;1280x960&quot; 148.50 1280 1344 1504 1728 960 961 964 1011 +HSync +VSync
+# 1280x1024 @ 60 Hz (X Server) HSync: 63.981 kHz
+ModeLine &quot;1280x1024&quot; 108.00 1280 1328 1440 1688 1024 1025 1028 1066 +HSync +VSync
+# 1280x1024 @ 75 Hz (X Server) HSync: 79.9763 kHz
+ModeLine &quot;1280x1024&quot; 135.00 1280 1296 1440 1688 1024 1025 1028 1066 +HSync +VSync
+# 1280x1024 @ 85 Hz (X Server) HSync: 91.1458 kHz
+ModeLine &quot;1280x1024&quot; 157.50 1280 1344 1504 1728 1024 1025 1028 1072 +HSync +VSync
+# 1400x1050 @ 60 Hz (X Server) HSync: 64.8936 kHz
+ModeLine &quot;1400x1050&quot; 122.00 1400 1488 1640 1880 1050 1052 1064 1082 +HSync +VSync
+# 1400x1050 @ 70 Hz (X Server) HSync: 77.0408 kHz
+ModeLine &quot;1400x1050&quot; 151.00 1400 1464 1656 1960 1050 1051 1054 1100 +HSync +VSync
+# 1400x1050 @ 75 Hz (X Server) HSync: 81.4854 kHz
+ModeLine &quot;1400x1050&quot; 155.80 1400 1464 1784 1912 1050 1052 1064 1090 +HSync +VSync
+# 1400x1050 @ 85 Hz (X Server) HSync: 93.8776 kHz
+ModeLine &quot;1400x1050&quot; 184.00 1400 1464 1656 1960 1050 1051 1054 1100 +HSync +VSync
+# 1440x900 @ 60 Hz (X Server) HSync: 56.9247 kHz
+ModeLine &quot;1440x900&quot; 108.84 1440 1472 1880 1912 900 918 927 946 +HSync +VSync
+# 1600x1024 @ 60 Hz (X Server) HSync: 64.018 kHz
+ModeLine &quot;1600x1024&quot; 106.91 1600 1620 1640 1670 1024 1027 1030 1067 -HSync -VSync
+# 1600x1200 @ 60 Hz (X Server) HSync: 75 kHz
+ModeLine &quot;1600x1200&quot; 162.00 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 65 Hz (X Server) HSync: 81.25 kHz
+ModeLine &quot;1600x1200&quot; 175.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 70 Hz (X Server) HSync: 87.5 kHz
+ModeLine &quot;1600x1200&quot; 189.00 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 75 Hz (X Server) HSync: 93.75 kHz
+ModeLine &quot;1600x1200&quot; 202.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 85 Hz (X Server) HSync: 106.25 kHz
+ModeLine &quot;1600x1200&quot; 229.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1680x1050 @ 60 Hz (X Server) HSync: 65.2216 kHz
+ModeLine &quot;1680x1050&quot; 147.14 1680 1784 1968 2256 1050 1051 1054 1087 +HSync +VSync
+# 1792x1344 @ 60 Hz (X Server) HSync: 83.6601 kHz
+ModeLine &quot;1792x1344&quot; 204.80 1792 1920 2120 2448 1344 1345 1348 1394 -HSync +VSync
+# 1792x1344 @ 75 Hz (X Server) HSync: 106.27 kHz
+ModeLine &quot;1792x1344&quot; 261.00 1792 1888 2104 2456 1344 1345 1348 1417 -HSync +VSync
+# 1856x1392 @ 60 Hz (X Server) HSync: 86.3528 kHz
+ModeLine &quot;1856x1392&quot; 218.30 1856 1952 2176 2528 1392 1393 1396 1439 -HSync +VSync
+# 1856x1392 @ 75 Hz (X Server) HSync: 112.5 kHz
+ModeLine &quot;1856x1392&quot; 288.00 1856 1984 2208 2560 1392 1393 1396 1500 -HSync +VSync
+# 1920x1200 @ 60 Hz (X Server) HSync: 74.5216 kHz
+ModeLine &quot;1920x1200&quot; 193.16 1920 2048 2256 2592 1200 1201 1204 1242 +HSync +VSync
+# 1920x1200 @ 73 Hz (X Server) HSync: 90.981 kHz
+ModeLine &quot;1920x1200&quot; 230.00 1920 1936 2096 2528 1200 1201 1204 1250 -HSync -VSync
+# 1920x1440 @ 60 Hz (X Server) HSync: 90 kHz
+ModeLine &quot;1920x1440&quot; 234.00 1920 2048 2256 2600 1440 1441 1444 1500 -HSync +VSync
+# 1920x1440 @ 75 Hz (X Server) HSync: 112.5 kHz
+ModeLine &quot;1920x1440&quot; 297.00 1920 2064 2288 2640 1440 1441 1444 1500 -HSync +VSync
+# 1920x1440 @ 85 Hz (X Server) HSync: 128.52 kHz
+ModeLine &quot;1920x1440&quot; 341.35 1920 2072 2288 2656 1440 1441 1444 1512 -HSync +VSync
+# 2048x1536 @ 60 Hz (X Server) HSync: 95.3393 kHz
+ModeLine &quot;2048x1536&quot; 266.95 2048 2200 2424 2800 1536 1537 1540 1589 -HSync +VSync
+# 2048x1536 @ 75 Hz (X Server) HSync: 120.226 kHz
+ModeLine &quot;2048x1536&quot; 340.48 2048 2216 2440 2832 1536 1537 1540 1603 -HSync +VSync
+# 2048x1536 @ 85 Hz (X Server) HSync: 137.02 kHz
+ModeLine &quot;2048x1536&quot; 388.04 2048 2216 2440 2832 1536 1537 1540 1612 -HSync +VSync
+</pre>
+<a name="VESA_ModePool" id="VESA_ModePool"></a><h3> <span class="mw-headline"> VESA ModePool </span></h3>
+<p>These are the VESA modelines:
+</p>
+<pre>
+# 640x350 @ 85 Hz (VESA) HSync: 37.8606 kHz
+ModeLine &quot;640x350&quot; 31.50 640 672 736 832 350 382 385 445 +HSync -VSync
+# 640x400 @ 85 Hz (VESA) HSync: 37.8606 kHz
+ModeLine &quot;640x400&quot; 31.50 640 672 736 832 400 401 404 445 -HSync +VSync
+# 640x480 @ 60 Hz (VESA) HSync: 31.475 kHz
+ModeLine &quot;640x480&quot; 25.18 640 656 752 800 480 490 492 525 -HSync -VSync
+# 640x480 @ 73 Hz (VESA) HSync: 37.8606 kHz
+ModeLine &quot;640x480&quot; 31.50 640 664 704 832 480 489 492 520 -HSync -VSync
+# 640x480 @ 75 Hz (VESA) HSync: 37.5 kHz
+ModeLine &quot;640x480&quot; 31.50 640 656 720 840 480 481 484 500 -HSync -VSync
+# 640x480 @ 85 Hz (VESA) HSync: 43.2692 kHz
+ModeLine &quot;640x480&quot; 36.00 640 696 752 832 480 481 484 509 -HSync -VSync
+# 720x400 @ 85 Hz (VESA) HSync: 37.9274 kHz
+ModeLine &quot;720x400&quot; 35.50 720 756 828 936 400 401 404 446 -HSync +VSync
+# 800x600 @ 56 Hz (VESA) HSync: 35.1562 kHz
+ModeLine &quot;800x600&quot; 36.00 800 824 896 1024 600 601 603 625 +HSync +VSync
+# 800x600 @ 60 Hz (VESA) HSync: 37.8788 kHz
+ModeLine &quot;800x600&quot; 40.00 800 840 968 1056 600 601 605 628 +HSync +VSync
+# 800x600 @ 72 Hz (VESA) HSync: 48.0769 kHz
+ModeLine &quot;800x600&quot; 50.00 800 856 976 1040 600 637 643 666 +HSync +VSync
+# 800x600 @ 75 Hz (VESA) HSync: 46.875 kHz
+ModeLine &quot;800x600&quot; 49.50 800 816 896 1056 600 601 604 625 +HSync +VSync
+# 800x600 @ 85 Hz (VESA) HSync: 53.7214 kHz
+ModeLine &quot;800x600&quot; 56.30 800 832 896 1048 600 601 604 631 +HSync +VSync
+# 1024x768 @ 60 Hz (VESA) HSync: 48.3631 kHz
+ModeLine &quot;1024x768&quot; 65.00 1024 1048 1184 1344 768 771 777 806 -HSync -VSync
+# 1024x768 @ 70 Hz (VESA) HSync: 56.4759 kHz
+ModeLine &quot;1024x768&quot; 75.00 1024 1048 1184 1328 768 771 777 806 -HSync -VSync
+# 1024x768 @ 75 Hz (VESA) HSync: 60.0229 kHz
+ModeLine &quot;1024x768&quot; 78.75 1024 1040 1136 1312 768 769 772 800 +HSync +VSync
+# 1024x768 @ 85 Hz (VESA) HSync: 68.6773 kHz
+ModeLine &quot;1024x768&quot; 94.50 1024 1072 1168 1376 768 769 772 808 +HSync +VSync
+# 1024x768 @ 87 Hz (VESA) HSync: 35.5222 kHz
+ModeLine &quot;1024x768&quot; 44.90 1024 1032 1208 1264 768 768 776 817 +HSync +VSync Interlace
+# 1152x864 @ 75 Hz (VESA) HSync: 67.5 kHz
+ModeLine &quot;1152x864&quot; 108.00 1152 1216 1344 1600 864 865 868 900 +HSync +VSync
+# 1280x960 @ 60 Hz (VESA) HSync: 60 kHz
+ModeLine &quot;1280x960&quot; 108.00 1280 1376 1488 1800 960 961 964 1000 +HSync +VSync
+# 1280x960 @ 85 Hz (VESA) HSync: 85.9375 kHz
+ModeLine &quot;1280x960&quot; 148.50 1280 1344 1504 1728 960 961 964 1011 +HSync +VSync
+# 1280x1024 @ 60 Hz (VESA) HSync: 63.981 kHz
+ModeLine &quot;1280x1024&quot; 108.00 1280 1328 1440 1688 1024 1025 1028 1066 +HSync +VSync
+# 1280x1024 @ 75 Hz (VESA) HSync: 79.9763 kHz
+ModeLine &quot;1280x1024&quot; 135.00 1280 1296 1440 1688 1024 1025 1028 1066 +HSync +VSync
+# 1280x1024 @ 85 Hz (VESA) HSync: 91.1458 kHz
+ModeLine &quot;1280x1024&quot; 157.50 1280 1344 1504 1728 1024 1025 1028 1072 +HSync +VSync
+# 1600x1200 @ 60 Hz (VESA) HSync: 75 kHz
+ModeLine &quot;1600x1200&quot; 162.00 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 65 Hz (VESA) HSync: 81.25 kHz
+ModeLine &quot;1600x1200&quot; 175.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 70 Hz (VESA) HSync: 87.5 kHz
+ModeLine &quot;1600x1200&quot; 189.00 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 75 Hz (VESA) HSync: 93.75 kHz
+ModeLine &quot;1600x1200&quot; 202.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1600x1200 @ 85 Hz (VESA) HSync: 106.25 kHz
+ModeLine &quot;1600x1200&quot; 229.50 1600 1664 1856 2160 1200 1201 1204 1250 +HSync +VSync
+# 1792x1344 @ 60 Hz (VESA) HSync: 83.6601 kHz
+ModeLine &quot;1792x1344&quot; 204.80 1792 1920 2120 2448 1344 1345 1348 1394 -HSync +VSync
+# 1792x1344 @ 75 Hz (VESA) HSync: 106.27 kHz
+ModeLine &quot;1792x1344&quot; 261.00 1792 1888 2104 2456 1344 1345 1348 1417 -HSync +VSync
+# 1856x1392 @ 60 Hz (VESA) HSync: 86.3528 kHz
+ModeLine &quot;1856x1392&quot; 218.30 1856 1952 2176 2528 1392 1393 1396 1439 -HSync +VSync
+# 1856x1392 @ 75 Hz (VESA) HSync: 112.5 kHz
+ModeLine &quot;1856x1392&quot; 288.00 1856 1984 2208 2560 1392 1393 1396 1500 -HSync +VSync
+# 1920x1440 @ 60 Hz (VESA) HSync: 90 kHz
+ModeLine &quot;1920x1440&quot; 234.00 1920 2048 2256 2600 1440 1441 1444 1500 -HSync +VSync
+# 1920x1440 @ 75 Hz (VESA) HSync: 112.5 kHz
+ModeLine &quot;1920x1440&quot; 297.00 1920 2064 2288 2640 1440 1441 1444 1500 -HSync +VSync
+</pre>
+<a name="CVT_modelines" id="CVT_modelines"></a><h3> <span class="mw-headline"> CVT modelines </span></h3>
+<p>Some CVT modelines:
+</p>
+<pre>
+# CVT-RB (Reduced blanking) 60 Hz (vfreq 59.934Hz, hfreq 66.587kHz)
+ModeLine  &quot;1920x1080&quot; 138.500 1920 1968 2000 2080 1080 1083 1088 1111 +hsync -vsync
+
+# 1920x1080 @ 50.00 Hz (CVT)
+#   field rate 49.93 Hz; hsync: 55.62 kHz; pclk: 141.50 MHz
+Modeline &quot;1920x1080_50&quot;  141.50  1920 2032 2232 2544  1080 1083 1088 1114  -HSync +Vsync
+
+</pre>
+<a name="EDID_modelines_from_HDTVs" id="EDID_modelines_from_HDTVs"></a><h3> <span class="mw-headline"> EDID modelines from HDTVs </span></h3>
+<p>Here are some EDID modelines from HDTVs.
+</p>
+<pre>
+# 640x480 @ 60 Hz (EDID) HSync: 31.4625 kHz
+ModeLine &quot;640x480&quot; 25.17 640 656 752 800 480 490 492 525 -HSync -VSync
+# 720x480 @ 60 Hz (EDID) HSync: 15.7343 kHz
+ModeLine &quot;720x480&quot; 13.50 720 739 801 858 480 488 494 524 -HSync -VSync Interlace
+# 720x480 @ 60 Hz (EDID) HSync: 31.4685 kHz
+ModeLine &quot;720x480&quot; 27.00 720 736 798 858 480 489 495 525 -HSync -VSync
+# 720x576 @ 50 Hz (EDID) HSync: 15.625 kHz
+ModeLine &quot;720x576&quot; 13.50 720 732 795 864 576 580 586 624 -HSync -VSync Interlace
+# 720x576 @ 50 Hz (EDID) HSync: 31.25 kHz
+ModeLine &quot;720x576&quot; 27.00 720 732 796 864 576 581 586 625 -HSync -VSync
+# 800x600 @ 60 Hz (EDID) HSync: 37.8788 kHz
+ModeLine &quot;800x600&quot; 40.00 800 840 968 1056 600 601 605 628 +HSync +VSync
+# 1024x768 @ 60 Hz (EDID) HSync: 48.3631 kHz
+ModeLine &quot;1024x768&quot; 65.00 1024 1048 1184 1344 768 771 777 806 -HSync -VSync
+# 1280x720 @ 50 Hz (EDID) HSync: 37.5 kHz
+ModeLine &quot;1280x720&quot; 74.25 1280 1720 1760 1980 720 725 730 750 +HSync +VSync
+# 1280x720 @ 60 Hz (EDID) HSync: 44.9576 kHz
+ModeLine &quot;1280x720&quot; 74.18 1280 1390 1430 1650 720 725 730 750 +HSync +VSync
+# 1280x720 @ 60 Hz (EDID) HSync: 45 kHz
+ModeLine &quot;1280x720&quot; 74.25 1280 1390 1430 1650 720 725 730 750 +HSync +VSync
+# 1280x768 @ 60 Hz (EDID) HSync: 47.3958 kHz
+ModeLine &quot;1280x768&quot; 68.25 1280 1328 1360 1440 768 771 778 790 +HSync +VSync
+# 1280x1024 @ 60 Hz (EDID) HSync: 63.981 kHz
+ModeLine &quot;1280x1024&quot; 108.00 1280 1328 1440 1688 1024 1025 1028 1066 +HSync +VSync
+# 1360x768 @ 60 Hz (EDID) HSync: 47.7121 kHz
+ModeLine &quot;1360x768&quot; 85.50 1360 1424 1536 1792 768 771 778 795 -HSync -VSync
+# 1440x480 @ 60 Hz (EDID) HSync: 15.7343 kHz
+ModeLine &quot;720x480&quot; 27.00 1440 1478 1602 1716 480 488 494 524 -HSync -VSync Interlace
+# 1440x576 @ 50 Hz (EDID) HSync: 15.625 kHz
+ModeLine &quot;720x576&quot; 27.00 1440 1464 1590 1728 576 580 586 624 -HSync -VSync Interlace
+# 1920x1080 @ 24 Hz (EDID) HSync: 26.9673 kHz
+ModeLine &quot;1920x1080&quot; 74.16 1920 2558 2602 2750 1080 1084 1089 1125 +HSync +VSync
+# 1920x1080 @ 25 Hz (EDID) HSync: 28.125 kHz
+ModeLine &quot;1920x1080&quot; 74.25 1920 2448 2492 2640 1080 1084 1089 1125 +HSync +VSync
+# 1920x1080 @ 30 Hz (EDID) HSync: 33.7159 kHz
+ModeLine &quot;1920x1080&quot; 89.01 1920 2448 2492 2640 1080 1084 1089 1125 +HSync +VSync
+# 1920x1080 @ 50 Hz (EDID) HSync: 56.25 kHz
+ModeLine &quot;1920x1080&quot; 148.50 1920 2448 2492 2640 1080 1084 1089 1125 +HSync +VSync
+# 1920x1080 @ 50 Hz (EDID) HSync: 28.125 kHz
+ModeLine &quot;1920x1080&quot; 74.25 1920 2448 2492 2640 1080 1084 1094 1124 +HSync +VSync Interlace
+# 1920x1080 @ 60 Hz (EDID) HSync: 67.4318 kHz
+ModeLine &quot;1920x1080&quot; 148.35 1920 2008 2052 2200 1080 1084 1089 1125 +HSync +VSync
+# 1920x1080 @ 60 Hz (EDID) HSync: 67.5 kHz
+ModeLine &quot;1920x1080&quot; 148.50 1920 2008 2052 2200 1080 1084 1088 1125 -HSync -VSync
+# 1920x1080 @ 60 Hz (EDID) HSync: 33.7182 kHz
+ModeLine &quot;1920x1080&quot; 74.18 1920 2008 2052 2200 1080 1084 1094 1124 +HSync +VSync Interlace
+</pre>
+<a name="ModeValidation" id="ModeValidation"></a><h3> <span class="mw-headline"> ModeValidation </span></h3>
+<p>Some HDTV and monitors connected via VGA or DVI in which your able to receive EDID information may need to enable some options from the ModeValidation option, as you can see below.  Be careful in using these, some may cause your TV/monitor problems, so use them sparingly! Figure out which options you <b>absolutely</b> need.
+</p><p>From the NVIDIA readme,
+</p>
+<pre>Option "ModeValidation" "string"
+
+This option provides fine-grained control over each stage of the mode 
+validation pipeline, disabling individual mode validation checks. This
+option should only very rarely be used.
+
+The option string is a semicolon-separated list of comma-separated lists
+of mode validation arguments. Each list of mode validation arguments can
+optionally be prepended with a display device name.
+
+"&lt;dpy-0&gt;: &lt;tok&gt;, &lt;tok&gt;; &lt;dpy-1&gt;: &lt;tok&gt;, &lt;tok&gt;, &lt;tok&gt;; ..."
+
+Possible arguments:
+
+"AllowNon60HzDFPModes": some lower quality TMDS encoders are only rated 
+to drive DFPs at 60Hz; the driver will determine when only 60Hz DFP modes 
+are allowed. This argument disables this stage of the mode validation pipeline.
+
+"NoMaxPClkCheck": each mode has a pixel clock; this pixel clock is validated 
+against the maximum pixel clock of the hardware (for a DFP, this is the 
+maximum pixel clock of the TMDS encoder, for a CRT, this is the maximum pixel 
+clock of the DAC). This argument disables the maximum pixel clock checking 
+stage of the mode validation pipeline.
+
+"NoEdidMaxPClkCheck": a display device's EDID can specify the maximum pixel 
+clock that the display device supports; a mode's pixel clock is validated 
+against this pixel clock maximum. This argument disables this stage of the mode 
+validation pipeline.
+
+"AllowInterlacedModes": interlaced modes are not supported on all NVIDIA GPUs; 
+the driver will discard interlaced modes on GPUs where interlaced modes are 
+not supported; this argument disables this stage of the mode validation pipeline.
+
+"NoMaxSizeCheck": each NVIDIA GPU has a maximum resolution that it can drive; 
+this argument disables this stage of the mode validation pipeline.
+
+"NoHorizSyncCheck": a mode's horizontal sync is validated against the range 
+of valid horizontal sync values; this argument disables this stage of the mode 
+validation pipeline.
+
+"NoVertRefreshCheck": a mode's vertical refresh rate is validated against the
+range of valid vertical refresh rate values; this argument disables this stage 
+of the mode validation pipeline.
+
+"NoWidthAlignmentCheck": the alignment of a mode's visible width is validated 
+against the capabilities of the GPU; normally, a mode's visible width must be 
+a multiple of 8. This argument disables this stage of the mode validation pipeline.
+
+"NoDFPNativeResolutionCheck": when validating for a DFP, a mode's size is 
+validated against the native resolution of the DFP; this argument disables this 
+stage of the mode validation pipeline.
+
+"NoVirtualSizeCheck": if the X configuration file requests a specific virtual 
+screen size, a mode cannot be larger than that virtual size; this argument disables 
+this stage of the mode validation pipeline.
+
+"NoVesaModes": when constructing the mode pool for a display device, the X driver 
+uses a built-in list of VESA modes as one of the mode sources; this argument 
+disables use of these built-in VESA modes.
+
+"NoEdidModes": when constructing the mode pool for a display device, the X driver 
+uses any modes listed in the display device's EDID as one of the mode sources; 
+this argument disables use of EDID-specified modes.
+
+"NoXServerModes": when constructing the mode pool for a display device, the X 
+driver uses the built-in modes provided by the core XFree86/Xorg X server as one 
+of the mode sources; this argument disables use of these modes. Note that this 
+argument does not disable custom ModeLines specified in the X config file; see 
+the "NoCustomModes" argument for that.
+
+"NoCustomModes": when constructing the mode pool for a display device, the X 
+driver uses custom ModeLines specified in the X config file (through the "Mode" 
+or "ModeLine" entries in the Monitor Section) as one of the mode sources; this 
+argument disables use of these modes.
+
+"NoPredefinedModes": when constructing the mode pool for a display device, the
+X driver uses additional modes predefined by the NVIDIA X driver; this argument
+disables use of these modes.
+
+"NoUserModes": additional modes can be added to the mode pool dynamically, using
+the NV-CONTROL X extension; this argument prohibits user-specified modes via the
+NV-CONTROL X extension.
+</pre>
+<a name="NTSC_.28Analog.29" id="NTSC_.28Analog.29"></a><h3> <span class="mw-headline"> NTSC (Analog) </span></h3>
+<pre>
+# 712x486 @ 29.97Hz, 15.7kHz, itu-r bt.470 M/ntsc, 711 dots displayed
+ModeLine &quot;712x486@30i&quot; 13.5   712 736 799 858  486 492 498 525 interlace -hsync -vsync
+
+# 704x480 @ 29.97Hz, 15.7kHz, itu-r bt.470 M conformant, mpeg
+ModeLine &quot;704x480@30i&quot; 13.5   704 728 791 858  480 486 492 525 interlace -hsync -vsync
+
+# 720x480 @ 29.97Hz, 15.7kHz, itu-r bt.601, mpeg
+ModeLine &quot;720x480@30i&quot; 13.5   720 736 799 858  480 486 492 525 interlace -hsync -vsync
+
+#ModeLine &quot;NTSCspec-59.94i&quot; 14.318 768 784 848 910 483 484 492 525 Interlace
+#ModeLine &quot;NTSCspec-59.94p&quot; 28.636 768 784 848 910 483 484 492 525
+#ModeLine &quot;Laserdisk-59.94i&quot; 10.762 567 583 647 684 483 484 492 525 Interlace
+#ModeLine &quot;Laserdisk-59.94p&quot; 21.524 567 583 647 684 483 484 492 525
+</pre>
+<p>Note: Analog equipment expects a 711x485 image with an aspect ratio of 4/3.  Thus, setting 
+the aspect ratio of 704x480 to 4/3 and of 720x480 to 15/11 is approximative up to 0.5 per mille.
+</p>
+<a name="PAL_625" id="PAL_625"></a><h3> <span class="mw-headline"> PAL 625 </span></h3>
+<pre>
+# 702x576 @ 25Hz, 15.6kHz, itu-r bt.470 PAL, analog broadcast
+ModeLine &quot;702x576@25i&quot; 13.5   702 722 785 864  576 581 586 625 interlace -hsync -vsync
+
+# 704x576 @ 25Hz, 15.6kHz, itu-r bt.470 PAL, mpeg, 702 dots displayed
+ModeLine &quot;704x576@25i&quot; 13.5   704 723 786 864  576 581 586 625 interlace -hsync -vsync
+
+# 720x576 @ 25Hz, 15.6kHz, itu-r bt.601 PAL, mpeg
+ModeLine &quot;720x576@25i&quot; 13.5   720 732 795 864  576 581 586 625 interlace -hsync -vsync
+
+# 768x576 @ 25Hz, 15.6kHz, square dot itu-r bt.470 PAL, TV-monitor, 767 dots displayed
+ModeLine &quot;768x576@25i&quot; 14.75  768 789 858 944  576 581 586 625 interlace -hsync -vsync
+
+# 720x576 @ 50Hz, 31.25kHz, itu-r bt.1358 625/50/p/1:1, RGB, YPbPr, HDMI
+ModeLine &quot;720x576@50&quot;  27     720 732 795 864  576 581 586 625 -hsync -vsync
+
+# 768x576 @ 50Hz, 31.25kHz, progressive square dot itu-r bt.470 PAL 
+ModeLine &quot;768x576@50&quot;  29.5   768 789 858 944  576 581 586 625 -hsync -vsync
+
+# nonstandard PAL (Works with BOB deinterlace) It is 60Hz but works well with nVIDIA PAL-B TV-OUT
+# Nvidia option: Option &quot;TVStandard&quot; &quot;PAL-B&quot;
+ModeLine &quot;720x576@60&quot; 32.7  720 744 816 912  576 577 580 597
+
+# This modeline is 50Hz interlaced and works well with kerneldeint:
+ModeLine &quot;720x576i&quot; 13.875  720 744 808 888  576 581 586 625 -hsync -vsync interlace
+</pre>
+<p>PAL 625 broadcast equipment using a 13.5 MHz reference 
+frequency sets the image aspect ratio of 704x576 to 1.33=4/3 
+and of 720x576 to 1.3636=15/11.  This ensures compatibility with
+analog TV's which expect 702x575 at a ratio of 4/3.  Video monitors 
+can display the whole image, including the extra dots on the left 
+and right, by depressing the underscan switch.  
+Analog broadcast cameras typically output a 14.75 MHz square dot 
+resolution of 786x581 from a 816x606 CCD frame.
+</p><p>However, 720x576 at 13.5 MHz with an image aspect ratio of 4/3 is employed by dvb-c set top boxes 
+and upgraded analog TV channels.
+</p>
+<a name="DVD" id="DVD"></a><h3> <span class="mw-headline"> DVD </span></h3>
+<pre>
+#DVD-NativeModes
+#ModeLine &quot;NTSC-DVD-59.94i&quot; 13.5 720 736 800 858 480 484 492 525 Interlace
+#ModeLine &quot;NTSC-DVD-60i&quot; 13.514 720 736 800 858 480 484 492 525 Interlace
+#ModeLine &quot;NTSC-DVD-59.94p&quot; 27.0 720 736 800 858 480 484 492 525
+#ModeLine &quot;NTSC-DVD-60p&quot; 27.027 720 736 800 858 480 484 492 525
+#ModeLine &quot;NTSC-DVD-71.93p&quot; 32.4 720 736 800 858 480 484 492 525
+#ModeLine &quot;NTSC-DVD-72p&quot; 32.432 720 736 800 858 480 484 492 525
+#ModeLine &quot;NTSC-DVD-119.88p&quot; 54.0 720 736 800 858 480 484 492 525
+#ModeLine &quot;NTSC-DVD-120p&quot; 54.054 720 736 800 858 480 484 492 525
+</pre>
+<a name="DILA_Projector_Native" id="DILA_Projector_Native"></a><h3> <span class="mw-headline"> DILA Projector Native </span></h3>
+<pre>
+#DILA-Projector-NativeModes
+#ModeLine &quot;DILA-47.95p&quot; 91.493 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-48p&quot; 91.584 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-50p&quot; 95.4 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-59.94p&quot; 114.366 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-60p&quot; 114.48 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-71.93p&quot; 137.239 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-72p&quot; 137.376 1360 1464 1608 1800 1024 1026 1028 1060
+#ModeLine &quot;DILA-MarkR-71.997&quot; 139.202 1360 1464 1608 1824 1024 1026 1028 1060
+</pre>
+<a name="ATSC_Standard_Modes" id="ATSC_Standard_Modes"></a><h3> <span class="mw-headline"> ATSC Standard Modes </span></h3>
+<pre>
+#DTV-StandardModes
+#ModeLine &quot;ATSC-480-59.94i&quot; 11.958 640 664 736 760 480 484 492 525 Interlace
+#ModeLine &quot;ATSC-480-60i&quot; 11.97 640 664 736 760 480 484 492 525 Interlace
+#ModeLine &quot;ATSC-480-59.94p&quot; 23.916 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480-60p&quot; 23.94 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480a-59.94i&quot; 11.958 640 664 736 760 480 484 492 525 Interlace
+#ModeLine &quot;ATSC-480a-60i&quot; 11.97 640 664 736 760 480 484 492 525 Interlace
+#ModeLine &quot;ATSC-480a-59.94p&quot; 23.916 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480a-60p&quot; 23.94 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-720-59.94p&quot; 74.176 1280 1320 1376 1650 720 722 728 750
+#ModeLine &quot;ATSC-720-60p&quot; 74.25 1280 1320 1376 1650 720 722 728 750
+#ModeLine &quot;ATSC-1080-59.94i&quot; 74.176 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-60i&quot; 74.25 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-59.94p&quot; 148.352 1920 1960 2016 2200 1080 1082 1088 1125
+#ModeLine &quot;ATSC-1080-60p&quot; 148.5 1920 1960 2016 2200 1080 1082 1088 1125
+</pre>
+<a name="ATSC_Movie_Modes" id="ATSC_Movie_Modes"></a><h3> <span class="mw-headline"> ATSC Movie Modes </span></h3>
+<pre>
+#DTV-MovieModes
+#ModeLine &quot;ATSC-480-71.93p&quot; 28.699 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480-72p&quot; 28.728 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480-119.88p&quot; 47.832 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-480-120p&quot; 47.88 640 664 736 760 480 484 492 525
+#ModeLine &quot;ATSC-720-71.93p&quot; 89.011 1280 1296 1360 1650 720 722 728 750
+#ModeLine &quot;ATSC-720-72p&quot; 89.1 1280 1296 1360 1650 720 722 728 750
+#ModeLine &quot;ATSC-720-119.88p&quot; 148.351 1280 1296 1360 1650 720 722 728 750
+#ModeLine &quot;ATSC-720-120p&quot; 148.5 1280 1296 1360 1650 720 722 728 750
+#ModeLine &quot;ATSC-1080-71.93i&quot; 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-72i&quot; 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-71.93p&quot; 178.022 1920 1960 2016 2200 1080 1082 1088 1125
+#ModeLine &quot;ATSC-1080-72p&quot; 178.2 1920 1960 2016 2200 1080 1082 1088 1125
+</pre>
+<a name="PC_Tweaked" id="PC_Tweaked"></a><h3> <span class="mw-headline"> PC Tweaked </span></h3>
+<pre>
+#DTV-PCTweakedModes
+#ModeLine &quot;NTSC-59.94i&quot; 14.35 768 808 864 912 483 485 491 525 Interlace
+#ModeLine &quot;NTSC-59.94p&quot; 28.699 768 808 864 912 483 485 491 525
+#ModeLine &quot;NTSC-DVD-59.94i&quot; 13.469 720 760 816 856 480 482 488 525 Interlace
+#ModeLine &quot;NTSC-DVD-60i&quot; 13.482 720 760 816 856 480 482 488 525 Interlace
+#ModeLine &quot;NTSC-DVD-59.94p&quot; 26.937 720 760 816 856 480 482 488 525
+#ModeLine &quot;NTSC-DVD-60p&quot; 26.964 720 760 816 856 480 482 488 525
+#ModeLine &quot;NTSC-DVD-71.93p&quot; 32.324 720 760 816 856 480 482 488 525
+#ModeLine &quot;NTSC-DVD-72p&quot; 32.357 720 760 816 856 480 482 488 525
+#ModeLine &quot;ATSC-480-59.94p&quot; 23.916 640 664 736 760 480 482 488 525
+#ModeLine &quot;ATSC-480-60p&quot; 23.94 640 664 736 760 480 482 488 525
+#ModeLine &quot;ATSC-480-71.93p&quot; 28.699 640 664 736 760 480 482 488 525
+#ModeLine &quot;ATSC-480-72p&quot; 28.728 640 664 736 760 480 482 488 525
+#ModeLine &quot;ATSC-720-59.94p&quot; 74.086 1280 1320 1376 1648 720 722 728 750
+#ModeLine &quot;ATSC-720-60p&quot; 74.16 1280 1320 1376 1648 720 722 728 750
+#ModeLine &quot;ATSC-720-71.93p&quot; 88.903 1280 1320 1376 1648 720 722 728 750
+#ModeLine &quot;ATSC-720-72p&quot; 88.992 1280 1320 1376 1648 720 722 728 750
+#ModeLine &quot;ATSC-1080-59.94i&quot; 74.176 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-60i&quot; 74.25 1920 1960 2016 2200 1080 1082 1088 1125 Interlace
+#ModeLine &quot;ATSC-1080-59.94p&quot; 148.352 1920 1960 2016 2200 1080 1082 1088 1125
+#ModeLine &quot;ATSC-1080-60p&quot; 148.5 1920 1960 2016 2200 1080 1082 1088 1125
+#ModeLine &quot;ATSC-1080-71.93p&quot; 178.022 1920 1960 2016 2200 1080 1082 1088 1125
+#ModeLine &quot;ATSC-1080-72p&quot; 178.2 1920 1960 2016 2200 1080 1082 1088 1125
+</pre>
+<a name="Custom_Modelines" id="Custom_Modelines"></a><h2> <span class="mw-headline"> Custom Modelines </span></h2>
+<a name="Acer" id="Acer"></a><h3> <span class="mw-headline"> Acer </span></h3>
+<a name="Acer_AT4220B_.2F_AT3720B_.2F_AT3220B_.2F_AT2720B" id="Acer_AT4220B_.2F_AT3720B_.2F_AT3220B_.2F_AT2720B"></a><h4> <span class="mw-headline"> Acer AT4220B / AT3720B / AT3220B / AT2720B </span></h4>
+<p>These screens supports 1366x768 on both the VGA input and HDMI input but the EDID data does not do this correctly. (using xorg 7.2) I have the 37" version, but I guess the electronics is the same in the whole range. Native resolution is 1366x768. Running the screen at 1368x768 will result in a little line running up the image from time to time. 1360x768 is much better, but scene changes flicker a bit some times. My 7100 nvidia card can't do the 1366x768 resolution and I'm guessing that would fix the issue.
+</p><p>Device section:
+</p>
+<pre>
+# Option &quot;ExactModeTimingsDVI&quot;
+# Option &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+</pre>
+<p>Monitor section:
+</p>
+<pre>
+SubSection &quot;Display&quot;
+                Modes &quot;1360x768&quot;
+</pre>
+<a name="Apex" id="Apex"></a><h3> <span class="mw-headline"> Apex </span></h3>
+<a name="Apex_LD_4088_40.22_LCD" id="Apex_LD_4088_40.22_LCD"></a><h4> <span class="mw-headline"> Apex LD 4088 40" LCD</span></h4>
+<p>Device section:
+</p>
+<pre>
+Option &quot;ModeValidation&quot; &quot;NoEdidModes&quot;
+</pre>
+<p>Monitor section:
+</p>
+<pre>
+ModeLine &quot;1920x1080&quot; 74.25 1920 2008 2052 2200 1080 1084 1094 1124 +hsync +vsync Interlace
+Option &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+SubSection &quot;Display&quot;
+                Modes &quot;1920x1080&quot;
+</pre>
+<a name="Dell" id="Dell"></a><h3> <span class="mw-headline"> Dell </span></h3>
+<a name="Dell_2405FPW" id="Dell_2405FPW"></a><h4> <span class="mw-headline"> Dell 2405FPW </span></h4>
+<pre>
+## (at native 1920x1200)
+# Modeline    &quot;1920x1200&quot; 151.138 1920 1960 1992 4040 1200 1201 1204 1232  -hsync
+## I have to use an older driver (1.0-7174) which does not limit the bandwidth:
+# Modeline    &quot;1920x1200&quot; 161.75 1920 2020 2052 2184 1200 1202 1208 1235 -hsync -vsync
+</pre>
+<a name="Fujitsu" id="Fujitsu"></a><h3> <span class="mw-headline"> Fujitsu </span></h3>
+<a name="Fujitsu-Siemens.2C_Amilo_LSL_3230T" id="Fujitsu-Siemens.2C_Amilo_LSL_3230T"></a><h4> <span class="mw-headline"> Fujitsu-Siemens, Amilo LSL 3230T </span></h4>
+<pre>
+Found from the monitors EDID.
+
+# 1920x1080 @ 60Hz hsync: 67.5kHz (EDID from Fujitsu-Siemens, Amilo LSL 3230T)
+Modeline &quot;1920x1080&quot; 148.5 1920 2008 2052 2200 1080 1089 1095 1125 +hsync +vsync
+</pre>
+<a name="Fujitsu_50.22_Plasma" id="Fujitsu_50.22_Plasma"></a><h4> <span class="mw-headline"> Fujitsu 50" Plasma </span></h4>
+<pre>
+## Fujitsu 50&quot; HD Plasma (1366x768@60Hz native)
+## I'm using a nVidia card so the resolution must be a multiple of 8, I use 1368x768.
+## This is the modeline i got from PowerStrip. Add this to the &quot;Monitor&quot; section.
+#	Modeline &quot;1368x768&quot; 85.478 1368 1424 1536 1792 768 771 777 795 +hsync +vsync
+## To get this working on my computer I had to disable EDID, &quot;UseEDID&quot; did not work so I read through the nVidia driver
+## documentation and added everything to do with disabling monitor checks (there's probably a bit of redundancy here).
+## Check the latest driver documentation for more info. This can go in the &quot;Device&quot; or &quot;Screen&quot; section.
+#	Option		&quot;UseEDID&quot; &quot;False&quot;
+#	Option		&quot;FlatPanelProperties&quot; &quot;Scaling = native&quot;
+#	Option		&quot;ExactModeTimingsDVI&quot; &quot;true&quot;
+#	Option &quot;ModeValidation&quot; &quot;AllowNon60HzDFPModes, NoEdidMaxPClkCheck, NoMaxPClkCheck, NoHorizSyncCheck, NoVertRefreshCheck, NoEdidDFPMaxSizeCheck, NoEdidModes&quot;
+</pre>
+<a name="Hitachi" id="Hitachi"></a><h3> <span class="mw-headline"> Hitachi </span></h3>
+<a name="Hitachi_42PD380TA" id="Hitachi_42PD380TA"></a><h4> <span class="mw-headline"> Hitachi 42PD380TA </span></h4>
+<pre>
+##(42&quot;/106cm Standard Definition Plasma)
+## Note: you can fine tune position and size from TV's Menu
+# Modeline &quot;1280x720@60&quot;   74.48  1280 1468 1604 1664  720 721 724 746 +hsync +vsync
+##  Works for nVidia FX 5200 PCI -&gt; DVI to HDMI -&gt; Sony KDF60WF655 LCD HDTV
+#  The &quot;Monitor&quot; Section should include
+#
+#  Option       &quot;IgnoreEDID&quot;
+#  Note:  For newer versions of the NVIDIA driver the line above has to be replaced with the following two lines:
+#  Option       &quot;UseEDID&quot; &quot;FALSE&quot;
+#  Option       &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+#
+#  HorizSync    15 - 46
+#  VertRefresh  59 - 61
+#  Modeline    &quot;1280x720p_at60Hz&quot;   74.250 1280 1390 1430 1650 720 725 730 750 +hsync +vsync
+</pre>
+<p><br />
+</p>
+<a name="InFocus" id="InFocus"></a><h3> <span class="mw-headline"> InFocus </span></h3>
+<a name="InFocus_ScreenPlay_5000" id="InFocus_ScreenPlay_5000"></a><h4> <span class="mw-headline"> InFocus ScreenPlay 5000 </span></h4>
+<pre>
+# ModeLine &quot;ATSC-720-59.94p&quot; 74.176 1280 1320 1376 1650 720 722 728 750
+# ModeLine &quot;ATSC-720-60p&quot; 74.25 1280 1320 1376 1650 720 722 728 750
+</pre>
+<a name="InFocus_X1A" id="InFocus_X1A"></a><h4> <span class="mw-headline"> InFocus X1A </span></h4>
+<pre>
+# Modeline &quot;800x600&quot; 31.00 800 824 840 1000 600 602 603 632  # 31 MHz, 31.0 kHz, 49.1 Hz
+</pre>
+<p><br />
+</p>
+<a name="LG" id="LG"></a><h3> <span class="mw-headline"> LG </span></h3>
+<a name="DU-37LZ30" id="DU-37LZ30"></a><h4> <span class="mw-headline"> DU-37LZ30</span></h4>
+<p>ATSC 720p @ 60 Hz no overscan on VGA input
+</p>
+<pre>ModeLine "ATSC-720-60p-no-over" 74.16 1192 1310 1343 1648 672 700 705 750 +HSync +VSync
+</pre>
+<p>ATSC 1080i @ 60 Hz no overscan on VGA input
+</p>
+<pre>ModeLine "ATSC-1080-60i" 74.25 1778 1899 2002 2200 1010 1052 1068 1125 Interlace +HSync +VSync
+</pre>
+<a name="32LG3000" id="32LG3000"></a><h4> <span class="mw-headline"> 32LG3000 </span></h4>
+<p>(Probably the same for 32LG2000 and maybe all xxLG3000 and xxLG2000)
+</p><p>The native resolutions of the 32LG3000 is 1366x768.
+</p>
+<pre># monitor-edid
+#Name: LG TV
+#EISA ID: GSM75ef
+#Screen size: 70.0 cm x 39.0 cm (31.55 inches, aspect ratio 16/9 = 1.78)
+DisplaySize     700 390
+#Gamma: 2.2
+#Analog signal
+#Max video bandwidth: 150 MHz
+HorizSync 28-67
+VertRefresh 50-75
+# Monitor preferred modeline (59.8 Hz vsync, 47.7 kHz hsync, ratio 16/9) (bad ratio)
+ModeLine "1360x768" 84.75 1360 1432 1568 1776 768 771 776 798 +hsync -vsync
+# Monitor preferred modeline (60.0 Hz vsync, 67.5 kHz hsync, ratio 16/9)
+ModeLine "1920x1080" 148.5 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+</pre>
+<p>I have also managed to use the following modelines:
+</p>
+<pre>       # gtf 1366 768 59.8
+       # 1368x768 @ 59.80 Hz (GTF) hsync: 47.54 kHz; pclk: 85.57 MHz
+       Modeline "1368x768_59.80"  85.57  1368 1440 1584 1800  768 769 772 795  -HSync +Vsync
+</pre>
+<pre>       # gtf 1366 768 60
+       # 1368x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 85.86 MHz
+       Modeline "1368x768_60.00"  85.86  1368 1440 1584 1800  768 769 772 795  -HSync +Vsync
+</pre>
+<pre>       # gtf 1360 768 60
+       # 1360x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 84.72 MHz
+       Modeline "1360x768_60.00"  84.72  1360 1424 1568 1776  768 769 772 795  -HSync +Vsync
+</pre>
+<pre>       # gtf 1360 768 59.8
+       # 1360x768 @ 59.80 Hz (GTF) hsync: 47.54 kHz; pclk: 84.43 MHz
+       Modeline "1360x768_59.80"  84.43  1360 1424 1568 1776  768 769 772 795  -HSync +Vsync
+</pre>
+<pre>       # Selfmade:
+       Modeline "1366x768" 85.500 1366 1494 1624 1798 768 770 776 795 +hsync -vsync
+</pre>
+<p>The modeline above gives perfect 1:1 pixelmapping on the screen when sent from my Intel G35 onboard graphics card (Asus P5E-VM HDMI) using a plain HDMI-HDMI cable (no DVI dongle). The "Just Scan" option is only available for true 1080p, 1080i and 720p, so I set it to "16/9" and still get a perfect image. Great. 
+</p><p>In the "Monitor" section of my xorg.conf I use the following option to choose the preferred mode:
+</p>
+<pre>       #Option "PreferredMode" "1360x768"
+       #Option "PreferredMode" "1368x768_59.80"
+       Option "PreferredMode" "1366x768"
+</pre>
+<p><a href="/wiki/User:Judaz" title="User:Judaz">Judaz</a> 08:31, 27 January 2009 (UTC)
+</p>
+<a name="37LG7000" id="37LG7000"></a><h4> <span class="mw-headline"> 37LG7000 </span></h4>
+<p>Custom modeline modified by hand from 1920x1080 60Hz to get 1920x1080 50Hz. This happens to work with LG7000. It has the same pixel clock as the 1920x1080_60 (CVT-RB) from LG7000's EDID.
+</p>
+<ol><li> 1920x1080 50 Hz custom modeline (vsync width: 7)
+</li></ol>
+<p>Modeline "1920x1080_50c"   138.5   1920 2378 2410 2490   1080 1083 1090 1113  +hsync -vsync
+</p>
+<a name="26LC3R" id="26LC3R"></a><h4> <span class="mw-headline"> 26LC3R </span></h4>
+<pre>
+# 720p @ 50Hz no overscan on HDMI
+ModeLine &quot;1157x685&quot; 74.25 1157 1658 1698 1980 685 707 712 750 +hsync +vsync
+# On NVIDIA ION you also need
+Option &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+</pre>
+<a name="Mitsubishi" id="Mitsubishi"></a><h3> <span class="mw-headline"> Mitsubishi </span></h3>
+<a name="Mitsubishi_HC-1500" id="Mitsubishi_HC-1500"></a><h4> <span class="mw-headline"> Mitsubishi HC-1500 </span></h4>
+<pre>
+## Doesn't claim to support native (1280x720) over VGA, but it does just fine
+# ModeLine &quot;720p&quot; 74.25 1280 1392 1448 1650 720 722 728 750
+</pre>
+<a name="Mitsubishi_WT-46809" id="Mitsubishi_WT-46809"></a><h4> <span class="mw-headline"> Mitsubishi WT-46809 </span></h4>
+<pre>
+## Detected as 1080i
+# ModeLine &quot;960x540p&quot; 37.26 960 976 1008 1104 540 542 548 563 +hsync +vsync
+</pre>
+<a name="Mitsubishi_WS-55513" id="Mitsubishi_WS-55513"></a><h4> <span class="mw-headline"> Mitsubishi WS-55513 </span></h4>
+<pre>
+## 1080 on DVI with a 5200
+# ModeLine     &quot;in1080i&quot; 74.5 1760 1888 2096 2208 960 1012 1028 1126 -hsync -vsync interlace
+</pre>
+<a name="Mitsubishi_WS-48313" id="Mitsubishi_WS-48313"></a><h4> <span class="mw-headline"> Mitsubishi WS-48313 </span></h4>
+<pre>
+## I had to add the following
+## HorizSync     15-75
+## Option      &quot;UseEdidFreqs&quot; &quot;FALSE&quot;
+# Modeline &quot;1920x1080&quot; 74.250 1920 2008 2052 2200 1080 1084 1094 1124 interlace +hsync +vsync
+</pre>
+<a name="Mitsubishi_HC3000u_Projector" id="Mitsubishi_HC3000u_Projector"></a><h4> <span class="mw-headline"> Mitsubishi HC3000u Projector </span></h4>
+<pre>
+# (naitive DLP chip resolution 1280x768)
+# 1280x768 at 59.94 Hz - VGA output of an nvidia 6150 graphics chip (Asus A8N-VM CSM motherboard)
+# Modeline  &quot;1280x768-Mitsubishi&quot; 83.05 1280 1376 1504 1736 768 771 778 798  -hsync -vsync
+</pre>
+<a name="NEC" id="NEC"></a><h3> <span class="mw-headline"> NEC </span></h3>
+<a name="NEC_2090UXi" id="NEC_2090UXi"></a><h4> <span class="mw-headline"> NEC 2090UXi </span></h4>
+<p>These slightly reduced blanking modes work for the analog and the digital input.  The lower 
+dot clock frequency allows to use a DVI cable of 15 m long.
+</p>
+<pre>
+## 1600x1200 @ 50Hz, 62.5 kHz hsync, nec 2090uxi
+#Modeline &quot;1600x1200@50&quot; 120  1600 1628 1788 1920  1200 1201 1204 1250
+#
+## 1600x1200 @ 60Hz, 75 kHz hsync, nec 2090uxi
+#Modeline &quot;1600x1200@60&quot; 144  1600 1628 1788 1920  1200 1201 1204 1250
+</pre>
+<a name="NEC_PX-50XM5_50.22_HD_Plasma" id="NEC_PX-50XM5_50.22_HD_Plasma"></a><h4> <span class="mw-headline"> NEC PX-50XM5 50" HD Plasma </span></h4>
+<p>This panel has a native resolution of 1365x768@60Hz and can be driven at this resolution using the DVI port.  I tried to make it sync at 50Hz (due to PAL) with no luck.
+</p>
+<pre>
+Section &quot;Screen&quot;
+    Monitor        &quot;NEC PX-50XM5&quot;
+    DefaultDepth    24
+    Option         &quot;UseEDID&quot;  &quot;FALSE&quot;
+    Option         &quot;UseEDIDFreqs&quot; &quot;FALSE&quot;
+    Option         &quot;ModeValidation&quot; NoEdidModes,AllowNon60HzDFPModes,NoMaxPClkCheck,NoMaxSizeCheck,NoDFPNativeResolutionCheck,NoPredefinedModes,NoVesaModes,NoVirtualSizeCheck,NoWidthAlignmentCheck,NoVertRefreshCheck,NoHorizSyncCheck,NoMaxSizeCheck,NoEdidMaxPClkCheck,NoDFPNativeResolutionCheck&quot;
+    Option         &quot;XvmcUsesTextures&quot; &quot;true&quot;
+    Option         &quot;RenderAccel&quot; &quot;true&quot;
+    Option         &quot;ExactModeTimingsDVI&quot; &quot;true&quot;
+    Option         &quot;FlatPanelProperties&quot; &quot;Scaling = Native&quot;
+    Option         &quot;UseEvents&quot; &quot;TRUE&quot;
+    Option         &quot;DPMS&quot;
+    Option         &quot;NoLogo&quot; &quot;TRUE&quot;
+    SubSection     &quot;Display&quot;
+        Viewport    0 0
+        Depth       24
+        Modes      &quot;1365x768&quot;
+    EndSubSection
+EndSection
+
+Section &quot;Monitor&quot;
+    Identifier     &quot;NEC PX-50XM5&quot;
+    HorizSync       15.0 - 110.0
+    VertRefresh     50.0 - 120.0
+    ModeLine       &quot;1365x768&quot; 72.149 1365 1416 1466 1526 768 772 776 788 +hsync +vsync
+EndSection
+</pre>
+<a name="Olevia" id="Olevia"></a><h3> <span class="mw-headline"> Olevia </span></h3>
+<a name="Olevia_LT26HVX" id="Olevia_LT26HVX"></a><h4> <span class="mw-headline"> Olevia LT26HVX </span></h4>
+<pre>
+## This TV has a decent screen for the cost, but VGA and DVI input is
+## problematic, since it reports a mode of 1280x1024 in EDID, though the native
+## resolution is 1366x768, something which I wanted to take advantage of to display
+## 1080i with maximum detail. After much trial and error I found several modelines
+## that work when it's connected to my Radeon 8500 via DVI; I didn't have as much
+## luck connected to an Nvidia card, with Windows and X. The TV doesn't seem to have
+## a way to disable scaling, so even with a mode of 1360x768 or 1366x768, pixels
+## don't line up perfectly. It seems close enough for video, if not for
+## desktop use. It also doesn't recognize image sizes larger than 1280x1024, so I had 
+## tweak those modes carefully with xvidtune to get the image centered. I use 
+## 'Option &quot;IgnoreEDID&quot; &quot;true&quot;' in the Screen section. 
+##
+## DisplaySize  586 330
+## VertRefresh 50-70
+##
+# Modeline &quot;1280x768@60&quot; 80 1280 1312 1608 1640 768 783 791 807
+# Modeline &quot;1360x768&quot;     85.50   1360 1476 1588 1776    768  771  777  795 +hsync +vsync
+# Modeline &quot;1368x768&quot;     85.50   1368 1478 1590 1776    768  771  777  795
+#
+## This works over VGA. The panel will not accept a signal over DVI with more than 720
+## vertical pixels. (displays &quot;Not Support&quot;)
+#
+# Modeline &quot;1366x768&quot; 85.50 1366 1478 1590 1776 768 771 777 795
+#
+## On my display, to get this as close to pixel perfect as I can tell, set in
+## &quot;Advance Picture Adjust&quot;:
+##    Vertical Position 18
+##    Horizontal Position 115
+##    Phase 13
+##    Manual Clock 117 
+</pre>
+<a name="Olevia_LT26HVX_-_alternate" id="Olevia_LT26HVX_-_alternate"></a><h4> <span class="mw-headline"> Olevia LT26HVX - alternate </span></h4>
+<pre>
+#Using a current nvidia driver and the VGA port i was unable to use any of the modelines in the 
+#original example, but found a modeline somewhere else that worked. I have not used the 
+#&quot;Advance Picture Adjust&quot; menu on my Olevia at all - I just used the auto-adjust feature after 
+#configuring xorg.conf as follows:
+#
+#
+#Section &quot;Monitor&quot;
+#    Identifier     &quot;LT26HVX&quot;
+#    VendorName     &quot;Syntax&quot;
+#    ModelName      &quot;Olevia 26 HVX&quot;
+#    HorizSync      30.0 - 85.0
+#    VertRefresh    50.0 - 70.0
+#    DisplaySize    586 330
+#    Option         &quot;dpms&quot;
+#    Modeline       &quot;1366x768&quot; 85.500 1360 1440 1552 1792 768 771 777 795 +hsync +vsync
+#EndSection
+#
+#Section &quot;Device&quot;
+#    Identifier     &quot;GeForce FX5500&quot;
+#    Driver         &quot;nvidia&quot;
+#    Option         &quot;UseEDID&quot; &quot;false&quot;
+#EndSection
+#
+#Section &quot;Screen&quot;
+#    Identifier     &quot;Default Screen&quot;
+#    Device         &quot;GeForce FX5500&quot;
+#    Monitor        &quot;LT26HVX&quot;
+#    Option         &quot;RenderAccel&quot; &quot;true&quot;
+#    DefaultDepth   24
+#    SubSection     &quot;Display&quot;
+#        ViewPort   0 0
+#        Depth      24
+#        Modes      &quot;1366x768&quot;
+#    EndSubSection
+#EndSection
+#
+#The dpms option is probably worthless because this display just gives me a blue screen 
+#when dpms is triggered instead of powering off the panel. 
+</pre>
+<a name="Olevia_LT32HVE" id="Olevia_LT32HVE"></a><h4> <span class="mw-headline"> Olevia LT32HVE </span></h4>
+<pre>
+(--) NVIDIA(0): EDID Version                &nbsp;: 1.0
+(--) NVIDIA(0): Manufacturer                &nbsp;: DMI
+(--) NVIDIA(0): Monitor Name                &nbsp;: DMI LCD Multi-Media Display
+(--) NVIDIA(0): Product ID                  &nbsp;: 0
+(--) NVIDIA(0): 32-bit Serial Number        &nbsp;: 66
+(--) NVIDIA(0): Serial Number String        &nbsp;: 
+(--) NVIDIA(0): Manufacture Date            &nbsp;: 2004, week 17
+(--) NVIDIA(0): DPMS Capabilities           &nbsp;: Standby
+(--) NVIDIA(0): Prefer first detailed timing&nbsp;: Yes
+(--) NVIDIA(0): Supports GTF                &nbsp;: No
+(--) NVIDIA(0): Maximum Image Size          &nbsp;: 40mm x 30mm
+(--) NVIDIA(0): Valid HSync Range           &nbsp;: 31.5 kHz - 80.0 kHz
+(--) NVIDIA(0): Valid VRefresh Range        &nbsp;: 56 Hz - 75 Hz
+(--) NVIDIA(0): EDID maximum pixel clock    &nbsp;: 135.0 MHz
+</pre>
+<p>I use an Nvidia GeForce 7900GT/GTO. Somehow, after a recent software upgrade, the 1280x768 mode that I have been using has disappeared from the Nvidia driver's mode pool. So I added new modelines to match the native resolution of 1366x768. Since 1366 is not divisible by 8, the closest I got was 1368x768 (like the LT26HVE above). Similarly, I couldn't get a pixel-by-pixel match. Both 1368 and 1280 gave a clear picture that can be used as a monitor or TV output. The choice of number of scan lines was more important in clarity. Anything other than 768 made it very blurry.
+</p><p>I did not have to set "useEDID" to false or play with the TV's picture settings.
+</p><p>Here are the modes obtained using the <a href="http://gtf.sf.net" class="external text" title="http://gtf.sf.net" rel="nofollow">GTF utility</a> (also see some usage examples elsewhere on this page):
+</p>
+<pre>
+# 1368x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 85.86 MHz
+Modeline &quot;1368x768_60.00&quot;  85.86  1368 1440 1584 1800  768 769 772 795  -HSync +Vsync
+# 1280x768 @ 60.00 Hz (GTF) hsync: 47.70 kHz; pclk: 80.14 MHz
+Modeline &quot;1280x768_60.00&quot;  80.14  1280 1344 1480 1680  768 769 772 795  -HSync +Vsync
+# 1280x720 @ 60.00 Hz (GTF) hsync: 44.76 kHz; pclk: 74.48 MHz
+Modeline &quot;1280x720_60.00&quot;  74.48  1280 1336 1472 1664  720 721 724 746  -HSync +Vsync
+</pre>
+<p>--<a href="/wiki?title=User:Cengique&amp;action=edit&amp;redlink=1" class="new" title="User:Cengique (page does not exist)">Cengique</a> 23:16, 24 December 2009 (UTC)
+</p>
+<a name="Olevia_537h" id="Olevia_537h"></a><h4> <span class="mw-headline"> Olevia 537h </span></h4>
+<pre>
+#Section &quot;Monitor&quot;
+#       Identifier      &quot;OleviaHDTV&quot;
+#       VendorName      &quot;Olevia&quot;
+#       ModelName       &quot;537h&quot;
+#       VertRefresh     50-80
+#       HorizSync       30-85
+#       Modeline &quot;1360x768&quot; 72.000 1360 1424 1456 1560 768 771 776 790 -hsync +vsync
+#       DisplaySize     457 812
+#EndSection
+</pre>
+<p>With an nvidia 6200LE, the above did not work for my 537h. X started, but the screen was blank. The following worked for me:
+</p>
+<pre>
+#Section &quot;Monitor&quot;
+#         Identifier &quot;OleviaHDTV&quot;
+#         VendorName &quot;Olevia&quot;
+#         ModelName &quot;537h&quot;
+#         VertRefresh 50-80
+#         HorizSync 30-85
+#         Modeline &quot;1360x768&quot; 84.50 1360 1392 1712 1744 768 783 791 807
+#EndSection
+</pre>
+<p><br />
+</p>
+<a name="Panasonic" id="Panasonic"></a><h3> <span class="mw-headline"> Panasonic </span></h3>
+<a name="Panasonic_TX-32LED8F" id="Panasonic_TX-32LED8F"></a><h4> <span class="mw-headline"> Panasonic TX-32LED8F </span></h4>
+<pre>
+## panel has a native res of 1366*768 but doesn't accept this over HDMI, as is specified on the user manual.
+## The TV seems to work perfectly with the timings provided by EDID, but not without specifing them on xorg.conf
+## These settings have been tested with fglrx proprietary and radeon drivers
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor-0&quot;
+        Option      &quot;VendorName&quot; &quot;Panasonic&quot;
+        Option      &quot;ModelName&quot; &quot;TX-32LED8F&quot;
+        Option      &quot;DPMS&quot; &quot;true&quot;
+        VertRefresh     23-61
+        HorizSync       15-68
+        Modeline &quot;1280x720&quot;  74.2  1280 1720 1760 1980  720 725 730 750
+EndSection
+</pre>
+<a name="Panasonic_TX32LXD52" id="Panasonic_TX32LXD52"></a><h4> <span class="mw-headline"> Panasonic TX32LXD52 </span></h4>
+<pre>
+## panel has a native res of 1366*768 but doesn't accept this (AFAIK) over HDMI. 
+## I am running an nvidia card and custom interlaced modes over DVI/HDMI are currently
+## difficult to get working. 
+## A good summary of the issue here - http://www.nvnews.net/vbulletin/showthread.php?t=69255
+## This mode is a 1216*684@60Hz mode that I came up with through trial and error.
+## Exactly what switches you pass for DPI and other checks may vary from what I have.
+##
+## NB: the vast array of ModeValidation arguments have arisen today since moving to 9629 
+## driver release of the last few days. Tweak according to what is needed to validate the 
+## mode by your driver version.
+#
+#Section &quot;Monitor&quot;
+#        Identifier      &quot;Monitor0&quot;
+#        VendorName      &quot;Panasonic&quot;
+#        ModelName       &quot;32in HDTV&quot;
+#        Mode &quot;1216x684p60&quot; 
+#                DotClock 74.160
+#                HTimings 1216 1356 1396 1648 
+#                VTimings 684 707 712 750  
+#                Flags &quot;+hsync&quot; &quot;+vsync&quot;
+#        EndMode
+#Section &quot;Device&quot;
+#        Identifier      &quot;NVIDIA Corporation NV45 [GeForce 6800GT]&quot;
+#        Driver          &quot;nvidia&quot;
+#        BusID           &quot;PCI:2:0:0&quot;
+#        Option          &quot;UseDisplayDevice&quot;      &quot;DFP&quot;
+#        Option          &quot;FlatPanelProperties&quot;   &quot;Scaling = native&quot;
+#        Option          &quot;IgnoreDisplayDevices&quot;  &quot;TV, CRT&quot;
+#        Option          &quot;ExactModeTimingsDVI&quot;   &quot;1&quot;
+#        Option          &quot;NoLogo&quot;                &quot;1&quot;
+#        Option          &quot;UseEDIDDpi&quot;            &quot;0&quot;
+#        Option          &quot;UseEDIDFreqs&quot;          &quot;0&quot;
+#        Option        &quot;ModeValidation&quot;        &quot;AllowNon60HzDFPModes,NoEdidMaxPClkCheck,NoVertRefreshCheck,NoHorizSyncCheck,NoDFPNativeResolutionC
+heck,NoVesaModes,NoEdidModes,NoXServerModes,NoPredefinedModes&quot;
+#EndSection
+</pre>
+<a name="Panasonic_PT-AE700_Projector" id="Panasonic_PT-AE700_Projector"></a><h4> <span class="mw-headline"> Panasonic PT-AE700 Projector </span></h4>
+<pre>
+#Section &quot;Monitor&quot;
+#        Identifier      &quot;AE-700&quot;
+#        Option          &quot;DPMS&quot;
+#
+#        Modeline  &quot;1280x720@60&quot; 74.160 1280 1352 1392 1648 720 725 730 750 -hsync -vsync
+#EndSection
+</pre>
+<p>To get DVI output to work on ATI cards using the open source driver, try setting some options in the device section.
+</p>
+<pre>
+#Section &quot;Device&quot;
+#        Identifier      &quot;ATI Technologies Inc RV280 [Radeon 9200 PRO]&quot;
+#        Driver          &quot;radeon&quot;
+#
+#        Option &quot;AGPMode&quot; &quot;4&quot;
+#        Option &quot;MonitorLayout&quot; &quot;TMDS, NONE&quot;
+#        Option &quot;DDCMode&quot; &quot;on&quot;
+#        Option &quot;PanelSize&quot; &quot;1280x720&quot;
+#EndSection
+
+</pre>
+<a name="Panasonic_PT-AE900U_Projector" id="Panasonic_PT-AE900U_Projector"></a><h4> <span class="mw-headline"> Panasonic PT-AE900U Projector </span></h4>
+<pre>
+#Section &quot;Monitor&quot;
+#	Identifier	&quot;Monitor0&quot;
+#       VendorName      &quot;Panasonic&quot;
+#       ModelName       &quot;PT-AE900U&quot;
+#	Option	&quot;DPMS&quot;	&quot;true&quot;
+#       # From the User's Manual, page 62
+#	HorizSync 	30.0 - 70.0
+#	VertRefresh 	50.0 - 87.0
+#       # From the the User's Manual, page 62 the dot clock must be &lt; 108 MHz
+#	ModeLine &quot;1280x720&quot;     74.52   1280 1312 1368 1676    720  724  730  750 +hsync +vsync
+#EndSection
+</pre>
+<a name="Panasonic_PT-AX100U_Projector" id="Panasonic_PT-AX100U_Projector"></a><h4> <span class="mw-headline"> Panasonic PT-AX100U Projector </span></h4>
+<pre>
+#Section &quot;Monitor&quot;
+#       Identifier      &quot;Configured Monitor&quot;
+#       VendorName      &quot;Panasonic&quot;
+#       ModelName       &quot;PT-AX100U&quot;
+#       Option          &quot;DPMS&quot;
+#       HorizSync       30 - 70
+#       VertRefresh     50 - 87
+#       Modeline &quot;1280x720@60&quot; 74.160 1280 1308 1344 1672 720 725 730 750 -hsync -vsync
+#EndSection
+</pre>
+<a name="Panasonic_TH-50PX600A.2C_TH-50PX60A.2C_TH-50PX70A" id="Panasonic_TH-50PX600A.2C_TH-50PX60A.2C_TH-50PX70A"></a><h4> <span class="mw-headline"> Panasonic TH-50PX600A, TH-50PX60A, TH-50PX70A </span></h4>
+<p>According to Nvidia, older drivers had a limitation where they could not accept resolutions of odd sizes:
+<a href="http://nvidia.custhelp.com/cgi-bin/nvidia.cfg/php/enduser/std_adp.php?p_faqid=143&amp;p_created=1100037537" class="external text" title="http://nvidia.custhelp.com/cgi-bin/nvidia.cfg/php/enduser/std_adp.php?p_faqid=143&amp;p_created=1100037537" rel="nofollow">nVidia Release</a>
+</p><p>This limitation has now been fixed and it is possible to run these TVs in their native resolutions (768p (1366x768)).  When running with a VGA cable it seems that these TVs will not provide any EDID data.  As 1366x768 is a non standard resolution you need to add a modeline to your monitor section that specifies 1366x768:
+</p>
+<pre>
+#    Modeline &quot;1366x768&quot; 85.500 1360 1440 1552 1792 768 771 777 795 +hsync +vsync
+</pre>
+<p><br />
+When running with nvidia cards you may also need to add a line that reads:
+</p>
+<pre>
+  Option       &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+</pre>
+<p>into your Device section.
+</p><p>Also take note that these TVs have a 'input resolution' setting which defaults to XGA and gives very poor results when running in their native resolutions.  If the picture looks strange try pressing the 'menu' button on the remote, then going to 'Setup', 'PC setup' then changing the 'Input resolution' from XGA to WXGA.  When running in native resolution also make sure you are in 16:9 mode, by pressing the 'aspect' button on the remote to bring up the 'Aspect selection' menu.
+</p><p><br />
+The following has been tested and works without problems:
+</p>
+<pre>
+## Plasma panel has a native res of 1366*768 but the 9xxx series of nVidia drivers only
+## accept resolutions which divide by 8. So the nearest I got was 1280 x 768. No EDID is 
+## passed through the PC connection to the TV - to get EDID I believe you need to connect
+## via HDMI. You can find out what the valid resolutions, HorizSync and VertRefresh settings 
+## are by looking in the TV manual (p39) or at 
+## http://panasonic.com.au/products/specifications.cfm?objectID=3406
+## HorizSync range is 31.46 - 68.38 and the VertRefresh range is 60-85.
+#
+#Section &quot;Monitor&quot;
+#    Identifier     &quot;Monitor0&quot;
+#    VendorName     &quot;Panasonic&quot;
+#    ModelName      &quot;TH-50PX70A&quot;
+#    HorizSync      31.46 - 68.38
+#    VertRefresh    60 - 85
+#    
+##    Modeline for non standard 1366x768 resolution.  You may not need this if running
+##    With HDMI, though I haven't tested.
+#    Modeline &quot;1366x768&quot; 85.500 1360 1440 1552 1792 768 771 777 795 +hsync +vsync
+#EndSection
+#
+#Section &quot;Screen&quot;
+#    Identifier     &quot;Screen0&quot;
+#    Device         &quot;Videocard0&quot;
+#    Monitor        &quot;Monitor0&quot;
+#    DefaultDepth    24
+#    SubSection     &quot;Display&quot;
+#        Viewport    0 0
+#        Depth       24
+#        Modes      &quot;1280x768_60&quot; &quot;1280x720_60&quot; &quot;1024x768_60&quot; &quot;800x600&quot; &quot;640x480&quot;
+#    EndSubSection
+#    ### Force 100x100 dpi as that's what MythTV is designed to run at.
+#    Option         &quot;DPI&quot; &quot;100 x 100&quot;
+#EndSection
+</pre>
+<a name="Panasonic_TH-50PX80A" id="Panasonic_TH-50PX80A"></a><h4> <span class="mw-headline"> Panasonic TH-50PX80A </span></h4>
+<p>Similar to the TH-50PX70A above, but I found this modeline worked better:
+</p>
+<pre>
+ModeLine &quot;1366x768_60&quot; 88.0 1384 1424 1704 1816 770 770 782 808
+</pre>
+<p>The 1366x768 (really 1360x768) modeline given above didn't use all available screen real estate.  This panel lets you move the image around, but not stretch it.
+</p><p>Similar to the TH-50PX70A, you'll get better results with the WXGA mode over XGA.
+</p>
+<a name="Panasonic_TH-42PX7A" id="Panasonic_TH-42PX7A"></a><h4> <span class="mw-headline"> Panasonic TH-42PX7A </span></h4>
+<p>Should work for most Panasonic 1024x768 plasma panels (in test at the moment for a TH-42PX80a):
+</p>
+<pre>
+&quot;1024x768custom&quot; 28.043 1024 1050 1186 1344 768 771 777 806 -hsync -vsync
+</pre>
+<p><br />
+</p>
+<a name="Panasonic_TX-42PX75U" id="Panasonic_TX-42PX75U"></a><h4> <span class="mw-headline"> Panasonic TX-42PX75U </span></h4>
+<p>This widescreen panel's native resolution is 1024x768.  The manual says that it does not take inputs at this resolution and I have been unsuccessful when trying to drive it at this resolution.  So we have to settle with a non-native resolution and put up with awful-looking text.  I decided to send 720p at 60Hz.
+</p>
+<pre>
+Section &quot;Monitor&quot;
+        ...
+      	Modeline     &quot;1208x679&quot;   74.25   1208 1353 1393 1650   679 707 712 750  +hsync +vsync
+EndSection
+</pre>
+<p>The TV's overscan seems to vary by a few pixels each time it is turned on so one cannot fill the screen perfectly every time.  The modeline above compensates for this by being slightly smaller and leaving a few rows or columns of black (porch) pixels on either side of the viewable screen.
+</p><p>Improvements welcome.
+</p>
+<a name="Panasonic_TH-P50G10A" id="Panasonic_TH-P50G10A"></a><h4> <span class="mw-headline"> Panasonic TH-P50G10A </span></h4>
+<p>This a one of the new releases for 2009 for Panasonic - Has a native of 1920x1080@50/60/24
+</p>
+<pre>
+Section &quot;Monitor&quot;
+    Identifier     &quot;Monitor0&quot;
+    VendorName     &quot;Panasonic-TV&quot;
+    ModelName      &quot;P50G10A&quot;
+    HorizSync       15.0 - 68.0
+    VertRefresh     23.0 - 61.0
+    Option         &quot;DPMS&quot;
+    # 1920x1080p @ 50Hz
+    ModeLine &quot;1920x1080@50&quot; 148.50 1920 2448 2492 2640 1080 1084 1089 1125 +hsync +vsync
+    # 1920x1080p @ 60Hz
+    ModeLine &quot;1920x1080@60&quot; 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+    # 1920x1080p @ 24Hz
+    ModeLine &quot;1920x1080@24&quot; 74.16 1920 2558 2602 2750 1080 1084 1089 1125 +hsync +hsync
+EndSection
+</pre>
+<a name="Philips" id="Philips"></a><h3> <span class="mw-headline"> Philips </span></h3>
+<a name="Philips_170S_.2817_inch_LCD_Monitor.29" id="Philips_170S_.2817_inch_LCD_Monitor.29"></a><h4> <span class="mw-headline"> Philips 170S (17 inch LCD Monitor) </span></h4>
+<pre>
+Found from the monitors EDID.
+
+# 1280x1024 @ 60Hz (VESA) hsync: 64.0kHz
+ModeLine &quot;1280x1024&quot; 108.0   1280 1328 1440 1688 1024 1025 1028 1066 +hsync +vsync
+</pre>
+<a name="Philips_190S_.2819_inch_LCD_Monitor.29" id="Philips_190S_.2819_inch_LCD_Monitor.29"></a><h4> <span class="mw-headline"> Philips 190S (19 inch LCD Monitor) </span></h4>
+<pre>
+Found from the monitors EDID.
+
+# 1280x1024 @ 60Hz (VESA) hsync: 64.0kHz
+ModeLine &quot;1280x1024&quot; 108.0   1280 1328 1440 1688 1024 1025 1028 1066 +hsync +vsync
+</pre>
+<a name="Philips_190b6_TFT_LCD" id="Philips_190b6_TFT_LCD"></a><h4> <span class="mw-headline"> Philips 190b6 TFT LCD </span></h4>
+<pre>
+## Native dotclock list: 94.5(31.5) 100 108(13.5,27,36) 120(30,40) 130(65) 135 MHz
+## HorizSync   30.0 - 83.0
+## VertRefresh 49-76
+## Option      &quot;IgnoreEDID&quot;
+##
+## 1280x1024 @ 50 Hz, 56.25 kHz, analog and digital
+# Modeline &quot;1280x1024@50&quot; 94.5 1280 1320 1460 1680  1024 1025 1028 1125
+##
+## The following doesn't work over VGA since the firmware invariably assumes 556
+## visible lines when driving 625@50Hz (preset: 30MHz 688x556@50Hz 960x625).
+## 800x600 @ 50 Hz, 31.25 kHz, digital
+# Modeline &quot;800x600@50&quot;   30    800  814  884  960   600  601  606  625 +hsync +vsync
+</pre>
+<a name="Philips_190b8_TFT_LCD" id="Philips_190b8_TFT_LCD"></a><h4> <span class="mw-headline"> Philips 190b8 TFT LCD </span></h4>
+<p>The monitor's firmware rejects any mode with a vertical frequency 
+outside the 55-76 Hz range.  Also, the resynchronization delay is 
+just below 2 seconds for a distant modeswitch.  Displaying a 25 
+frame/s video without judder requires the 75 Hz modeline below.
+</p>
+<pre>
+## Native dotclock: 100 108(13.5,27,36) 120(30,40) 126(31.5,94.5) 130(65) 135 MHz
+## HorizSync   30.0 - 83.0
+## VertRefresh 55-76
+## Option      &quot;IgnoreEDID&quot;
+##
+## 1280x1024 @ 60 Hz, 67.5 kHz, philips 170b5 190b6 190b8
+# Modeline &quot;1280x1024@60&quot; 108  1280 1328 1440 1600  1024 1025 1028 1125
+##
+## 1280x1024 @ 75 Hz, 78.75 kHz, philips 170b5 190b6 190b8
+# Modeline &quot;1280x1024@75&quot; 126  1280 1328 1440 1600  1024 1025 1028 1050
+</pre>
+<a name="Philips_50.22_Cineos_Plasma_50PF9631D.2F10" id="Philips_50.22_Cineos_Plasma_50PF9631D.2F10"></a><h4> <span class="mw-headline"> Philips 50" Cineos Plasma 50PF9631D/10 </span></h4>
+<p>Still needs to be connected to the graphics card at boot up to recognise the display.
+Works well in 1080i, I prefer 720p for normal tv / dvd.
+</p>
+<pre>
+
+Section &quot;Monitor&quot;
+  HorizSync    31-145
+  Identifier   &quot;Monitor[0]&quot;
+  ModelName    &quot;1920X1080@55HZ&quot;
+  VendorName   &quot;Philips&quot;
+  VertRefresh  50-75
+  UseModes     &quot;Modes[0]&quot;
+  Option &quot;ModeValidation&quot; &quot;NoVertRefreshCheck, AllowNon60HzDFPModes, AllowInterlacedModes, NoHorizSyncCheck, NoVirtualSizeCheck, NoDFPNativeResolutionCheck &quot;
+  Option &quot;ConnectedMonitor&quot; &quot;DFP&quot;
+  Option &quot;UseDisplayDevice&quot; &quot;DFP-0&quot;
+EndSection
+
+Section &quot;Modes&quot;
+  Identifier   &quot;Modes[0]&quot;
+Modeline &quot;1920x1080@60i&quot; 77.60 1920 1952 2240 2272 1080 1104 1110 1135 interlace
+Section &quot;Screen&quot;
+Option     &quot;UseEvents&quot; &quot;True&quot;
+DefaultDepth 24
+  SubSection &quot;Display&quot;
+    Depth      15
+    Modes       &quot;1920x1080_60i&quot; &quot;1280x720_60&quot; &quot;720x480_60&quot;
+  EndSubSection
+
+</pre>
+<a name="Samsung" id="Samsung"></a><h3> <span class="mw-headline"> Samsung </span></h3>
+<a name="Samsung_HL-R5678W" id="Samsung_HL-R5678W"></a><h4> <span class="mw-headline"> Samsung HL-R5678W </span></h4>
+<pre>
+## Samsung HL-R5678W DLP (in 1920x1080p [over VGA input]), all resolutions without -XX are 60Hz
+## The 1920x1080 (@60Hz) Modeline is confirmed working for the Samsung HL-R5078W in same manner as above
+## 
+# Modeline        &quot;1920x1200&quot; 153.918 1920 1984 2016 2080 1200 1203 1209 1235 +hsync -vsync
+# Modeline        &quot;1920x1080&quot; 138.407 1920 1984 2016 2096 1080 1082 1087 1111 +hsync -vsync
+# Modeline        &quot;1600x1200&quot; 162.270 1600 1672 1864 2160 1200 1201 1204 1250 +hsync +vsync
+# Modeline        &quot;1600x1024&quot; 136.617 1600 1712 1880 2144 1024 1025 1028 1060 -hsync +vsync
+# Modeline        &quot;1280x1024&quot; 107.981 1280 1344 1456 1688 1024 1025 1028 1066 +hsync +vsync
+# Modeline        &quot;1280x1024-70&quot; 128.862 1280 1384 1520 1728 1024 1025 1028 1066 -hsync +vsync
+# Modeline        &quot;1280x1024-72&quot; 133.038 1280 1384 1520 1728 1024 1025 1028 1067 -hsync +vsync
+# Modeline        &quot;1280x1024-75&quot; 135.126 1280 1312 1456 1688 1024 1025 1028 1066 +hsync +vsync
+# Modeline        &quot;1280x960&quot; 107.981 1280 1392 1504 1800 960 965 968 1000 +hsync +vsync
+# Modeline        &quot;1280x768&quot; 79.464 1280 1360 1488 1664 768 771 778 798 -hsync +vsync
+# Modeline        &quot;1280x768-70&quot; 95.055 1280 1368 1504 1696 768 769 772 800 -hsync +vsync
+# Modeline        &quot;1280x768-72&quot; 97.839 1280 1368 1504 1696 768 769 772 801 -hsync +vsync
+# Modeline        &quot;1280x768-75&quot; 102.271 1280 1376 1504 1696 768 771 778 805 -hsync +vsync
+# Modeline        &quot;1280x720&quot; 74.453 1280 1448 1584 1696 720 721 724 746 -hsync +vsync
+# Modeline        &quot;1152x864&quot; 107.981 1152 1232 1360 1616 864 865 868 900 +hsync +vsync
+# Modeline        &quot;1024x768&quot; 74.871 1024 1064 1200 1344 768 771 777 806 -hsync -vsync
+# Modeline        &quot;800x600-56&quot; 36.018 800 848 920 1040 600 601 603 625 +hsync +vsync
+# Modeline        &quot;800x600&quot; 40.025 800 856 984 1056 600 601 605 628 +hsync +vsync
+</pre>
+<a name="Samsung_LE32R51B_.2F_LE26Rx_.2F_LE37R4_.2F__LE40R5_.2F_LE32R71_.28B.2FW.29" id="Samsung_LE32R51B_.2F_LE26Rx_.2F_LE37R4_.2F__LE40R5_.2F_LE32R71_.28B.2FW.29"></a><h4> <span class="mw-headline"> Samsung LE32R51B / LE26Rx / LE37R4 /  LE40R5 / LE32R71 (B/W) </span></h4>
+<pre>
+## DisplaySize             349 196
+# Modeline                &quot;1360x768&quot; 85.500 1360 1424 1536 1792 768 771 777 795 +Hsync +Vsync
+</pre>
+<a name="Samsung_LE40F8" id="Samsung_LE40F8"></a><h4> <span class="mw-headline"> Samsung LE40F8 </span></h4>
+<pre>
+# Modeline  &quot;1920x1080@60&quot; 138.5 1920 1960 1995 2083 1080 1082 1087 1109 +hsync -vsync
+</pre>
+<a name="Samsung_LA40S71BX_.2F_LA40S71BX.2FXSA" id="Samsung_LA40S71BX_.2F_LA40S71BX.2FXSA"></a><h4> <span class="mw-headline"> Samsung LA40S71BX / LA40S71BX/XSA </span></h4>
+<p>This is a 1360x768 resolution monitor with VGA and HDMI inputs (amongst others).  However according to the <a href="http://downloadcenter.samsung.com/content/EM/200607/20060717132348453/EN/4_sub.htm" class="external text" title="http://downloadcenter.samsung.com/content/EM/200607/20060717132348453/EN/4_sub.htm" rel="nofollow">Samsung Manual</a>, it is not <i>correct</i> to connect a computer to the HDMI input.  Samsung state: "Do not attempt to connect the HDMI/DVI connector to a PC or Laptop Graphics Card." (Section 2, "Quick guide", "Setup").
+</p><p>However a note in the <a href="http://ubuntuforums.org/showthread.php?t=433367" class="external text" title="http://ubuntuforums.org/showthread.php?t=433367" rel="nofollow">Ubuntu Forums</a> suggests that configuring output to be 1280x720 (i.e.: "720p") is a workaround.  Connecting DVI-&gt;HDMI gives a 1280x720 X-Desktop regardless of the modeline setting, so perhaps the above workaround is the only full-digital option.
+</p><p>A 1360x768 desktop via (analogue) VGA works perfectly though.
+</p>
+<a name="Samsung_LA40R81BD" id="Samsung_LA40R81BD"></a><h4> <span class="mw-headline"> Samsung LA40R81BD </span></h4>
+<pre>
+## Samsung LA40R81BD LCD TV [over HDMI2 input]
+# Modeline          &quot;1360x768@60&quot; 85.800 1360 1440 1552 1792 768 771 777 795 +hsync +vsync
+# DisplaySize       349 196
+#
+# You will probably have to disable DDC/EDID
+# So will need these also. (They work for 1360x768@60 but not sure if they are totally correct.)
+# HorizSync         30-61
+# VertRefresh       60-75
+#
+# Also in Device disable DDC/EDID
+# e.g. For Xorg Radeon driver
+# Section &quot;Device&quot;
+#        Identifier &quot;ATIVideocard0&quot;
+#        Driver     &quot;radeon&quot;
+#        #### # Remove DDC
+#        Option     &quot;NoDDC&quot; &quot;on&quot;
+#        Option     &quot;DDCMode&quot; &quot;off&quot;
+#        Option     &quot;IgnoreEDID&quot; &quot;on&quot;
+# EndSection
+</pre>
+<a name="Samsung_LA46M81BDX" id="Samsung_LA46M81BDX"></a><h4> <span class="mw-headline"> Samsung LA46M81BDX </span></h4>
+<p>For a 50Hz modeline to prevent judder on stock/news tickers and scrolling credits when viewing PAL DVB: 
+</p>
+<pre>
+Section &quot;Device&quot;
+         Option &quot;ModeValidation&quot; &quot;NoMaxPClkCheck, AllowNon60HzDFPModes&quot;
+         # Samsung LA46M81BDX LCD TV [over HDMI2 input]
+         Modeline &quot;1920x1080@50&quot; 148.50 1920 2448 2492 2640 1080 1084 1089 1125
+EndSection
+</pre>
+<a name="Samsung_LNR328W" id="Samsung_LNR328W"></a><h4> <span class="mw-headline"> Samsung LNR328W </span></h4>
+<pre>
+# Modeline        &quot;1360x768&quot; 85.5 1360 1416 1528 1792 768 771 777 795 +hsync +vsync
+</pre>
+<a name="Samsung_LNR3255W" id="Samsung_LNR3255W"></a><h4> <span class="mw-headline"> Samsung LNR3255W </span></h4>
+<pre>
+# Modeline    &quot;1360x768&quot; 84.50 1360 1392 1712 1744 768 783 791 807 +hsync +vsync
+</pre>
+<a name="Samsung_LNS3241D_.2F_LNS3251D" id="Samsung_LNS3241D_.2F_LNS3251D"></a><h4> <span class="mw-headline"> Samsung LNS3241D / LNS3251D </span></h4>
+<pre>
+## Used `get-edid | parse-edid` to determine this modeline:
+# Modeline     &quot;1360x768&quot; 85.50  1360 1424 1536 1792  768 771 777 795 +HSync +VSync
+## Also had to set the Horizontal/Vertical Freq.: 
+# HorizSync    47.7 - 47.7
+# VertRefresh  60.0 - 60.0
+## Don't know if this is necessary for correct DPI, but the display size is:
+# DisplaySize  692 394
+</pre>
+<a name="Samsung_LNT4661F_.2F_LNT4061F_.2F_LNT4065F_.2F_LNT4665F_.2F_LNT5265F" id="Samsung_LNT4661F_.2F_LNT4061F_.2F_LNT4065F_.2F_LNT4665F_.2F_LNT5265F"></a><h4> <span class="mw-headline"> Samsung LNT4661F / LNT4061F / LNT4065F / LNT4665F / LNT5265F</span></h4>
+<pre>
+# Samsung LNT4661F (VGA input).  Given that the manual is identical, this should also
+# work for models LNT4061F, LNT4065F, LNT4665F and LNT5265F
+Section &quot;Monitor&quot;
+    Identifier     &quot;Monitor0&quot;
+    VendorName     &quot;Samsung&quot;
+    ModelName      &quot;LNT4661F&quot;
+    HorizSync       15.0 - 80.0
+    VertRefresh     50.0 - 100.0
+    Modeline       &quot;1920x1080&quot; 138.500   1920 1960 1995 2083   1080 1082 1087 1109  +hsync -vsync
+    Option         &quot;dpms&quot;
+EndSection
+# Video card is an NVidia GeForce FX 5200.  Using the binary driver from NVidia, I appear
+# to need this line in my &quot;Screen&quot; section.  It's likely some of these options are not needed
+# but I've been too lazy to figure out which ones.
+    Option         &quot;ModeValidation&quot; &quot;AllowNon60HzDFPModes,NoEdidMaxPClkCheck,NoVertRefreshCheck,NoHorizSyncCheck,NoDFPNativeResolutionCheck,NoVesaModes,NoEdidModes,NoXServerModes,NoPredefinedModes&quot;
+#
+</pre>
+<p><br />
+</p>
+<a name="Samsung_2343BW" id="Samsung_2343BW"></a><h4> <span class="mw-headline"> Samsung 2343BW </span></h4>
+<pre>
+	# 23&quot; 16:9 monitor. Power use: 44W running, 1W standby. Display area 509.952 mm(H) X 286.848 mm(V)
+	# Max pixel clock: 157MHz
+	# 
+	# Scan frequencies: VESA, 2048 X 1152 70.992 59.909 156.750 +/-
+	# What seems really weird is that the manual says sync H/V +/- while what acually works is -HSync +VSync
+	# Manual: http://downloadcenter.samsung.com/content/UM/200905/20090526185745109/BN59-00950A-02Eng.pdf
+	# 
+Section &quot;Monitor&quot;
+	Identifier	&quot;VGA&quot;
+	ModelName	&quot;Samsung 2343BW&quot;
+	HorizSync	30-92
+	VertRefresh	56-85
+	Mode &quot;2048x1152&quot;
+		DotClock 156.75
+		HTimings 2048 2096 2128 2208
+		VTimings 1152 1155 1160 1185
+		Flags &quot;-HSync&quot; &quot;+VSync&quot;
+	EndMode
+EndSection
+</pre>
+<a name="Sanyo" id="Sanyo"></a><h3> <span class="mw-headline"> Sanyo </span></h3>
+<a name="Sanyo_ViZZon_DP42647_42.22_LCD" id="Sanyo_ViZZon_DP42647_42.22_LCD"></a><h4> <span class="mw-headline"> Sanyo ViZZon DP42647 42" LCD </span></h4>
+<pre>
+## Samsung Sanyo DP42647 42 inch LCD TV
+ModeLine &quot;1280x720&quot; 74.48 1280 1468 1604 1664 720 721 724 746 +hsync +vsync
+# If doesn't fill the screen, use the TV's aspect ratio to fix
+</pre>
+<a name="Sanyo_PLV_Z4.2FZ5" id="Sanyo_PLV_Z4.2FZ5"></a><h4> <span class="mw-headline"> Sanyo PLV Z4/Z5 </span></h4>
+<pre>
+## Samsung Sanyo PLV Z4 and PLV Z5 projector
+# DisplaySize 325 182  # For 1280x720 at 100dpi  (16:9)
+# HorizSync   30.0 - 62.0
+# VertRefresh 50.0 - 85.0
+# Modeline    &quot;1280x720@60Hz&quot; 73.78 1280 1312 1592 1624 720 735 742 757
+# Modeline    &quot;1280x720@50Hz&quot; 59.42 1280 1312 1536 1568 720 735 741 757
+</pre>
+<a name="Sceptre" id="Sceptre"></a><h3> <span class="mw-headline"> Sceptre </span></h3>
+<a name="Sceptre_X37SV-Naga" id="Sceptre_X37SV-Naga"></a><h4> <span class="mw-headline"> Sceptre X37SV-Naga </span></h4>
+<pre>
+## (37&quot; 1920x1080 60Mhz native resolution LCD)
+## Using Nvidia FX5200 DVI-&gt;HDMI cable connected to the LCD
+## I had to use the following options for any modes greater than 1280x1024 to work when using the DVI-&gt;HDMI 
+## output, I didn't need these options for VGA output to the LCD.
+#   Option &quot;ModeValidation&quot; &quot;NoMaxPClkCheck, NoEdidMaxPClkCheck&quot;
+#   Option &quot;UseDisplayDevice&quot; &quot;DFP&quot;
+#
+#   Modeline for the LCD's native resolution
+#   ModeLine &quot;1920x1080p&quot; 148.500 1920 2024 2072 2200 1080 1084 1094 1124 -hsync -vsync
+</pre>
+<a name="Sharp" id="Sharp"></a><h3> <span class="mw-headline"> Sharp </span></h3>
+<a name="Sharp_LC-37D65E" id="Sharp_LC-37D65E"></a><h4> <span class="mw-headline"> Sharp LC-37D65E </span></h4>
+<pre>
+Section &quot;Monitor&quot;
+	Identifier   &quot;Monitor0&quot;
+	VendorName   &quot;Monitor Vendor&quot;
+	ModelName    &quot;Monitor Model&quot;
+	HorizSync	30.0 - 82.0
+	VertRefresh 	60.0 - 76.0
+	# 1024x768 @ 60Hz (VESA) hsync: 48.4kHz
+	ModeLine &quot;1024x768_VESA&quot;   65.0 1024 1048 1184 1344    768  771  777  806 -hsync -vsync	
+	# 1280x1024 @ 60Hz (VESA) hsync: 64.0kHz
+	ModeLine &quot;1280x1024_VESA&quot; 108.0 1280 1328 1440 1688   1024 1025 1028 1066 +hsync +vsync
+	# 1360x768 @ 60 Hz (EDID) HSync: 47.7121 kHz
+	ModeLine &quot;1360x768&quot; 85.50 1360 1424 1536 1792  768 771 778 795 -Hsync -Vsync
+EndSection
+</pre>
+<a name="Sharp_LC-37D6U" id="Sharp_LC-37D6U"></a><h4> <span class="mw-headline"> Sharp LC-37D6U </span></h4>
+<pre>
+# Modeline &quot;1080x680&quot; 79.68 1080 1492 1532 1752 680 722 724 758
+</pre>
+<a name="Sharp_LC-40C32U" id="Sharp_LC-40C32U"></a><h4> <span class="mw-headline"> Sharp LC-40C32U </span></h4>
+<pre>
+## with ubuntu edgy's x.org and the nvidia 8776 drivers, a simple mode of &quot;1360x768&quot; works without
+## the custom modeline
+#Section &quot;Monitor&quot;
+#        Identifier      &quot;Sharp LC-40C32U&quot;
+#        HorizSync       24-62
+#        VertRefresh     49-76
+#
+#        modelines from the web generator at
+#        http://xtiming.sourceforge.net/cgi-bin/xtiming.pl
+#        Modeline &quot;1360x768@60&quot; 84.50 1360 1392 1712 1744 768 783 791 807
+#
+#        EDID-derived modelines
+#        ModeLine &quot;1360x768@60&quot; 85.5 1360 1424 1536 1792 768 771 777 795 +hsync +vsync
+#EndSection
+</pre>
+<p>On Fedora Core 6, with the nVidia 9746 driver, the following will work for 1360x768 mode using a DVI connection:
+</p>
+<pre>
+Section &quot;Monitor&quot;
+    Identifier    &quot;Monitor0&quot;
+    VendorName    &quot;Sharp&quot;
+    ModelName     &quot;LC-40C32U&quot;
+    Option        &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+    Option        &quot;DPMS&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier    &quot;Screen0&quot;
+    Device        &quot;Videocard0&quot;
+    Monitor       &quot;Monitor0&quot;
+    DefaultDepth  24
+    SubSection    &quot;Display&quot;
+        Viewport  0 0
+        Depth     24
+        Modes     &quot;1360x768&quot; &quot;1024x768&quot;
+    EndSubSection
+EndSection
+</pre>
+<p>The monitor sends back an inaccurate maximum DFP size, making it necessary to disable the native resolution check.
+</p><p><b>NOTE:</b> This TV requires that you manually select a 1360x768 input signal through the on-screen menu. See your TV's manual for details.
+</p><p><br />
+</p>
+<a name="Sharp_LC-46D64U" id="Sharp_LC-46D64U"></a><h4> <span class="mw-headline"> Sharp LC-46D64U </span></h4>
+<pre>
+   ModeLine &quot;1920x1080@65&quot; 160.875 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+</pre>
+<p><br />
+</p>
+<a name="Sharp_LC-46D92U" id="Sharp_LC-46D92U"></a><h4> <span class="mw-headline"> Sharp LC-46D92U </span></h4>
+<p>Using the nvidia binary drivers version 9746. Outputting 1920x1080 over DVI to the display. Graphics card is a GeForce 6600 with 256MB of VRAM.
+</p><p>This is the same modeline as the Vizio GV47L and I got it from this wiki. So thanks to the person who put it there.
+</p><p>I had to disable native resolution check because the EDID information returned by the display was reporting a max resolution of "1280x1024". This configuration is also known to work on the Vizio VS42LF. Here is the Monitor section:
+</p>
+<pre>
+Section &quot;Monitor&quot;
+
+    Identifier  &quot;Sharp LCD HDTV&quot;
+    ModeLine &quot;1920x1080_60-Sharp_D92U&quot; 148.35 1920 2008 2052 2200 1080 1085 1090 1125 +hsync +vsync
+    Option &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+    Option &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+
+EndSection
+</pre>
+<a name="Sharp_LC-37X20E" id="Sharp_LC-37X20E"></a><h4> <span class="mw-headline"> Sharp LC-37X20E </span></h4>
+<p>Running an Nvidia 6150 onboard graphic @ 1920 x 1080 (MSI MS-7329, Media Live). These setting were provided bei the WinXP Nvidia settings, which fixed my "black-bar-on-left-side" issue with (k)ubuntu.
+Settings with 50Hz looks almost similar as the LC-46X20E one's.
+</p>
+<pre>
+Section &quot;Monitor&quot;
+    Identifier     &quot;Generic Monitor&quot;
+    Option         &quot;DPMS&quot;
+	Modeline 	&quot;1920x1080&quot; 148.5 1920 2448 2492 2640 1080 1084 1089 1125 +hsync -vsync
+	HorizSync	20-500
+	VertRefresh	50-61
+EndSection
+
+</pre>
+<a name="Sharp_LC-46X20E" id="Sharp_LC-46X20E"></a><h4> <span class="mw-headline"> Sharp LC-46X20E </span></h4>
+<p>Im using Onboard Intel X3100 graphic Card with Intel driver... EDID workes only for 50Hz, this Modelines enable 60Hz and 24Hz. Im using "xrandr --output TMDS-1 --mode 1920x1080@24 for switching...
+</p>
+<pre>
+Section &quot;Monitor&quot;
+        Identifier      &quot;Sharp LC-46X20E&quot;
+        Modeline &quot;1920x1080@24&quot; 74.250 1920 2560 2608 2752 1080 1084 1089 1125 +hsync +vsync
+        Modeline &quot;1920x1080@50&quot; 148.500 1920 2448 2492 2640 1080 1084 1089 1125 +hsync +vsync
+        Modeline &quot;1920x1080@60&quot; 148.500 1920 2008 2056 2200 1080 1084 1089 1125 +hsync +vsync
+EndSection
+</pre>
+<a name="Sony" id="Sony"></a><h3> <span class="mw-headline"> Sony </span></h3>
+<p>Note that some Sony models (e.g. KDL-46WE5) do not allow 50Hz inputs using the PC input (i.e. VGA DB15 connection).
+To get 50Hz modelines to work you must use an HDMI input- for example by using an inexpensive ($10)
+DVI to HDMI converter attached to your graphics card.
+</p>
+<a name="Song_KDL-26S3000" id="Song_KDL-26S3000"></a><h4> <span class="mw-headline"> Song KDL-26S3000 </span></h4>
+<pre>
+# Nvidia 9500GT over HDMI with overscan correction for 720p at 50Hz for UK DVB
+Section &quot;Monitor&quot;
+    Identifier     &quot;Monitor0&quot;
+    VendorName     &quot;Unknown&quot;
+    ModelName      &quot;SONY TV&quot;
+    HorizSync       14.0 - 48.0
+    VertRefresh     48.0 - 62.0
+    Option &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+    Modeline &quot;1280x720@50&quot; 74.25 1216 1690 1730 1980 670 705 710 750 +hsync +vsync
+EndSection
+</pre>
+<a name="Sony_KDL-46X3100" id="Sony_KDL-46X3100"></a><h4> <span class="mw-headline"> Sony KDL-46X3100 </span></h4>
+<pre>
+# Device nVidia 9400GT, DVI-&gt;HDMI cable
+# Monitor section:
+##  This allows 1920x1080/24p 1920x1080/50p 1920x1080/60p (otherwise only 60Hz mode work)
+#    Modeline &quot;1920x1080@24&quot; 74.250 1920 2560 2608 2752 1080 1084 1089 1125 +hsync +vsync
+#    Modeline &quot;1920x1080@50&quot; 148.500 1920 2448 2492 2640 1080 1084 1089 1125 +hsync +vsync
+#    Modeline &quot;1920x1080@60&quot; 148.500 1920 2008 2056 2200 1080 1084 1089 1125 +hsync +vsync
+#    HorizSync       20.0 - 150.0
+#    VertRefresh     24.0 - 90.0
+#    Option         &quot;ExactModeTimingsDVI&quot; &quot;True&quot;
+#    Option         &quot;UseEDIDDpi&quot; &quot;False&quot;
+#    Option         &quot;UseEDIDFreqs&quot; &quot;False&quot;
+#    Option         &quot;RenderAccel&quot; &quot;True&quot;
+#    Option         &quot;AllowGLXWithComposite&quot; &quot;true&quot;
+
+</pre>
+<a name="Sony_KP-46WT520" id="Sony_KP-46WT520"></a><h4> <span class="mw-headline"> Sony KP-46WT520 </span></h4>
+<pre>
+# Device &quot;NVIDIA Corporation NV18 [GeForce4 MX 440 AGP 8x]&quot;
+# HorizSync 15.0 - 46.0
+# VertRefresh 59.0 - 61.0
+# Option &quot;DPMS&quot;
+# Option &quot;IgnoreEDID&quot;
+# ModeLine &quot;1160x652&quot; 74.48 1160 1208 1328 1664 652 653 656 746 -hsync +vsync
+</pre>
+<a name="Sony_KF-50WE610" id="Sony_KF-50WE610"></a><h4> <span class="mw-headline"> Sony KF-50WE610 </span></h4>
+<pre>
+## nVidia FX5200, DVI
+## HorizSync       15.0 - 46.0
+## VertRefresh     59.0 - 61.0
+# Modeline &quot;1152x648&quot; 74.2 1152 1288 1328 1648 648 689 694 750 +hsync +vsync
+</pre>
+<a name="Sony_KDF-E42A10" id="Sony_KDF-E42A10"></a><h4> <span class="mw-headline"> Sony KDF-E42A10 </span></h4>
+<pre>
+## You'll also need to add Option &quot;IgnoreEDID&quot; &quot;true&quot; to the Screen section
+## since the TV incorrectly reports as 1920x540.
+## For 1920x1080 I had to add 
+##       Option      &quot;ModeValidation&quot; &quot;NoVertRefreshCheck&quot;
+## to the device section. Tested w/ FX5200 DVI -&gt; HDMI using nvidia drivers.
+# ModeLine &quot;1280x720&quot; 74.25 1280 1390 1430 1648 720 725 732 752 +hsync +vsync
+# ModeLine &quot;1920x1080&quot; 74.25 1920 2008 2052 2200 1080 1088 1091 1121 +hsync +vsync
+</pre>
+<a name="Sony_KDF-46E2000" id="Sony_KDF-46E2000"></a><h4> <span class="mw-headline"> Sony KDF-46E2000 </span></h4>
+<pre>
+## Valid widescreen modes from the manual are 1280x768_60 and 1152x648_60
+#       Option &quot;metamodes&quot; &quot;1280x768_60 +0+0; 1152x648_60 +0+0; 640x480 +0+0&quot;
+</pre>
+<a name="Sony_Bravia_KLV-S32A10E_.28KLV-S40A10E.2C_KLV-S32A10E.2C_KLV-S26A10E.2C_KLV-S23A10E.2C_KLV-S19A10E.29" id="Sony_Bravia_KLV-S32A10E_.28KLV-S40A10E.2C_KLV-S32A10E.2C_KLV-S26A10E.2C_KLV-S23A10E.2C_KLV-S19A10E.29"></a><h4> <span class="mw-headline"> Sony Bravia KLV-S32A10E (KLV-S40A10E, KLV-S32A10E, KLV-S26A10E, KLV-S23A10E, KLV-S19A10E) </span></h4>
+<pre>
+#Section &quot;Monitor&quot;
+#        Identifier      &quot;KDL-S32A12U&quot;
+#        Option          &quot;DPMS&quot;
+#        HorizSync       31-60
+#        VertRefresh     56-75
+#        Modeline        &quot;1280x768&quot; 80.14 1280 1344 1480 1680 768 769 772 795 -hsync +vsync
+#EndSection
+#
+#Section &quot;Screen&quot;
+#        Identifier      &quot;Default Screen&quot;
+#        Device          &quot;VIA Technologies, Inc. VT8623 [Apollo CLE266] integrated CastleRock graphics&quot;
+#        Monitor         &quot;KDL-S32A12U&quot;
+#        DefaultDepth    24
+#        SubSection &quot;Display&quot;
+#               Depth           24
+#               Modes           &quot;1280x768&quot; &quot;1024x768&quot;
+#        EndSubSection
+# EndSection
+</pre>
+<a name="Sony_Bravia_KDL-26P2530" id="Sony_Bravia_KDL-26P2530"></a><h4> <span class="mw-headline"> Sony Bravia KDL-26P2530 </span></h4>
+<pre>
+## I couldn't get the TV to display through HDMI properly - but this configuration works through VGA just fine
+## Note: &quot;UseEDID&quot; &quot;False&quot; and &quot;AllowNon60HzDFPModes&quot; are only there as they seem to speed up the length of
+##       time it takes for the TV to display the signal; they are NOT required.
+#
+#Section &quot;Monitor&quot;
+#        Identifier   &quot;KDL_26P2530&quot;
+#        VendorName   &quot;Sony&quot;
+#EndSection
+#Section &quot;Device&quot;
+#        Identifier  &quot;Card0&quot;
+#        Driver      &quot;nvidia&quot;
+#        VendorName  &quot;nVidia Corporation&quot;
+#        BoardName   &quot;NV41 [GeForce 6800 GS]&quot;
+#        BusID       &quot;PCI:1:0:0&quot;
+#        Option      &quot;UseEDID&quot; &quot;False&quot;
+#        Option      &quot;ModeValidation&quot; &quot;AllowNon60HzDFPModes,NoHorizSyncCheck&quot;
+#EndSection
+#Section &quot;Screen&quot;
+#        Identifier      &quot;Screen0&quot;
+#        Device          &quot;Card0&quot;
+#        Monitor         &quot;KDL_26P2530&quot;
+#        DefaultDepth    24
+#        SubSection &quot;Display&quot;
+#                Modes     &quot;1280x768&quot;
+#                Viewport   0 0
+#                Depth      24
+#        EndSubSection
+#EndSection
+</pre>
+<a name="Sony_KDL-40W2000_.28European_model.29" id="Sony_KDL-40W2000_.28European_model.29"></a><h4> <span class="mw-headline"> Sony KDL-40W2000 (European model) </span></h4>
+<pre>
+## 1080p native LCD 
+## For some reason the native 1080p modes were failing the validation due to incorrectly checking the maxpixelclock
+## You need the &quot;NoMaxPClkCheck&quot; to get 1080p and &quot;AllowNon60HzDFPModes&quot; to use 50Hz (1920x1080_50) 
+## The last 3 are optional just to limit to EDID modes reported by the screen only
+##
+## Section &quot;Device&quot;
+##    	Identifier &quot;dev2&quot;
+##    	Driver &quot;nvidia&quot;
+##    	BusID &quot;PCI:1:0:0&quot;
+##    	Option		&quot;UseFBDev&quot;		&quot;true&quot; 
+##      Option  &quot;ModeValidation&quot; &quot;NoMaxPClkCheck, AllowNon60HzDFPModes, NoVesaModes, NoXServerModes, NoPredefinedModes&quot;        
+##	Screen 1
+## EndSection
+</pre>
+<a name="Sony_KDL-40V2500" id="Sony_KDL-40V2500"></a><h4> <span class="mw-headline"> Sony KDL-40V2500 </span></h4>
+<pre>
+## I used DVI to HDMI on the HDMI input 6 (the one with RCA audio jacks). 
+## Make sure you have display area set to full otherwise you will be tricked into thinking you have overscan -- see pages 29 and 30 of the product manual on how to set to full
+## The picture looks great from an nVidia 7600 GS
+##
+#Section &quot;Monitor&quot;
+#   Identifier     &quot;Monitor[0]&quot;
+#   VendorName     &quot;Sony&quot;
+#   ModelName      &quot;SonyHDTV&quot;
+#   UseModes       &quot;Modes[0]&quot;
+#   DisplaySize     320 180
+#   HorizSync       20.0 - 150.0
+#  VertRefresh     30.0 - 90.0
+#   Option         &quot;UseDisplayDevice&quot; &quot;DFP&quot;
+#   Option         &quot;IgnoreDisplayDevices&quot; &quot;TV, CRT&quot;
+#   Option         &quot;ExactModeTimingsDVI&quot; &quot;1&quot;
+#   Option         &quot;NoLogo&quot; &quot;0&quot;
+#   Option         &quot;UseEDIDDpi&quot; &quot;0&quot;
+#   Option         &quot;UseEDIDFreqs&quot; &quot;0&quot;
+#   Option         &quot;RenderAccel&quot; &quot;true&quot;
+#   Option         &quot;AllowGLXWithComposite&quot; &quot;true&quot;
+#   Option         &quot;ConnectedMonitor&quot; &quot;DFP&quot;
+#   Option         &quot;ModeValidation&quot;
+#EndSection
+
+#Modeline &quot;1920x1080p60&quot; 148.35 1920 2008 2052 2200 1080 1084 1089 1125 +Hsync +Vsync
+
+## NOTE the 'Option         &quot;ModeValidation&quot;' line with no args -- I had issues getting this mode to validate -- so this just seems to make all happy.
+## NOTE DisplaySize is fudged to get a reasonably large font from X, if you use the real dimensions -- you will be doing alot of squinting... 
+</pre>
+<a name="Sony_KDS-R60XBR1" id="Sony_KDS-R60XBR1"></a><h4> <span class="mw-headline"> Sony KDS-R60XBR1 </span></h4>
+<pre>
+## Make sure that you don't use the IgnoreEDID option becase it work with this option
+## unlike some other Sony models.
+## The picture is still does not fit perfect but pretty close. I am using 1152x648 now.
+## HorizSync       31.5 - 37.9
+## VertRefresh     59.9 - 60.1
+#  ModeLine       &quot;1280x720&quot; 74.2 1280 1390 1426 1646 720 725 727 747 +hsync +vsync
+#  ModeLine       &quot;1920x1080&quot; 74.2 1920 2008 2052 2200 1080 1088 1091 1121 +hsync +vsync interlace
+#  ModeLine       &quot;1152x648&quot; 74.2 1152 1288 1328 1648 648 689 694 750 +hsync +vsync
+</pre>
+<a name="Sony_KDL-40S2000" id="Sony_KDL-40S2000"></a><h4> <span class="mw-headline"> Sony KDL-40S2000  </span></h4>
+<p>I am able to get the picture exactly as it is with XP under Ubuntu with these settings.
+</p>
+<pre>
+HorizSync    30-66
+VertRefresh  30-61
+Modeline &quot;1360x768&quot;   85.500   1360 1432 1544 1792   768 771 777 795
+</pre>
+<a name="Sony_KDL-32M3000" id="Sony_KDL-32M3000"></a><h4> <span class="mw-headline"> Sony KDL-32M3000  </span></h4>
+<p>This works great for me with VGA cable connection.
+</p>
+<pre>
+Horizsync       31.5-48.0
+Vertrefresh     56.0 - 65.0
+ModeLine &quot;1360x768&quot; 85.500 1360 1424 1536 1792 768 771 777 795 +Hsync +Vsync
+</pre>
+<a name="Sony_KDL-40W4000" id="Sony_KDL-40W4000"></a><h4> <span class="mw-headline"> Sony KDL-40W4000  </span></h4>
+<p>This works for me with a VGA cable connection, and an NVIDIA 9400, which really struggles with the EDID. It is, however, a bit of a sledgehammer...
+</p>
+<pre>
+Section &quot;Monitor&quot;
+    Identifier     &quot;Monitor0&quot;
+    VendorName     &quot;Unknown&quot;
+    ModelName      &quot;CRT-0&quot;
+    DisplaySize    884 495
+    HorizSync      31.5 - 64.0
+    VertRefresh    60.0 - 75.0
+    Option         &quot;DPMS&quot;
+    Option         &quot;RenderAccel&quot;
+    ModeLine       &quot;1920x1080&quot; 148.50 1920 2448 2492 2640 1080 1084 1089 1125 +HSync +VSync
+EndSection
+
+Section &quot;Device&quot;
+    Identifier     &quot;Device0&quot;
+    Driver         &quot;nvidia&quot;
+    VendorName     &quot;NVIDIA Corporation&quot;
+    BoardName      &quot;GeForce 9400&quot;
+    Option         &quot;ModeValidation&quot; &quot;NoMaxPClkCheck, AllowNon60HzDFPModes, NoVirtualSizeCheck, NoEdidMaxPClkCheck, NoMaxSizeCheck, NoHorizSynCheck, NoVertRefreshCheck, NoWidthAlignmentCheck, NoExtendedGpuCapabilitiesCheck, NoTotalSizeCheck&quot;
+    Option         &quot;UseEDID&quot; &quot;False&quot;
+    Option         &quot;NoBandWidthTest&quot; &quot;True&quot;
+EndSection
+</pre>
+<a name="Sony_KDL-40W4100" id="Sony_KDL-40W4100"></a><h4> <span class="mw-headline"> Sony KDL-40W4100  </span></h4>
+<p>Thru HDMI the EDID info seems off by one count for HBlank_end. EDID specifies 2200 but using 2201 syncs the tv to native resolution. With fglrx driver, unfortunately EDID override is not easy. Using any predefined mode (1920x1080) seems to return the driver to EDID sync specifications. Working solution is to define a 1919x1080 modeline:
+</p>
+<pre>
+Section &quot;Monitor&quot;
+        Identifier   &quot;KDL40W4100&quot;
+        HorizSync       15.0 - 70.0
+        VertRefresh     58.0 - 62.0
+        ModeLine        &quot;1919x1080&quot; 148.50 1919 2030 2052 2201 1080 1084 1089 1125 +hsync +vsync
+        Option          &quot;DPMS&quot;  &quot;FALSE&quot;
+        Option          &quot;DPI&quot;   &quot;100x100&quot;
+EndSection
+
+Section &quot;Screen&quot;
+        Identifier &quot;Default Screen&quot;
+        Device     &quot;Configured Video Device&quot;
+        Monitor    &quot;KDL40W4100&quot;
+        DefaultDepth     24
+        SubSection     &quot;Display&quot;
+            Depth       24
+            Modes      &quot;1919x1080&quot;
+        EndSubSection
+EndSection
+</pre>
+<a name="Toshiba" id="Toshiba"></a><h3> <span class="mw-headline"> Toshiba </span></h3>
+<a name="Toshiba_42A3000A" id="Toshiba_42A3000A"></a><h4> <span class="mw-headline"> Toshiba 42A3000A </span></h4>
+<pre>
+## ATI 9250 AGB, DVI 
+## Have not figured out how to force Xorg to set it all up automatically so I have to use xrandr)
+## 42 Inch widescree tv
+## HorizSync 15-46
+## VertRefresh 49-61
+# Modeline &quot;1280x720&quot; 74.48 1280 1336 1472 1664 720 721 724 746 -hsync +vsync
+# TV will start in lower resolution,  Modeline &quot;720x576&quot;x50.0   27.00  720 732 796 864  576 581 586 625 -hsync -vsync (31.2 kHz)
+# Script to run after logging on to my computer
+xrandr --output DVI-0 --newmode 1280x720 74.48 1280 1336 1472 1664 720 721 724 746 -hsync +vsync
+xrandr --addmode DVI-0 1280x720
+xrandr --output DVI-0 --mode  1280x720
+
+#If anyone knows how to configure xorg and force it to do this in xorg.conf, feel free to email me with info.
+#martin(youknowwhat)forest(d)gen(d)nz
+</pre>
+<a name="Toshiba_42H83" id="Toshiba_42H83"></a><h4> <span class="mw-headline"> Toshiba 42H83 </span></h4>
+<pre>
+## nVidia FX5200, DVI 
+## (obsolete by X.org-7.0 and NVidia-8774; 1280x720 built-in mode now works)
+## DisplaySize 93 52
+## HorizSync 31-46
+## VertRefresh 59-61
+## Option &quot;DPMS&quot;
+# Modeline &quot;960x540p&quot; 40.86 960 992 1144 1176 540 551 557 568 +HSync +VSync
+</pre>
+<a name="Toshiba_52HM84" id="Toshiba_52HM84"></a><h4> <span class="mw-headline"> Toshiba 52HM84 </span></h4>
+<pre>
+# overscan cannot be avoided from dvi/hdmi interface
+# Section &quot;Monitor&quot;
+#    Identifier     &quot;Monitor0&quot;
+#    VendorName     &quot;Unknown&quot;
+#    ModelName      &quot;TSB-HM84s&quot;
+#    HorizSync       15.0 - 46.0
+#    VertRefresh     59.0 - 61.0
+#    Option          &quot;UseEDID&quot; &quot;FALSE&quot;
+#    ModeLine       &quot;1280x720_60&quot; 74.250 1280 1390 1430 1650 720 725 730 750 +hsync +vsync
+# EndSection
+#
+# to force the modeline when using kvm or monitor is off, add the following to Screen section
+# Option          &quot;ModeValidation&quot; &quot;NoEdidDFPMaxSizeCheck,NoDFPNativeResolutionCheck&quot;
+# Option          &quot;ExactModeTimingsDVI&quot; &quot;TRUE&quot;
+# Monitor section
+# Option          &quot;UseEDID&quot; &quot;FALSE&quot;
+</pre>
+<a name="Toshiba_50H81" id="Toshiba_50H81"></a><h4> <span class="mw-headline"> Toshiba 50H81 </span></h4>
+<pre>
+## Connected through an Audio Authority Scan Converter (Model A960)
+##    *I have these settings to help protect TV if I play with other modes later:
+##        HorizSync 15 - 33.85
+##        VertRefresh 29.9 - 60.1
+##     Last revised Oct-2006
+##
+## Use in540p for menus/mythplugins         (  880x480p ) 
+## Use 640x480p to playback SD recordings   (  640x480p )
+## Use 1080i for HD Content                 ( 1760x960i )
+# ModeLine &quot;in540p&quot;           37.26  880  944  1048 1104   480  506  520  563  +hsync +vsync
+# Modeline &quot;640x480p&quot;          26.964 640  704  768  856    480  486  492  525  -hsync -vsync
+# ModeLine &quot;in1080i&quot;          74.52  1760 1888 2096 2208   960  1012 1028 1126 -hsync -vsync interlace
+</pre>
+<a name="Toshiba_HD51" id="Toshiba_HD51"></a><h4> <span class="mw-headline"> Toshiba HD51 </span></h4>
+<pre>
+## Note: using an NVidia GeForce 6200 w/ Component Video dongle -- does not work with S-Video connected at the same time
+# Option         &quot;TVStandard&quot; &quot;HD720p&quot;
+# Option         &quot;TVOutFormat&quot; &quot;SVIDEO&quot;
+# Option         &quot;ConnectedMonitor&quot; &quot;TV&quot;
+# Option         &quot;NoLogo&quot; &quot;True&quot;
+# Option         &quot;NvAGP&quot; &quot;1&quot;
+#
+# ModeLine       &quot;720p&quot; 73.8 1280 1320 1368 1640 720 722 724 751 +hsync +vsync
+</pre>
+<a name="Toshiba_56HM66_DLP" id="Toshiba_56HM66_DLP"></a><h4> <span class="mw-headline"> Toshiba 56HM66 DLP </span></h4>
+<pre>
+##Despite the manual stating it cannot be connected to a computer
+## I have mythtv running in 720p (the native mode of the tv) using an NVidia fx5200 via dvi-&gt;hdmi cable
+
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor0&quot;
+        VendorName   &quot;Toshiba 56HM66&quot;
+        ModelName    &quot;56HM66&quot;
+        HorizSync    44.9 - 45.1
+        VertRefresh  59.9 - 61.1
+        Modeline        &quot;1280x720&quot; 75.288 1280 1397 1445 1672 720 725 730 750 +hsync +vsync
+EndSection
+</pre>
+<a name="Toshiba_REGZA_52.22_1080p_LCD_52HL167" id="Toshiba_REGZA_52.22_1080p_LCD_52HL167"></a><h4> <span class="mw-headline"> Toshiba REGZA 52" 1080p LCD 52HL167 </span></h4>
+<pre>
+# Note: this assumes Nvidia video card connected via DVI-&gt;HDMI.  These modes
+#       are primarily useful if the TV is not on when X is started or
+#       an HDMI switching receiver isn't set to the proper input when X
+#       is started.
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor0&quot;
+
+        VendorName   &quot;Toshiba&quot;
+        ModelName    &quot;Toshiba REGZA 52HL167&quot;
+
+        # Connected via DVI (may not be able to detect if TV off otherwise)
+        Option &quot;ConnectedMonitor&quot; &quot;DFP&quot;
+
+        Option &quot;USEEDIDDpi&quot; &quot;FALSE&quot;
+        Option &quot;DPI&quot; &quot;100 x 100&quot;
+
+        # Necessary as if TV is not on, default Freqs are not right
+        Option &quot;UseEDIDFreqs&quot; &quot;FALSE&quot;
+
+        # Necessary otherwise states max size is 640x480
+        Option &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+
+        # Necessary or cannot calculate timings errors
+        Option &quot;ExactModeTimingsDVI&quot; &quot;true&quot;
+
+        # Refresh timings as per EDID info on TV. Necessary if TV is off
+        HorizSync   15.000 - 68.000
+        VertRefresh 23.000 - 61.000
+
+        # Modes taken from EDID of TV:
+        # 1080p @ 60Hz
+        ModeLine  &quot;1920x1080&quot; 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+        #  720p @ 60Hz
+        ModeLine  &quot;1280x720&quot;   74.25 1280 1390 1430 1650  720  725  730  750 +hsync +vsync
+        #  480p @ 60Hz
+        ModeLine  &quot;720x480&quot;    27.00  720  736  798  858  480  489  495  525 -hsync -vsync
+EndSection
+</pre>
+<a name="ViewSonic" id="ViewSonic"></a><h3> <span class="mw-headline"> ViewSonic </span></h3>
+<a name="ViewSonic_N2750w" id="ViewSonic_N2750w"></a><h4> <span class="mw-headline"> ViewSonic N2750w </span></h4>
+<pre>
+## HorizSync    30.0 - 80.0
+## VertRefresh  50.0 - 75.0
+## Option      &quot;dpms&quot;
+## DisplaySize 325 182
+# Modeline &quot;1280x720&quot; 75 1280 1336 1472 1664 720 725 730 75
+</pre>
+<a name="ViewSonic_N3251w_.28or_ViewSonic_N3760w.29" id="ViewSonic_N3251w_.28or_ViewSonic_N3760w.29"></a><h4> <span class="mw-headline"> ViewSonic N3251w (or ViewSonic N3760w)  </span></h4>
+<pre>
+## -- Monitor Section --
+## Actual native for the monitor is 1366x768, however my nVidia card requires it to be either 
+## 1360x768 or 1368x768.
+##
+## HorizSync 30.0 - 64.0
+## VertRefresh 60.0 - 75.0
+# Modeline &quot;1368x768&quot; 85.478 1368 1424 1536 1792 768 771 777 795 +hsync +vsync
+
+## -- Device Section --
+# Option &quot;IgnoreEDID&quot; &quot;True&quot;
+</pre>
+<a name="ViewSonic_VG2230wm" id="ViewSonic_VG2230wm"></a><h4> <span class="mw-headline"> ViewSonic VG2230wm </span></h4>
+<pre>
+# EDID derived values with 170 being the maximum pixel clock of my nVidia card.
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor-Center&quot;
+        VendorName   &quot;ViewSonic&quot;
+        ModelName    &quot;VG2230wm&quot;
+        DisplaySize  470 300
+        HorizSync    30.0 - 82.0
+        VertRefresh  50.0 - 75.0
+        ModeLine     &quot;1680x1050&quot;  170.00  1680 1784 1960 2240  1050 1053 1059 1089 +hsync +vsync
+        Option       &quot;dpms&quot;
+EndSection
+</pre>
+<a name="ViewSonic_N4280p" id="ViewSonic_N4280p"></a><h4> <span class="mw-headline"> ViewSonic N4280p </span></h4>
+<pre>
+#Mode line i got from powerstrip, very close to the ATSC1080 modeline -
+#couldn't get this to work with either at 9800pro or a X1600 (the X1600 did
+#work on a windows xp machine). Put a geforce 7600 in the machine and it works 
+#like a dream.
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor0&quot;
+        VendorName   &quot;Monitor Vendor&quot;
+        ModelName    &quot;Monitor Model&quot;
+        HorizSync       30 - 64
+        VertRefresh     60 - 75
+        Modeline &quot;1920x1024&quot; 148.500 1920 2008 2052 2200 1080 1084 1089 1125 +Hsync +Vsync
+        #1920x1080 Display Size
+        #DisplaySize 487 274
+#this is nvidia specific -- Have to over ride this to get 
+#it to use DisplaySize
+        Option    &quot;DPI&quot;  &quot;100 x 100&quot; 
+EndSection
+</pre>
+<a name="Vizio" id="Vizio"></a><h3> <span class="mw-headline"> Vizio </span></h3>
+<a name="Vizio_L37HDTV_37.22_LCD_720p_.281360x768_PC.29" id="Vizio_L37HDTV_37.22_LCD_720p_.281360x768_PC.29"></a><h4> <span class="mw-headline"> Vizio L37HDTV 37" LCD 720p (1360x768 PC)</span></h4>
+<pre>
+# Note: this assumes Nvidia video card connected via RGB.
+# Could not get DVI/HDMI to work reliably on this screen without lots of overscan.
+# Tested on MSI NX7300LE-TD256EH GeForce 7300LE 256MB 64-bit GDDR2 PCI Express x16 Video Card.
+
+Section &quot;Monitor&quot;
+	Identifier	&quot;Configured Monitor&quot;
+	Vendorname	&quot;VIZIO&quot;
+	Modelname	&quot;VIZIO L37HDTV&quot;
+	Horizsync	31-70
+	Vertrefresh	50-85
+	Mode &quot;1360x768&quot; # 	vfreq 59.815Hz, hfreq 47.553kHz
+		Dotclock	85.500000
+		Htimings	1360	1494	1624	1798
+		Vtimings	768	770	776	803
+		Flags		&quot;-HSync&quot;	&quot;+VSync&quot;
+	EndMode
+EndSection
+
+# Also added this for optimal performance
+Section &quot;Screen&quot;
+	Identifier	&quot;Default Screen&quot;
+	Device		&quot;Configured Video Device&quot;
+	Monitor		&quot;Configured Monitor&quot;
+	Option		&quot;DPI&quot;	&quot;100 x 100&quot;
+	Defaultdepth	24
+	SubSection &quot;Display&quot;
+		Viewport	0	0
+		Depth	24
+		Modes		&quot;1360x768&quot;
+	EndSubSection
+	SubSection &quot;Display&quot;
+		Viewport	0	0
+		Depth	16
+		Modes		&quot;1360x768&quot;
+	EndSubSection
+	SubSection &quot;Display&quot;
+		Viewport	0	0
+		Depth	15
+		Modes		&quot;1360x768&quot;
+	EndSubSection
+EndSection
+
+Section &quot;Module&quot;
+	Load	&quot;glx&quot;
+	Load	&quot;v4l&quot;
+EndSection
+
+Section &quot;Device&quot;
+	Identifier	&quot;Default Device&quot;
+	Driver		&quot;nvidia&quot;
+	Option		&quot;NoLogo&quot;	&quot;True&quot;
+	Option		&quot;AddARGBVisuals&quot;	&quot;True&quot;
+# Important!!! need this option to use nvidia card at 1360 x 768
+	Option		&quot;NvAGP&quot;			&quot;1&quot;
+# Needed for ACPI suspend to RAM
+	Option		&quot;AddARGBGLXVisuals&quot;	&quot;True&quot;
+	Option		&quot;ModeValidation&quot;	&quot;NoWidthAlignmentCheck&quot;
+# Causes Screen tearing...
+#	Option		&quot;TripleBuffer&quot;		&quot;True&quot;
+	Option		&quot;UseEvents&quot;		&quot;True&quot;
+#	Option		&quot;DynamicTwinView&quot;	&quot;false&quot;
+	Option		&quot;CoolBits&quot;		&quot;1&quot;
+	Option		&quot;NoFlip&quot;		&quot;1&quot;
+EndSection 
+</pre>
+<a name="Vizio_VO22L_22.22_LCD_720p_.281680x1050_PC.29" id="Vizio_VO22L_22.22_LCD_720p_.281680x1050_PC.29"></a><h4> <span class="mw-headline"> Vizio VO22L 22" LCD 720p (1680x1050 PC)</span></h4>
+<pre>
+# Note: this assumes Nvidia video card connected via DVI-&gt;HDMI.  These modes
+#       are primarily useful if the TV is not on when X is started or
+#       an HDMI switching receiver isn't set to the proper input when X
+#       is started.  Tested on integrated GeForce 8200 MiniITX board.
+Section &quot;Monitor&quot;
+	Identifier   &quot;Monitor0&quot;
+
+	VendorName   &quot;Vizio&quot;
+	ModelName    &quot;Vizio VO22L&quot;
+
+	# Connected via DVI
+	Option &quot;ConnectedMonitor&quot; &quot;DFP&quot;
+
+	Option &quot;USEEDIDDpi&quot; &quot;FALSE&quot;
+	Option &quot;DPI&quot; &quot;100 x 100&quot;
+
+	# Necessary as if TV is not on, default Freqs are not right
+	Option &quot;UseEDIDFreqs&quot; &quot;FALSE&quot;
+
+	# Necessary otherwise states max size is 640x480
+	Option &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+
+	# Necessary or cannot calculate timings
+	Option &quot;ExactModeTimingsDVI&quot; &quot;true&quot;
+
+	# Refresh timings as per EDID info on TV. Necessary if
+	# TV is off
+	HorizSync   31.000 - 70.000
+	VertRefresh 50.000 - 77.000
+
+	#  720p @ 60Hz -- taken from TV modeline
+	ModeLine  &quot;1280x720&quot;   74.25 1280 1390 1430 1650  720  725  730  750 +hsync +vsync
+
+	# 1680x1050 @ 60Hz -- not provided by TV's EDID, but advertised native resolution.
+	# Works and is the clearest resolution for fonts
+	ModeLine  &quot;1680x1050&quot;   147.14 1680 1784 1968 2256 1050 1051 1054 1087 +hsync +vsync
+EndSection
+</pre>
+<a name="Westinghouse" id="Westinghouse"></a><h3> <span class="mw-headline"> Westinghouse </span></h3>
+<a name="Westinghouse_LVM-42W2_42.22_LCD" id="Westinghouse_LVM-42W2_42.22_LCD"></a><h4> <span class="mw-headline"> Westinghouse LVM-42W2 42" LCD </span></h4>
+<pre>
+Section &quot;Monitor&quot;
+        Identifier   &quot;Monitor1&quot;
+        VendorName   &quot;Westinghouse&quot;
+        ModelName    &quot;LVM-42w2&quot;
+        ### From /var/log/Xorg.0.log: ###
+        # Supported additional Video Mode:
+        # clock: 138.5 MHz   Image Size:  930 x 520 mm
+        # h_active: 1920  h_sync: 1968  h_sync_end 2000 h_blank_end 2080 h_border: 0
+        # v_active: 1080  v_sync: 1082  v_sync_end 1087 v_blanking: 1111 v_border: 0
+        # Ranges: V min: 50  V max: 75 Hz, H min: 30  H max: 80 kHz, PixClock max 150 MHz
+        VertRefresh  50.0 - 75.0
+        HorizSync    30.0 - 80.0
+        ModeLine     &quot;1920x1080&quot; 138.5 1920 1968 2000 2080 1080 1082 1087 1111
+
+        Option  &quot;DPMS&quot;  &quot;true&quot;
+        Option &quot;UseEdidDpi&quot; &quot;FALSE&quot;
+        Option &quot;DPI&quot; &quot;100 x 100&quot;
+EndSection
+</pre>
+<a name="Westinghouse_SK-32H240S_.2832.22_LCD.29" id="Westinghouse_SK-32H240S_.2832.22_LCD.29"></a><h4> <span class="mw-headline"> Westinghouse SK-32H240S (32" LCD) </span></h4>
+<p>This is an inexpensive 32-inch 720p HDTV set sold by several retailers. Also, it doesn't put out EDID information over the VGA port (maybe it does on HDMI).
+</p>
+<pre>
+Section &quot;Monitor&quot;
+        Identifier      &quot;Monitor&quot;
+        VendorName      &quot;Westinghouse&quot;
+        ModelName       &quot;SK-32H240S&quot;
+
+        DisplaySize     710     401
+        HorizSync       30 - 49
+        VertRefresh     50 - 75
+
+        Option          &quot;DPMS&quot;  &quot;True&quot;
+
+        Modeline        &quot;1368x768&quot;  73.250      1368 1408 1440 1496     768 771 776 816 +hsync -vsync
+EndSection
+</pre>
+<a name="Zenith" id="Zenith"></a><h3> <span class="mw-headline"> Zenith </span></h3>
+<a name="Zenith_P60W26_60.22_Plasma" id="Zenith_P60W26_60.22_Plasma"></a><h4> <span class="mw-headline"> Zenith P60W26 60" Plasma </span></h4>
+<pre>
+# Connected directly to the VGA input
+# Modeline &quot;1280x720_70.00&quot;  89.04  1280 1352 1488 1696  720 721 724 750  -HSync +Vsync
+</pre>
+<p><br />
+</p>
+<a name="Others" id="Others"></a><h3> <span class="mw-headline"> Others </span></h3>
+<a name="AWA_81cm_LCD" id="AWA_81cm_LCD"></a><h4> <span class="mw-headline"> AWA 81cm LCD </span></h4>
+<pre>
+## AWA 81cm LCD
+## HorizSync   30-80
+## VertRefresh 56-85
+## Option &quot;UseEdidFreqs&quot;   &quot;false&quot;
+# ModeLine &quot;1360x768&quot; 84.6 1360 1424 1568 1776 768 769 774 795
+</pre>
+<a name="Tevion_or_Medion_41427_.28Aldi.29" id="Tevion_or_Medion_41427_.28Aldi.29"></a><h4> <span class="mw-headline"> Tevion or Medion 41427 (Aldi) </span></h4>
+<pre>
+## Tevion or Medion 41427 (also sold as Aldi LCD) 60Hz modeline
+#	Modeline &quot;1280x720@60&quot; 74.20 1280 1390 1430 1650 720 725 730 750 +hsync +vsync
+</pre>
+<p><br />
+</p>
+<a name="Vizio_GV47L" id="Vizio_GV47L"></a><h4> <span class="mw-headline"> Vizio GV47L </span></h4>
+<pre>
+##  Modeline for 1080p -- 1920x1080_60 for the Vizio GV47L
+#	ModeLine &quot;1920x1080_60-GV47L&quot; 148.35 1920 2008 2052 2200 1080 1085 1090 1125 +hsync +vsync
+## Nvidia drivers (at least the current 9746) require the following options in the card &quot;Device&quot; section of the xorg.conf file
+#   Option      &quot;ExactModeTimingsDVI&quot; &quot;True&quot;
+#   Option      &quot;ModeValidation&quot; &quot;NoDFPNativeResolutionCheck&quot;
+</pre>
+<a name="Vizio_l47" id="Vizio_l47"></a><h4> <span class="mw-headline"> Vizio l47 </span></h4>
+<p>This modeline gets my l47 displaying 720p correctly:
+</p>
+<pre>
+Modeline &quot;720p&quot; 82.61 1368 1424 1579 1754 768 770 757 793 +hsync +vsync # WORKS
+</pre>
+<p><br />
+</p>
+<a name="Polaroid_.28Proview.29_FLM-3232" id="Polaroid_.28Proview.29_FLM-3232"></a><h4> <span class="mw-headline"> Polaroid (Proview) FLM-3232 </span></h4>
+<p>No modelines are really necessary for this one over the VGA.  Here are the relevant xorg.conf pieces to display at the max resolution of 720p:
+</p>
+<pre>
+Section &quot;Monitor&quot;
+        HorizSync    30.0 - 81.0
+        VertRefresh  56.0 - 75.0
+        Identifier   &quot;Monitor0&quot;
+        VendorName   &quot;Polaroid&quot;
+        ModelName    &quot;FLM-3232&quot;
+EndSection
+
+Section &quot;Device&quot;
+        Identifier  &quot;Videocard0&quot;
+        Driver      &quot;nvidia&quot;
+        VendorName  &quot;XFX&quot;
+        BoardName   &quot;XFX nVidia GeForce 6200&quot;
+        Option      &quot;RenderAccel&quot; &quot;1&quot;
+        Option      &quot;NvAGP&quot; &quot;2&quot;
+        Option      &quot;NoLogo&quot; &quot;true&quot;
+        Option      &quot;UseEvents&quot; &quot;True&quot;
+EndSection
+
+Section &quot;Screen&quot;
+        Identifier &quot;Screen0&quot;
+        Device     &quot;Videocard0&quot;
+        Monitor    &quot;Monitor0&quot;
+        DefaultDepth     24
+        SubSection &quot;Display&quot;
+                Viewport   0 0
+                Depth   24
+                Modes   &quot;1920x1080_60&quot; &quot;1280x720_60&quot; &quot;720x480_60&quot;
+                #       1080p           720p            480p
+        EndSubSection
+EndSection
+</pre>
+<a name="Tatung_32.22_81cm_HDTV" id="Tatung_32.22_81cm_HDTV"></a><h4> <span class="mw-headline"> Tatung 32" 81cm HDTV </span></h4>
+<pre>
+# Scaling by the DFP, ModeLine necessary, plus validation checks switched off:
+
+Section &quot;Monitor&quot;
+
+    Identifier  &quot;Mon1&quot;
+    HorizSync    15.0 - 46.0
+    VertRefresh  49.0 - 61.0
+    ModeLine &quot;1920x1080&quot; 74.250 1920 2008 2052 2200 1080 1084 1094 1125 interlace +hsync +vsync
+#    Option    &quot;DPMS&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier                          &quot;NV2&quot;
+    Driver                              &quot;nvidia&quot;
+    Option &quot;AddARGBGLXVisuals&quot; &quot;True&quot;
+    Option &quot;DisableGLXRootClipping&quot; &quot;true&quot;
+
+        Option &quot;NoVertRefreshCheck&quot;
+        Option  &quot;ModeValidation&quot; &quot;NoVertRefreshCheck,NoDFPNativeResolutionCheck,NoEdidMaxPClkCheck,NoHorizSyncCheck,NoMaxPClkCheck&quot;
+        Option &quot;UseEDIDDpi&quot; &quot;false&quot;
+        Option &quot;ExactModeTimingsDVI&quot; &quot;true&quot;
+        Option &quot;FlatPanelProperties&quot; &quot;Scaling=Native&quot;
+
+    BusID &quot;PCI:5:0:0&quot;
+    Screen 1
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier  &quot;Screen1&quot;
+    Device      &quot;NV2&quot;
+    Monitor     &quot;Mon1&quot;
+    DefaultDepth 24
+
+    Subsection &quot;Display&quot;
+        Depth       24
+        Modes &quot;1920x1080_60i&quot;
+        # &quot;1280x720&quot; &quot;640x480&quot;
+        ViewPort    0 0  # initial origin if mode is smaller than desktop
+    EndSubsection
+EndSection
+
+</pre>
+<a name="Ventura_Wide" id="Ventura_Wide"></a><h4> <span class="mw-headline"> Ventura Wide </span></h4>
+<p>Modelines to run the full resolution of 1366x768, on a Ventura Wide panel. In Denmark sold by Mermaid Computers.
+</p>
+<pre>
+##  Modeline for 1366
+# ModeLine	&quot;1366x768&quot; 85.9 1366 1438 1626 1798 768 769 772 795 +hsync +vsync
+## Nvidia drivers require the following options in the card &quot;Device&quot; section of the xorg.conf file
+# Option      &quot;ExactModeTimingsDVI&quot; &quot;True&quot;
+# Option      &quot;ModeValidation&quot;  &quot;NoWidthAlignmentCheck, NoDFPNativeResolutionCheck&quot;
+</pre>
+<a name="See_Also" id="See_Also"></a><h2> <span class="mw-headline"> See Also </span></h2>
+<p><a href="/wiki/Working_with_Modelines" title="Working with Modelines">Working with Modelines</a>
+</p>
+<a name="Sources" id="Sources"></a><h2> <span class="mw-headline"> Sources </span></h2>
+<p><a href="http://www.gentoo-wiki.info/HOWTO_Xorg_HDTV" class="external free" title="http://www.gentoo-wiki.info/HOWTO_Xorg_HDTV" rel="nofollow">http://www.gentoo-wiki.info/HOWTO_Xorg_HDTV</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 555/1000000
+Post-expand include size: 2301/2097152 bytes
+Template argument size: 1608/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mythwiki:pcache:idhash:2042-0!1!0!!en!2!edit=0 and timestamp 20100329102251 -->
+<div class="printfooter">
+Retrieved from "<a href="http://www.mythtv.org/wiki/Modeline_Database">http://www.mythtv.org/wiki/Modeline_Database</a>"</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>:&#32;<span dir='ltr'><a href="/wiki/Category:HOWTO" title="Category:HOWTO">HOWTO</a></span> | <span dir='ltr'><a href="/wiki/Category:Hardware" title="Category:Hardware">Hardware</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Modeline_Database" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="/wiki/Talk:Modeline_Database" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/wiki?title=Modeline_Database&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/wiki?title=Modeline_Database&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/wiki?title=Special:UserLogin&amp;returnto=Modeline_Database" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/w/skins/common/images/mythtv.png);" href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/Main_Page">Main Page</a></li>
+				<li id="n-portal"><a href="/wiki/MythTV:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/wiki/MythTV:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search MythTV [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Modeline_Database" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Modeline_Database" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/wiki?title=Modeline_Database&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/wiki?title=Modeline_Database&amp;oldid=44437" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/w/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 29 March 2010, at 10:22.</li>
+					<li id="viewcount">This page has been accessed 158,456 times.</li>
+					<li id="privacy"><a href="/wiki/MythTV:Privacy_policy" title="MythTV:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="/wiki/MythTV:About" title="MythTV:About">About MythTV</a></li>
+					<li id="disclaimer"><a href="/wiki/MythTV:General_disclaimer" title="MythTV:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6891668-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script><!-- Served in 0.531 secs. --></body><!-- Cached 20100329102251 -->
+</html>

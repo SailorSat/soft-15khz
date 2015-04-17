@@ -1,0 +1,28 @@
+All you need is a bit of 75 ohm coax wire, a soldering iron, and 3 RCA male plugs. This mod is Win9X only, since we don't know the XP registry keys yet. And if you are reading this, I assume you know what you are doing. If not, don't do it, because you could ruin some very expensive equipment.
+
+
+First, using the 75 ohm wire, solder:
+-----------------------------------
+VGA pin 1 -> Female RCA Pr lead
+VGA pin 2 -> Female RCA Y lead
+VGA pin 3 -> Female RCA Pb lead
+
+VGA pin 6 -> Female RCA Pr ground
+VGA pin 7 -> Female RCA Y ground
+VGA pin 8 -> Female RCA Pb ground
+-----------------------------------
+
+
+Second, add this key to the registry (win9x only):
+-----------------------------------
+under the thread
+[HKEY_LOCAL_MACHINE\SOFTWARE\ATI Technologies\Driver\0000\DAL]
+
+add
+"HDTVRULE_HDTVCONNECTED" =hex:01,00,00,00
+
+and also
+"HDTVRULE_HDTVGDOENABLE"=hex:01,00,00,00
+"HDTVRULE_HDTVSIGNALFORMAT"=hex:01,00,00,00
+if they don't exist, which they won't, if you use a radeon 7xxx or 9000.
+-----------------------------------

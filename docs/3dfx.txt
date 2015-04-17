@@ -1,0 +1,19 @@
+
+3dfxToolsAPI
+
+-- location --
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\3dfxvs\Device0\TIMINGS\1024,768\100Hz]
+X,Y active pixels
+Z refresh rage
+
+-- default --
+@="GTF"; GTF = General Timing Formula;
+@="400,328,376,525,490,492,13,12587500,5994,8,9884"
+totalx, firstx, lastx, totaly, firsty, lasty, syncopt, pixclk, vclk, ??, chksum
+syncopt seems to be sync options (1 = double scan, 4 = neg hsync?, 8 = neg vsync?)
+?? is 8 every time
+
+-- "Supported" --
+"Supported"="BPP+8+16+32,DDRAW"
+
+Supported features; BPP = Bits, DDRAW = DirectX Mode, DFP_DESK = Flatpanel Desktop, DFP_DD = Flatpanel DirectX, TVO_DD = TV DirectX, NTSC/PAL, TVO_DESK = TV Desktop

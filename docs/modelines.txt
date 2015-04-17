@@ -1,0 +1,44 @@
+' -= 15KHz Progressive =-
+modeline '240x240' 4,83 240 252 276 310 240 243 246 265 -hsync -vsync
+modeline '256x240' 5,30 256 272 296 336 240 244 247 261 -hsync -vsync
+modeline '256x256' 5,36 256 268 292 330 256 257 260 273 -hsync -vsync
+modeline '256x264' 5,35 256 268 292 330 264 265 268 278 -hsync -vsync
+modeline '288x240' 5,84 288 296 328 368 240 243 246 265 -hsync -vsync
+modeline '296x240' 5,95 296 304 336 376 240 243 246 264 -hsync -vsync
+modeline '304x240' 6,20 304 320 352 396 240 243 246 264 -hsync -vsync
+modeline '320x240' 6,45 320 336 368 414 240 242 245 264 -hsync -vsync
+modeline '320x256' 6,68 320 340 372 416 256 257 260 268 -hsync -vsync
+modeline '336x240' 6,83 336 352 384 433 240 243 246 264 -hsync -vsync
+modeline '352x256' 7,28 352 368 400 450 256 257 260 271 -hsync -vsync
+modeline '352x264' 7,35 352 365 405 452 264 265 268 284 -hsync -vsync
+modeline '352x288' 7,40 352 368 408 464 288 289 292 312 -hsync -vsync
+modeline '368x240' 7,47 368 384 424 478 240 243 246 264 -hsync -vsync
+modeline '384x288' 7,85 384 400 440 496 288 289 292 309 -hsync -vsync
+modeline '392x240' 8,00 392 408 448 504 240 243 246 265 -hsync -vsync
+modeline '400x256' 8,08 400 416 456 519 256 268 271 297 -hsync -vsync
+modeline '448x240' 9,16 448 464 512 576 240 243 246 265 -hsync -vsync
+modeline '512x240' 10,68 512 544 600 672 240 243 246 265 -hsync -vsync
+modeline '512x288' 10,68 512 544 600 672 288 289 292 312 -hsync -vsync
+modeline '632x264' 13,00 632 664 728 824 264 265 268 278 -hsync -vsync
+modeline '640x240' 13,22 640 672 736 832 240 243 246 265 -hsync -vsync
+modeline '640x288' 13,10 640 672 736 832 288 289 292 309 -hsync -vsync
+  
+' -= 15KHz Interlace =-
+modeline '512x448' 10,60 512 542 598 672 448 469 472 527 interlace -hsync -vsync
+modeline '512x512' 10,60 512 538 594 668 512 513 516 545 interlace -hsync -vsync
+modeline '640x480' 13,09 640 672 736 836 480 481 483 526 interlace -hsync -vsync
+modeline '720x480' 14,60 720 752 824 928 480 486 489 525 interlace -hsync -vsync
+modeline '800x600' 16,48 800 840 920 1040 600 602 605 627 interlace -hsync -vsync
+modeline '1024x600' 20,90 1024 1072 1176 1328 600 607 610 627 interlace -hsync -vsync
+  
+' -= 25KHz Progressive =-
+modeline '496x384' 15,4752 496 508 570 620 384 386 391 416 -hsync -vsync
+modeline '512x384' 14,75 512 520 568 600 384 388 391 410 -hsync -vsync
+
+' -= 31KHz Progressive =-
+modeline '512x448' 21,21 512 542 598 672 448 469 472 527 -hsync -vsync
+modeline '512x512' 21,21 512 538 594 668 512 513 516 545 -hsync -vsync
+modeline '640x480' 26,18 640 672 736 836 480 486 489 525 -hsync -vsync
+modeline '720x480' 29,25 720 752 824 928 480 486 489 526 -hsync -vsync
+modeline '800x600' 32,96 800 840 920 1040 600 602 605 627 -hsync -vsync
+modeline '1024x600' 41,80 1024 1072 1176 1328 600 607 610 627 -hsync -vsync

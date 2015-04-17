@@ -1,0 +1,2 @@
+# -= 15KHz Progressive =-
+modeline '768x224-15,75kHz-60,577Hz' 16,632 768 840 912 1056 224 227 230 260 -hsync -vsync
