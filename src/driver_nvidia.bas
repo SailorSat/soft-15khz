@@ -346,6 +346,7 @@ Sub NVidia_NT6_RemoveAllModes(AdapterIndex As Byte)
   CurObjectPath = Adapter(AdapterIndex).ObjectPath1
   SaveSettingMultiString HKEY_LOCAL_MACHINE, CurObjectPath, "NV_Modes", ""
   DeleteValue HKEY_LOCAL_MACHINE, CurObjectPath, "CustomDisplay"
+  DeleteValue HKEY_LOCAL_MACHINE, CurObjectPath, "DevicesConnected"
   Adapter(AdapterIndex).ModeCount = 0
 End Sub
 
@@ -363,7 +364,9 @@ Sub NVidia_NT6_AddAllModes(AdapterIndex As Byte, Freq As Byte)
     Case 6
       Splice = 176 * 2  '0x00B0
     Case 7
-      Splice = 272 * 2  '0x0110"
+      Splice = 272 * 2  '0x0110
+    Case 8
+      Splice = 280 * 2  '0x0118
   End Select
   Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "NV_Modes", "")
   If Right(Dummy, 1) = Chr(0) Then Dummy = Mid(Dummy, 1, Len(Dummy) - 1)
@@ -414,6 +417,7 @@ Sub NVidia_NT6_AddAllModes(AdapterIndex As Byte, Freq As Byte)
   CustomDisplay = CustomDisplay & String(Index - Len(CustomDisplay), 48)
   SaveSettingMultiString HKEY_LOCAL_MACHINE, CurObjectPath, "NV_Modes", Dummy
   SaveSettingBinary HKEY_LOCAL_MACHINE, CurObjectPath, "CustomDisplay", HexToBinary(CustomDisplay)
+  SaveSettingBinary HKEY_LOCAL_MACHINE, CurObjectPath, "DevicesConnected", HexToBinary("03000000")
 End Sub
 
 '? NVidia_NT6_ModelineToBinary("640,240,60","modeline '640x240' 13,22 640 672 736 832 240 243 246 265 -hsync -vsync",544)
@@ -437,7 +441,7 @@ Function NVidia_NT6_ModelineToBinary(ResName As String, Modeline As String, Spli
   Dim H_FREQ As Long
 
   Dim Res() As String
-
+  
   LineBinary = ""
   LineParam = Split(Modeline, " ", 12)
 
@@ -486,119 +490,191 @@ Function NVidia_NT6_ModelineToBinary(ResName As String, Modeline As String, Spli
   V_FREQ = Round(((1000000 * (CSng(P_FREQ))) / (CSng(H_TOTAL) * CSng(V_TOTAL))) * 1000, 3)
   H_FREQ = V_TOTAL * (V_FREQ / 1000)
 
-
   If UCase(LineParam(0)) = "MODELINE" Then
-    'DUMMY
-    LineBinary = String(Splice, 48)
+    Dim LineBinary2 As String
+    Dim LineBinary3 As String
+    
+    ' Header
+    Dim LineBinary0 As String
+    
+    Dim LB0_01 As String
+    Dim LB0_02 As String
+    Dim LB0_03 As String
+    Dim LB0_04 As String
+    Dim LB0_05 As String
+    Dim LB0_06 As String
+    Dim LB0_07 As String
+    
     'DEVICEMASK
     '"01000000" on NT6
     '"01010002" on NT7 ' doesn't work!
-    Mid(LineBinary, 1, 8) = "00010002"
+    '"00011000" on NT7 300+
+    Select Case Splice
+      Case 352
+        LB0_01 = "01000000"
+      Case 544
+        LB0_01 = "00010002"
+      Case 560
+        LB0_01 = "00011000"
+    End Select
     
     'HARDWAREID
-    Mid(LineBinary, 9, 8) = "150841d0" ' Monitor ID = "PNP0815"
-
-''    'CHECKSUM?
-''    Mid(LineBinary, 343, 8) = "18340c00"
+    LB0_02 = "ffffffff" ' Monitor ID = "PNP0815" = "150841d0"
     
-    'HEADER
-    Mid(LineBinary, 33, 2) = "15"
-    'COLOR DEPTH
-    Mid(LineBinary, 41, 2) = "20"
-
     'H_ACTIVE (Windows)
     Dummy = LeadZero(Hex(Res(0)), 4)
-    Mid(LineBinary, 17, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 73, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 105, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 137, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB0_03 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
+    
     'V_ACTIVE (Windows)
     Dummy = LeadZero(Hex(Res(1)), 4)
-    Mid(LineBinary, 25, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 81, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 113, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-    Mid(LineBinary, 145, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-
+    LB0_04 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
+    
+    'UNKNOWN
+    LB0_05 = "15000000"
+    
+    'COLOR DEPTH
+    LB0_06 = "20000000"
+    
+    'ZERO
+    LB0_07 = "00000000"
+    
+    LineBinary0 = LB0_01 & LB0_02 & LB0_03 & LB0_04 & LB0_05 & LB0_06 & LB0_07 & _
+                  LB0_07 & LB0_07 & LB0_03 & LB0_04 & _
+                  LB0_07 & LB0_07 & LB0_03 & LB0_04 & _
+                  LB0_07 & LB0_07 & LB0_03 & LB0_04
+                  
+                  
+    ' Details
+    Dim LineBinary1 As String
+    Dim LB1_01 As String
+    Dim LB1_02 As String
+    Dim LB1_03 As String
+    Dim LB1_04 As String
+    Dim LB1_05 As String
+    Dim LB1_06 As String
+    Dim LB1_07 As String
+    Dim LB1_08 As String
+    Dim LB1_09 As String
+    Dim LB1_10 As String
+    Dim LB1_11 As String
+    Dim LB1_12 As String
+    Dim LB1_13 As String
+    Dim LB1_14 As String
+    Dim LB1_15 As String
+    Dim LB1_16 As String
+    Dim LB1_17 As String
+    Dim LB1_18 As String
+    Dim LB1_19 As String
+    Dim LB1_20 As String
+                  
     'H_ACTIVE (Resolution)
     Dummy = LeadZero(Hex(H_ACTIVE), 4)
-    Mid(LineBinary, 153, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_01 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
+    
     'H_FIRST - H_ACTIVE
     Dummy = LeadZero(Hex(H_FIRST - H_ACTIVE), 4)
-    Mid(LineBinary, 161, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_02 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    
     'H_LAST - H_FIRST
     Dummy = LeadZero(Hex(H_LAST - H_FIRST), 4)
-    Mid(LineBinary, 165, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_03 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    
     'H_TOTAL
     Dummy = LeadZero(Hex(H_TOTAL), 4)
-    Mid(LineBinary, 169, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
-
+    LB1_04 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    
+    'H_SYNC_POL
+    LB1_05 = IIf(M_OPTIONS And 4, "01", "00") & "00"
+    
     'V_ACTIVE (Resolution)
     Dummy = LeadZero(Hex(V_ACTIVE), 4)
-    Mid(LineBinary, 177, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_06 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
+    
     'V_FIRST - V_ACTIVE
     Dummy = LeadZero(Hex(V_FIRST - V_ACTIVE), 4)
-    Mid(LineBinary, 185, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_07 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    
     'V_LAST - V_LAST
     Dummy = LeadZero(Hex(V_LAST - V_FIRST), 4)
-    Mid(LineBinary, 189, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_08 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    
     'V_TOTAL
     Dummy = LeadZero(Hex(V_TOTAL), 4)
-    Mid(LineBinary, 193, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_09 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+
+    'V_SYNC_POL
+    LB1_10 = IIf(M_OPTIONS And 8, "01", "00") & "00"
+
+    'INTERLACE
+    LB1_11 = IIf(M_OPTIONS And 2, "01", "00") & "000000"
 
     'P_FREQ
     Dummy = LeadZero(Hex(P_FREQ * 100), 4)
-    Mid(LineBinary, 209, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_12 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
 
+    'ZERO
+    LB1_13 = "00000000"
+    
     'V_FREQ (OS)
     Dummy = LeadZero(Hex(Res(2)), 4)
-    'Dummy = LeadZero(Hex(CInt(V_FREQ / 1000)), 4)
-    Mid(LineBinary, 225, 4) = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_14 = Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2) & "0000"
 
     'V_FREQ
     Dummy = LeadZero(Hex(V_FREQ), 8)
-    Mid(LineBinary, 233, 8) = Mid(Dummy, 7, 2) & Mid(Dummy, 5, 2) & Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+    LB1_15 = Mid(Dummy, 7, 2) & Mid(Dummy, 5, 2) & Mid(Dummy, 3, 2) & Mid(Dummy, 1, 2)
+
+    'ZERO
+    LB1_16 = "00000000"
 
     '?
-    Mid(LineBinary, 249, 2) = "01"
+    Select Case Splice
+      Case 352, 544
+        LB1_17 = "01000000"
+        LB1_18 = ""
+      Case 560
+        LB1_17 = "01000200"
+        LB1_18 = "0000463A"
+    End Select
 
     'FORMAT
     '01 - ?
     '03 - DMT
     '05 - CVT
     '07 - automatic?/GTF
-    '0A - manual
-    Mid(LineBinary, 257, 2) = "0A"
-
-    'M_OPTIONS
-    If M_OPTIONS And 2 Then
-      Mid(LineBinary, 201, 2) = "01"
-    End If
-    If M_OPTIONS And 4 Then
-      Mid(LineBinary, 173, 2) = "01"
-    End If
-    If M_OPTIONS And 8 Then
-      Mid(LineBinary, 197, 2) = "01"
-    End If
-
+    '0A/1D - manual
+    Select Case Splice
+      Case 352, 544
+        LB1_19 = "0A00"
+      Case 560
+        LB1_19 = "001D"
+    End Select
+    
     'STRING
     Dummy = "@CUST:" & Res(0) & "x" & Res(1) & "x" & Replace(Format((CSng(V_FREQ) / 1000), "0.000"), ",", ".") & "Hz"
     If M_OPTIONS And 2 Then
       Dummy = Dummy & "/i"
     End If
-    Dummy = BinaryToHex(Dummy)
-
-    Mid(LineBinary, 263, Len(Dummy)) = Dummy
+    Dummy = "00" & BinaryToHex(Dummy)
+    LB1_20 = Dummy & String(84 - Len(Dummy), 48)
     
-    'Splice
-    If Splice = 544 Then
-      'CopyCat because I'm lazy ;D
-      Mid(LineBinary, 345, 108) = Mid(LineBinary, 153, 108)
-      Dummy = Mid(Dummy, 3)
-      Mid(LineBinary, 457, Len(Dummy)) = Dummy
-      'Mid(LineBinary, 537, 8) = "76007300"
-      'Mid(LineBinary, 537, 8) = "64006300"
-      Mid(LineBinary, 537, 8) = "EE3FFDF7"
-    End If
+    LineBinary1 = LB1_01 & LB1_02 & LB1_03 & LB1_04 & LB1_05 & _
+                  LB1_06 & LB1_07 & LB1_08 & LB1_09 & LB1_10 & _
+                  LB1_11 & LB1_12 & LB1_13 & LB1_14 & LB1_15 & _
+                  LB1_16 & LB1_17 & LB1_18 & LB1_19 & LB1_20
+    
+    
+    ' Details Copy?
+    Select Case Splice
+      Case 352
+        LineBinary2 = ""
+      Case 544, 560
+        LineBinary2 = LineBinary1
+    End Select
+    
+    ' Footer?
+    LineBinary3 = "00000000"
+    
+    LineBinary = LineBinary0 & LineBinary1 & LineBinary2 & LineBinary3
   End If
   NVidia_NT6_ModelineToBinary = LineBinary
 End Function

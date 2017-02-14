@@ -355,6 +355,15 @@ Private Sub GenerateAdapterTable_WinNT()
     CurObjectPath = Replace(LCase(CurObjectPath), "\registry\machine\", "")
     CurObjectPath = Replace(CurObjectPath, Chr(0), "")
     AdapterCount = AdapterCount + 1
+    
+#If DEBUGMODE = 1 Then
+    Select Case AdapterCount
+      Case 1
+        ' SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000
+        CurObjectPath = LCase("SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000")
+    End Select
+#End If
+    
     With Adapter(AdapterCount)
       .ObjectPath1 = CurObjectPath
       .ObjectPath2 = ""
@@ -391,9 +400,11 @@ Private Sub GenerateAdapterTable_WinNT()
               .DriverVersion = 6
             Case 8704
               .DriverVersion = 7
+            Case 8960
+              .DriverVersion = 8
             Case Else
               ' -- Most likely not correct! --
-              .DriverVersion = 7
+              .DriverVersion = 8
           End Select
         End If
         If InStr(1, .ChipType, "GeForce") Then
@@ -402,7 +413,7 @@ Private Sub GenerateAdapterTable_WinNT()
             .ChipFlags = 4
           End If
           ' -- Check later --
-          Dummy = Replace(Replace(Replace(.ChipType, "FX", ""), "GTX ", "10"), "GeForce", "")
+          Dummy = Replace(Replace(Replace(Replace(Replace(.ChipType, "FX", ""), "GTX ", "10"), "GeForce", ""), "GTS ", "10"), "GT ", "10")
           If InStr(2, Dummy, " ") > 0 Then
             Dummy = Mid(Dummy, 2, InStr(2, Dummy, " ") - 2)
           End If

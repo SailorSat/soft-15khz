@@ -1,5 +1,5 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
 Module=base_main; src\base_main.bas
 Module=base_api; src\base_api.bas
 Form=src\base_gui.frm
@@ -12,8 +12,8 @@ IconForm="base_gui"
 Startup="Sub Main"
 HelpFile=""
 Title="Soft-15kHz"
-ExeName32="soft15khz.exe"
-Path32="bin"
+ExeName32="soft15khz-debug.exe"
+Path32="\\DAYTONA05\Software\Soft-15kHz"
 Command32=""
 Name="Soft15KHz"
 HelpContextID="0"
@@ -28,6 +28,7 @@ VersionCompanyName="-"
 VersionFileDescription="slimline 15kHz tool"
 VersionLegalCopyright="© 2007-2009, Ariane 'SailorSat' Fugmann"
 VersionProductName="Soft-15kHz"
+CondComp="DEBUGMODE = 0"
 CompilationType=0
 OptimizationType=2
 FavorPentiumPro(tm)=-1

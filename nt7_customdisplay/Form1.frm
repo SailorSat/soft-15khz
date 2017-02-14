@@ -1,16 +1,16 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   15450
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientHeight    =   11595
+   ClientLeft      =   165
+   ClientTop       =   450
    ClientWidth     =   12915
    LinkTopic       =   "Form1"
-   ScaleHeight     =   15450
+   ScaleHeight     =   11595
    ScaleWidth      =   12915
-   StartUpPosition =   3  'Windows-Standard
+   StartUpPosition =   3  'Windows Default
    Begin VB.TextBox txtOut 
-      Alignment       =   2  'Zentriert
+      Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Fixedsys"
          Size            =   9
@@ -53,7 +53,7 @@ Begin VB.Form Form1
       Width           =   2055
    End
    Begin VB.Label lblVal 
-      Alignment       =   2  'Zentriert
+      Alignment       =   2  'Center
       Caption         =   "0"
       BeginProperty Font 
          Name            =   "Fixedsys"
@@ -72,7 +72,7 @@ Begin VB.Form Form1
       Width           =   1095
    End
    Begin VB.Label lblOut 
-      Alignment       =   2  'Zentriert
+      Alignment       =   2  'Center
       Caption         =   "DM------"
       BeginProperty Font 
          Name            =   "Fixedsys"
@@ -135,8 +135,8 @@ End Sub
 Private Sub Form_Load()
   Dim Labels As String
   Dim VTypes As String
-  Labels = "DM------ HWID---- H-ACTIVE V-ACTIVE 15------ COLORDEP 0------- 0------- 0------- H-ACTIVE V-ACTIVE 0------- 0------- H-ACTIVE V-ACTIVE 0------- 0------- H-ACTIVE V-ACTIVE H-ACTIVE H-FP H-SW H-TT H-SP V-ACTIVE V-FP V-SW V-TT V-SP FLAGS--- PCLOCK-- 0------- V-Hz H-Hz V-FREQ-- 0------- 1------- TIMM --40 String-- -------- -------- -------- -------- -------- -------- -------- 0------- 0------- H-ACTIVE H-FP H-SW H-TT H-SP V-ACTIVE V-FP V-SW V-TT V-SP FLAGS--- PCLOCK-- 0------- V-Hz H-Hz V-FREQ-- 0------- 1------- TIMM 0--- String-- -------- -------- -------- -------- -------- -------- -------- -------- -------- ?--- ?---"
-  VTypes = "R        R        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L    L    L    L    L        L    L    L    L    L        L        L        L    L    L        L        L        L    R    S        S        S        S        S        S        S        S        L        L        L        L    L    L    L    L        L    L    L    L    L        L        L        L    L    L        L        L        L    L    S        S        S        S        S        S        S        S        S        S        R    R   "
+  Labels = "DM------ HWID---- H-ACTIVE V-ACTIVE 15------ COLORDEP 0------- 0------- 0------- H-ACTIVE V-ACTIVE 0------- 0------- H-ACTIVE V-ACTIVE 0------- 0------- H-ACTIVE V-ACTIVE H-ACTIVE H-FP H-SW H-TT H-SP V-ACTIVE V-FP V-SW V-TT V-SP FLAGS--- PCLOCK-- 0------- V-Hz H-Hz V-FREQ-- 0------- 1------- TIMM -- String-- -------- -------- -------- -------- -------- -------- -------- 00 0------- 0------- H-ACTIVE H-FP H-SW H-TT H-SP V-ACTIVE V-FP V-SW V-TT V-SP FLAGS--- PCLOCK-- 0------- V-Hz H-Hz V-FREQ-- 0------- 1------- TIMM 0- String-- -------- -------- -------- -------- -------- -------- -------- -------- -------- 0- ?-------"
+  VTypes = "R        R        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L        L    L    L    L    L        L    L    L    L    L        L        L        L    L    L        L        L        L    R  S        S        S        S        S        S        S        S        R  L        L        L        L    L    L    L    L        L    L    L    L    L        L        L        L    L    L        L        L        L    L  S        S        S        S        S        S        S        S        S        S        R  R       "
   While InStr(1, VTypes, "  ")
     VTypes = Replace(VTypes, "  ", " ")
   Wend
