@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form GridForm 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00404040&
-   BorderStyle     =   0  'Kein
+   BorderStyle     =   0  'None
    Caption         =   "Form1"
    ClientHeight    =   3195
    ClientLeft      =   0
@@ -14,7 +14,7 @@ Begin VB.Form GridForm
    ScaleHeight     =   213
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   312
-   StartUpPosition =   3  'Windows-Standard
+   StartUpPosition =   3  'Windows Default
 End
 Attribute VB_Name = "GridForm"
 Attribute VB_GlobalNameSpace = False
@@ -22,6 +22,10 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+
+Private Sub Form_DblClick()
+  End
+End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
   If Me.Tag = 2 Then
@@ -36,7 +40,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
-  Me.Move Screen.Width, 0, Screen.Width - (Screen.Width Mod 30), Screen.Height - (Screen.Height Mod 30)
+  Me.Move 0, 0, Screen.Width, Screen.Height
 '  Me.Move 0, 0, 240 * 15, 240 * 15
   GridTest
 End Sub
@@ -352,6 +356,55 @@ Sub ColorTest()
   Me.Line (TileSize * ((((Me.ScaleWidth - PaletteSize) / 2) / TileSize) + 4), 10 * TileSize)-((((Me.ScaleWidth / TileSize)) - (((Me.ScaleWidth - PaletteSize) / 2) / TileSize) - 4) * TileSize, 13 * TileSize)
   Me.Line (TileSize * ((((Me.ScaleWidth - PaletteSize) / 2) / TileSize) + 4), 13 * TileSize)-((((Me.ScaleWidth / TileSize)) - (((Me.ScaleWidth - PaletteSize) / 2) / TileSize) - 4) * TileSize, 10 * TileSize)
   Me.Circle (Me.ScaleWidth / 2, 11 * TileSize + (TileSize / 2)), TileSize
+  
+    '-rot-
+  LineCount = 14
+  RowCount = ((Me.ScaleWidth - PaletteSize) / 2) / TileSize
+  SubPixel = 0
+  For ColorIndex = 255 To 0 Step -1
+    Me.ForeColor = RGB(((ColorIndex \ 16) + 1) * 16, 0, 0)
+    For WorkIndex = 1 To PaletteStep
+      Me.Line ((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + 0)-((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + TileSize)
+      SubPixel = SubPixel + 1
+      If SubPixel = TileSize Then
+        SubPixel = 0
+        RowCount = RowCount + 1
+      End If
+    Next
+  Next
+  
+  '-grün-
+  LineCount = 15
+  RowCount = ((Me.ScaleWidth - PaletteSize) / 2) / TileSize
+  SubPixel = 0
+  For ColorIndex = 255 To 0 Step -1
+    Me.ForeColor = RGB(0, ((ColorIndex \ 16) + 1) * 16, 0)
+    For WorkIndex = 1 To PaletteStep
+      Me.Line ((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + 0)-((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + TileSize)
+      SubPixel = SubPixel + 1
+      If SubPixel = TileSize Then
+        SubPixel = 0
+        RowCount = RowCount + 1
+      End If
+    Next
+  Next
+  
+  '-blau-
+  LineCount = 16
+  RowCount = ((Me.ScaleWidth - PaletteSize) / 2) / TileSize
+  SubPixel = 0
+  For ColorIndex = 255 To 0 Step -1
+    Me.ForeColor = RGB(0, 0, ((ColorIndex \ 16) + 1) * 16)
+    For WorkIndex = 1 To PaletteStep
+      Me.Line ((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + 0)-((RowCount * TileSize) + SubPixel, (LineCount * TileSize) + TileSize)
+      SubPixel = SubPixel + 1
+      If SubPixel = TileSize Then
+        SubPixel = 0
+        RowCount = RowCount + 1
+      End If
+    Next
+  Next
+
 End Sub
  
 Sub ContrastTest()
