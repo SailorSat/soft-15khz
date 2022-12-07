@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form Window 
-   BorderStyle     =   1  'Fest Einfach
+   BorderStyle     =   1  'Fixed Single
    ClientHeight    =   765
    ClientLeft      =   150
    ClientTop       =   435
@@ -12,12 +12,12 @@ Begin VB.Form Window
    ScaleHeight     =   765
    ScaleWidth      =   1380
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   2  'Bildschirmmitte
+   StartUpPosition =   2  'CenterScreen
    Visible         =   0   'False
-   WindowState     =   1  'Minimiert
+   WindowState     =   1  'Minimized
    Begin VB.Menu mnuResolutions 
       Caption         =   "Resolutions"
-      NegotiatePosition=   1  'Links
+      NegotiatePosition=   1  'Left
       Begin VB.Menu mnuRes 
          Caption         =   "-"
          Index           =   0
@@ -37,7 +37,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Const DisplayName As String = "\\.\DISPLAY3" 'vbNullString '
+Private Const DisplayName As String = "\\.\DISPLAY1" 'vbNullString '
 Private Const DisplayMinBit As Integer = 32
 
 Private Const NIM_ADD = &H0
