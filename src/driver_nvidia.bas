@@ -515,7 +515,7 @@ Function NVidia_NT6_ModelineToBinary(ResName As String, Modeline As String, Spli
       Case 544
         LB0_01 = "00010002"
       Case 560
-        LB0_01 = "00011000"
+        LB0_01 = "00012000" '"00011000"
     End Select
     
     'HARDWAREID
