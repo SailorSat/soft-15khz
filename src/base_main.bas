@@ -354,212 +354,215 @@ Private Sub GenerateAdapterTable_WinNT()
     CurObjectPath = GetSettingString(HKEY_LOCAL_MACHINE, "HARDWARE\DEVICEMAP\VIDEO", "\Device\Video" & CurObjectNumber, "")
     CurObjectPath = Replace(LCase(CurObjectPath), "\registry\machine\", "")
     CurObjectPath = Replace(CurObjectPath, Chr(0), "")
-    AdapterCount = AdapterCount + 1
     
-#If DEBUGMODE = 1 Then
-    Select Case AdapterCount
-      Case 1
-        ' SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000
-        CurObjectPath = LCase("SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000")
-    End Select
-#End If
-    
-    With Adapter(AdapterCount)
-      .ObjectPath1 = CurObjectPath
-      .ObjectPath2 = ""
-      .Soft15KHz = GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "___Soft-15KHz___", 0)
-    
-      If GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "NV_Modes", "!") <> "!" Then
-        ' -= NVidia ForceWare =-
-        .DriverType = 1
-        
-        Dummy = Replace(Replace(Right(GetFileVersionInformation(GetSpecialFolder(41) & "\" & Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), Chr(0), "") & ".dll"), 6), ".", ""), ",", "")
-        If Dummy = "" Then
-          Dummy = Replace(Replace(Right(GetFileVersionInformation(GetSpecialFolder(41) & "\nvapi.dll"), 6), ".", ""), ",", "")
-          If Dummy = "" Then Dummy = "99999"
-          ' -- Add Message later --
-        End If
-        If CLng(Dummy) < 6693 Then
-          .DriverVersion = 0
-          If Not Host.RuntimeFlags And 2 Then MsgBox "Your driver appears to be too old." & vbCrLf & "NVidia ForceWare 66.93 or newer required.", vbCritical + vbOKOnly, "Soft-15kHz"
-        Else
-          .DriverVersion = 1
-        End If
-        .DriverString = CLng(Left(Dummy, 3)) & "." & Right(Dummy, 2)
-        
-        .AdapterName = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", ""), Chr(0), "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-        
-        If Host.Windows = 6 Then
-          Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "CustomDisplay", "")
-          Select Case Len(Dummy)
-            Case 5632
-              '175.19
-              .DriverVersion = 6
-            Case 8704
-              .DriverVersion = 7
-            Case 8960
-              .DriverVersion = 8
-            Case Else
-              ' -- Most likely not correct! --
-              .DriverVersion = 8
-          End Select
-        End If
-        If InStr(1, .ChipType, "GeForce") Then
-          If InStr(1, .ChipType, "MX") > 0 Then
+    If CurObjectPath <> "" Then
+      AdapterCount = AdapterCount + 1
+      
+  #If DEBUGMODE = 1 Then
+      Select Case AdapterCount
+        Case 1
+          ' SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000
+          CurObjectPath = LCase("SYSTEM\CurrentControlSet\Control\Video\{7A741D44-029A-49A2-9318-3CF233EF2299}\0000")
+      End Select
+  #End If
+      
+      With Adapter(AdapterCount)
+        .ObjectPath1 = CurObjectPath
+        .ObjectPath2 = ""
+        .Soft15KHz = GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "___Soft-15KHz___", 0)
+      
+        If GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "NV_Modes", "!") <> "!" Then
+          ' -= NVidia ForceWare =-
+          .DriverType = 1
+          
+          Dummy = Replace(Replace(Right(GetFileVersionInformation(GetSpecialFolder(41) & "\" & Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), Chr(0), "") & ".dll"), 6), ".", ""), ",", "")
+          If Dummy = "" Then
+            Dummy = Replace(Replace(Right(GetFileVersionInformation(GetSpecialFolder(41) & "\nvapi.dll"), 6), ".", ""), ",", "")
+            If Dummy = "" Then Dummy = "99999"
             ' -- Add Message later --
-            .ChipFlags = 4
           End If
-          ' -- Check later --
-          Dummy = Replace(Replace(Replace(Replace(Replace(.ChipType, "FX", ""), "GTX ", "10"), "GeForce", ""), "GTS ", "10"), "GT ", "10")
-          If InStr(2, Dummy, " ") > 0 Then
-            Dummy = Mid(Dummy, 2, InStr(2, Dummy, " ") - 2)
+          If CLng(Dummy) < 6693 Then
+            .DriverVersion = 0
+            If Not Host.RuntimeFlags And 2 Then MsgBox "Your driver appears to be too old." & vbCrLf & "NVidia ForceWare 66.93 or newer required.", vbCritical + vbOKOnly, "Soft-15kHz"
+          Else
+            .DriverVersion = 1
           End If
-          If IsNumeric(Dummy) Then
-            Index = CInt(Dummy)
-            If Index > 7999 Then
-              If Not Host.RuntimeFlags And 2 Then MsgBox "Please note that GeForce 8 series, GeForce 9 series and GeForce GTX series cards most likely don´t work without the EDID dongle.", vbInformation + vbOKOnly, "Soft-15kHz"
+          .DriverString = CLng(Left(Dummy, 3)) & "." & Right(Dummy, 2)
+          
+          .AdapterName = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", ""), Chr(0), "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+          
+          If Host.Windows = 6 Then
+            Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "CustomDisplay", "")
+            Select Case Len(Dummy)
+              Case 5632
+                '175.19
+                .DriverVersion = 6
+              Case 8704
+                .DriverVersion = 7
+              Case 8960
+                .DriverVersion = 8
+              Case Else
+                ' -- Most likely not correct! --
+                .DriverVersion = 8
+            End Select
+          End If
+          If InStr(1, .ChipType, "GeForce") Then
+            If InStr(1, .ChipType, "MX") > 0 Then
+              ' -- Add Message later --
+              .ChipFlags = 4
             End If
-            .ChipFamily = Index
-          End If
-        End If
-      ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Catalyst_Version", "") <> "" Then
-        ' -= ATI Catalyst =-
-        .DriverType = 2
-        
-        Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "ReleaseVersion", ""), Chr(0), "")
-        Index = InStr(1, Dummy, "-")
-        If Index > 0 Then Dummy = Left(Dummy, Index - 1)
-        .DriverString = Dummy
-        
-        Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Catalyst_Version", "1.0"), Chr(0), "")
-        If Dummy = "0" Then Dummy = "1.0"
-        While InStr(1, Dummy, " ")
-          Dummy = Mid(Dummy, InStr(1, Dummy, " ") + 1)
-        Wend
-        Index = InStr(1, Dummy, ".")
-        If Index > 0 Then
-          If Not Dummy = "1.0" Then .DriverString = .DriverString & " (Catalyst " & CInt(Left(Dummy, Index - 1)) & "." & CInt(Mid(Dummy, Index + 1)) & ")"
-          Temp = Mid(Dummy, Index + 1)
-          Dummy = Left(Dummy, Index - 1)
-        Else
-          Temp = "0"
-        End If
-        .DriverVersion = CInt(Dummy)
-        
-        .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        Dummy = LCase(Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.AdapterString", ""), Chr(0), ""))
-        Dummy = Replace(Dummy, "mobility ", "")
-        Dummy = Replace(Dummy, " series", "")
-        Dummy = Replace(Dummy, "ati ", "")
-        Dummy = Replace(Dummy, "amd ", "")
-        Dummy = Replace(Dummy, "radeon ", "")
-        Dummy = Replace(Dummy, "x1", "11")
-        Dummy = Replace(Dummy, "x", "10")
-        Dummy = Replace(Dummy, "hd ", "1")
-        Index = InStr(1, Dummy, "/")
-        If Index > 0 Then Dummy = Left(Dummy, Index - 1)
-        Index = InStr(1, Dummy, " ")
-        If Index > 0 Then Dummy = Left(Dummy, Index - 1)
-        If IsNumeric(Dummy) Then .ChipFamily = CInt(Dummy) Else .ChipFamily = 7000
-        If .ChipFamily > 14000 Then
-          ' -= HD4000 and newer =-
-          .ChipFlags = 0
-        Else
-          If .ChipFamily < 11000 Then
-            If .DriverVersion > 6 Or (.DriverVersion = 6 And CInt(Temp) > 5) Then
-              If Not Host.RuntimeFlags And 2 Then MsgBox "For pre-X1000 series Radeon cards Catalyst 6.5 is recommended.", vbOKOnly + vbInformation, "Soft-15kHz"
+            ' -- Check later --
+            Dummy = Replace(Replace(Replace(Replace(Replace(.ChipType, "FX", ""), "GTX ", "10"), "GeForce", ""), "GTS ", "10"), "GT ", "10")
+            If InStr(2, Dummy, " ") > 0 Then
+              Dummy = Mid(Dummy, 2, InStr(2, Dummy, " ") - 2)
+            End If
+            If IsNumeric(Dummy) Then
+              Index = CInt(Dummy)
+              If Index > 7999 Then
+                If Not Host.RuntimeFlags And 2 Then MsgBox "Please note that GeForce 8 series, GeForce 9 series and GeForce GTX series cards most likely don´t work without the EDID dongle.", vbInformation + vbOKOnly, "Soft-15kHz"
+              End If
+              .ChipFamily = Index
             End If
           End If
-          .ChipFlags = 1
-        End If
-        
-        Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-        .ChipType = Dummy
-        
-        If InStr(1, .AdapterName, "ArcadeVGA") Then
-          If Not Host.RuntimeFlags And 2 Then MsgBox "ArcadeVGA cards are not supported.", vbOKOnly + vbExclamation, "Soft-15kHz"
+        ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Catalyst_Version", "") <> "" Then
+          ' -= ATI Catalyst =-
+          .DriverType = 2
+          
+          Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "ReleaseVersion", ""), Chr(0), "")
+          Index = InStr(1, Dummy, "-")
+          If Index > 0 Then Dummy = Left(Dummy, Index - 1)
+          .DriverString = Dummy
+          
+          Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Catalyst_Version", "1.0"), Chr(0), "")
+          If Dummy = "0" Then Dummy = "1.0"
+          While InStr(1, Dummy, " ")
+            Dummy = Mid(Dummy, InStr(1, Dummy, " ") + 1)
+          Wend
+          Index = InStr(1, Dummy, ".")
+          If Index > 0 Then
+            If Not Dummy = "1.0" Then .DriverString = .DriverString & " (Catalyst " & CInt(Left(Dummy, Index - 1)) & "." & CInt(Mid(Dummy, Index + 1)) & ")"
+            Temp = Mid(Dummy, Index + 1)
+            Dummy = Left(Dummy, Index - 1)
+          Else
+            Temp = "0"
+          End If
+          .DriverVersion = CInt(Dummy)
+          
+          .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          Dummy = LCase(Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.AdapterString", ""), Chr(0), ""))
+          Dummy = Replace(Dummy, "mobility ", "")
+          Dummy = Replace(Dummy, " series", "")
+          Dummy = Replace(Dummy, "ati ", "")
+          Dummy = Replace(Dummy, "amd ", "")
+          Dummy = Replace(Dummy, "radeon ", "")
+          Dummy = Replace(Dummy, "x1", "11")
+          Dummy = Replace(Dummy, "x", "10")
+          Dummy = Replace(Dummy, "hd ", "1")
+          Index = InStr(1, Dummy, "/")
+          If Index > 0 Then Dummy = Left(Dummy, Index - 1)
+          Index = InStr(1, Dummy, " ")
+          If Index > 0 Then Dummy = Left(Dummy, Index - 1)
+          If IsNumeric(Dummy) Then .ChipFamily = CInt(Dummy) Else .ChipFamily = 7000
+          If .ChipFamily > 14000 Then
+            ' -= HD4000 and newer =-
+            .ChipFlags = 0
+          Else
+            If .ChipFamily < 11000 Then
+              If .DriverVersion > 6 Or (.DriverVersion = 6 And CInt(Temp) > 5) Then
+                If Not Host.RuntimeFlags And 2 Then MsgBox "For pre-X1000 series Radeon cards Catalyst 6.5 is recommended.", vbOKOnly + vbInformation, "Soft-15kHz"
+              End If
+            End If
+            .ChipFlags = 1
+          End If
+          
+          Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+          .ChipType = Dummy
+          
+          If InStr(1, .AdapterName, "ArcadeVGA") Then
+            If Not Host.RuntimeFlags And 2 Then MsgBox "ArcadeVGA cards are not supported.", vbOKOnly + vbExclamation, "Soft-15kHz"
+            .DriverVersion = 0
+          End If
+        ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Mga.SingleResolutions", "!") <> "!" Then
+          ' -= Matrox PowerDesk =-
+          .DriverType = 3
+          
+          Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "PackageVer", "1.00.00")
+          .DriverString = Dummy
+          Index = InStr(1, Dummy, ".")
+          If Index > 0 Then Dummy = Left(Dummy, Index - 1)
+          If IsNumeric(Dummy) Then .DriverVersion = CInt(Dummy)
+          
+          Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          .AdapterName = Replace(Dummy, Chr(0), "")
+          
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+        ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "3dfxToolsAPI", "!") <> "!" Then
+          ' -= 3Dfx =-
+          .DriverType = 4
+          .DriverVersion = 1
+          
+          Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", "")
+          Dummy = Left(Dummy, InStr(1, Dummy, Chr(0)) - 1)
+          .DriverString = GetFileVersionInformation(GetSpecialFolder(41) & "\" & Dummy & ".dll")
+          
+          .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+          .ChipFlags = 2 + 4
+        ElseIf GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "TotalDTDCount", -1) <> -1 Then
+          ' -= Intel GMA =-
+          .DriverType = 5
+          .DriverVersion = 1
+          
+          .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+          .ChipType = Replace(Replace(Replace(Replace(Dummy, " Chipset", ""), " Family", ""), " Express", ""), "(R)", "")
+        ElseIf Left(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), 4) = "iegd" Then
+          ' -= Intel EGD =-
+          .DriverType = 5
+          .DriverVersion = 2
+          
+          Dummy = Hex(GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "PcfVersion", 256))
+          .DriverString = Left(Dummy, Len(Dummy) - 2) & "." & Right(Dummy, 2)
+          
+          .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+        ElseIf Left(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), 4) = "igdd" Then
+          ' -= Intel EGD 5.1 =-
+          .DriverType = 5
+          .DriverVersion = 2
+          
+          Dummy = Hex(GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "PcfVersion", 256))
+          .DriverString = Left(Dummy, Len(Dummy) - 2) & "." & Right(Dummy, 2)
+          
+          .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
+        Else
+          'Sonstiges
+          .DriverType = 0
           .DriverVersion = 0
+          
+          Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
+          If Dummy = "" Then Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
+          If Dummy = "" Then Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", "")
+          .AdapterName = Replace(Dummy, Chr(0), " ")
+          .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
         End If
-      ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Mga.SingleResolutions", "!") <> "!" Then
-        ' -= Matrox PowerDesk =-
-        .DriverType = 3
-        
-        Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "PackageVer", "1.00.00")
-        .DriverString = Dummy
-        Index = InStr(1, Dummy, ".")
-        If Index > 0 Then Dummy = Left(Dummy, Index - 1)
-        If IsNumeric(Dummy) Then .DriverVersion = CInt(Dummy)
-        
-        Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        .AdapterName = Replace(Dummy, Chr(0), "")
-        
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-      ElseIf GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "3dfxToolsAPI", "!") <> "!" Then
-        ' -= 3Dfx =-
-        .DriverType = 4
-        .DriverVersion = 1
-        
-        Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", "")
-        Dummy = Left(Dummy, InStr(1, Dummy, Chr(0)) - 1)
-        .DriverString = GetFileVersionInformation(GetSpecialFolder(41) & "\" & Dummy & ".dll")
-        
-        .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-        .ChipFlags = 2 + 4
-      ElseIf GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "TotalDTDCount", -1) <> -1 Then
-        ' -= Intel GMA =-
-        .DriverType = 5
-        .DriverVersion = 1
-        
-        .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        Dummy = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-        .ChipType = Replace(Replace(Replace(Replace(Dummy, " Chipset", ""), " Family", ""), " Express", ""), "(R)", "")
-      ElseIf Left(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), 4) = "iegd" Then
-        ' -= Intel EGD =-
-        .DriverType = 5
-        .DriverVersion = 2
-        
-        Dummy = Hex(GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "PcfVersion", 256))
-        .DriverString = Left(Dummy, Len(Dummy) - 2) & "." & Right(Dummy, 2)
-        
-        .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-      ElseIf Left(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", ""), 4) = "igdd" Then
-        ' -= Intel EGD 5.1 =-
-        .DriverType = 5
-        .DriverVersion = 2
-        
-        Dummy = Hex(GetSettingLong(HKEY_LOCAL_MACHINE, CurObjectPath, "PcfVersion", 256))
-        .DriverString = Left(Dummy, Len(Dummy) - 2) & "." & Right(Dummy, 2)
-        
-        .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If .AdapterName = "" Then .AdapterName = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-      Else
-        'Sonstiges
-        .DriverType = 0
-        .DriverVersion = 0
-        
-        Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "Device Description", "")
-        If Dummy = "" Then Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "DriverDesc", "")
-        If Dummy = "" Then Dummy = GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "InstalledDisplayDrivers", "")
-        .AdapterName = Replace(Dummy, Chr(0), " ")
-        .ChipType = Replace(GetSettingString(HKEY_LOCAL_MACHINE, CurObjectPath, "HardwareInformation.ChipType", ""), Chr(0), "")
-      End If
-    End With
+      End With
+    End If
   Next
 End Sub
 

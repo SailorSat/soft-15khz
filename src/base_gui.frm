@@ -1,8 +1,8 @@
 VERSION 5.00
 Begin VB.Form base_gui 
-   BorderStyle     =   1  'Fest Einfach
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Soft-15kHz"
-   ClientHeight    =   3675
+   ClientHeight    =   4800
    ClientLeft      =   45
    ClientTop       =   330
    ClientWidth     =   9480
@@ -10,10 +10,10 @@ Begin VB.Form base_gui
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   245
+   ScaleHeight     =   320
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   632
-   StartUpPosition =   3  'Windows-Standard
+   StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton CommandUSER 
       Caption         =   "Install USER"
       Enabled         =   0   'False
@@ -29,12 +29,12 @@ Begin VB.Form base_gui
       Height          =   375
       Left            =   8040
       TabIndex        =   18
-      Top             =   2760
+      Top             =   3840
       Width           =   1215
    End
    Begin VB.Frame StatusFrame 
       Caption         =   "Status:"
-      Height          =   2415
+      Height          =   3495
       Left            =   2640
       TabIndex        =   9
       Top             =   0
@@ -52,7 +52,7 @@ Begin VB.Form base_gui
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00808080&
-         Height          =   2040
+         Height          =   3120
          Left            =   120
          TabIndex        =   10
          Top             =   240
@@ -61,11 +61,62 @@ Begin VB.Form base_gui
    End
    Begin VB.Frame AdapterFrame 
       Caption         =   "Adapter:"
-      Height          =   3615
+      Height          =   4695
       Left            =   120
       TabIndex        =   0
       Top             =   0
       Width           =   2415
+      Begin VB.OptionButton AdapterOption 
+         BeginProperty Font 
+            Name            =   "Terminal"
+            Size            =   9
+            Charset         =   255
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   11
+         Left            =   120
+         TabIndex        =   24
+         Top             =   4200
+         Width           =   2175
+      End
+      Begin VB.OptionButton AdapterOption 
+         BeginProperty Font 
+            Name            =   "Terminal"
+            Size            =   9
+            Charset         =   255
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   10
+         Left            =   120
+         TabIndex        =   23
+         Top             =   3840
+         Width           =   2175
+      End
+      Begin VB.OptionButton AdapterOption 
+         BeginProperty Font 
+            Name            =   "Terminal"
+            Size            =   9
+            Charset         =   255
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   9
+         Left            =   120
+         TabIndex        =   22
+         Top             =   3480
+         Width           =   2175
+      End
       Begin VB.OptionButton AdapterOption 
          BeginProperty Font 
             Name            =   "Terminal"
@@ -225,7 +276,7 @@ Begin VB.Form base_gui
       Height          =   735
       Left            =   2640
       TabIndex        =   11
-      Top             =   2520
+      Top             =   3600
       Width           =   6735
       Begin VB.CommandButton Command31kHz 
          Caption         =   "Install 31kHz"
@@ -314,13 +365,13 @@ Begin VB.Form base_gui
       ForeColor       =   &H8000000D&
       Height          =   255
       Left            =   3960
-      MousePointer    =   10  'Aufwärtspfeil
+      MousePointer    =   10  'Up Arrow
       TabIndex        =   21
-      Top             =   3360
+      Top             =   4440
       Width           =   735
    End
    Begin VB.Label lblDonate 
-      Alignment       =   1  'Rechts
+      Alignment       =   1  'Right Justify
       Caption         =   "feel free to"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -334,11 +385,11 @@ Begin VB.Form base_gui
       Height          =   255
       Left            =   2640
       TabIndex        =   20
-      Top             =   3360
+      Top             =   4440
       Width           =   1215
    End
    Begin VB.Label lblSponsor 
-      Alignment       =   1  'Rechts
+      Alignment       =   1  'Right Justify
       Caption         =   "sponsored by"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -352,7 +403,7 @@ Begin VB.Form base_gui
       Height          =   255
       Left            =   6600
       TabIndex        =   16
-      Top             =   3360
+      Top             =   4440
       Width           =   1335
    End
    Begin VB.Label lblLink 
@@ -369,9 +420,9 @@ Begin VB.Form base_gui
       ForeColor       =   &H8000000D&
       Height          =   255
       Left            =   8040
-      MousePointer    =   10  'Aufwärtspfeil
+      MousePointer    =   10  'Up Arrow
       TabIndex        =   17
-      Top             =   3360
+      Top             =   4440
       Width           =   1335
    End
 End
@@ -686,7 +737,7 @@ End Sub
 Sub ReadAdapterTable()
   Dim Index As Integer
   For Index = 1 To AdapterCount
-    If Index = 10 Then Exit For
+    If Index = 12 Then Exit For
     With AdapterOption(Index - 1)
       .Visible = True
       .Caption = Adapter(Index).AdapterName
@@ -698,8 +749,8 @@ Sub ReadAdapterTable()
       End If
     End With
   Next
-  For Index = AdapterCount + 1 To 9
-    If Index = 10 Then Exit For
+  For Index = AdapterCount + 1 To 13
+    If Index = 13 Then Exit For
     With AdapterOption(Index - 1)
       .Visible = False
       .Enabled = False
